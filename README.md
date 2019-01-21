@@ -36,7 +36,7 @@ General:
 
 Classes:
 
-- [Oracle class](https://www.d20pfsrd.com/classes/core-classes/oracle/), with the following archetypes, mysteries & curses:
+- [Oracle class](https://www.d20pfsrd.com/classes/base-classes/oracle/), with the following archetypes, mysteries & curses:
   - [Seeker archetype](https://www.d20pfsrd.com/classes/base-classes/oracle/archetypes/paizo-oracle-archetypes/seeker/)
   - [Ancient Lorekeeper (Elf) archetype](https://www.d20pfsrd.com/races/core-races/elf/ancient-lorekeeper-oracle-elf/)
     - [Time mystery](https://www.d20pfsrd.com/classes/base-classes/oracle/mysteries/paizo-oracle-mysteries/time/) for use with Lorekeeper
