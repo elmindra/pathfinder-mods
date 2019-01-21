@@ -12,6 +12,13 @@ to level up your character to high level, quick save & load, then test out the a
 You can file bugs on [github](https://github.com/jennyem/pathfinder-mods/issues) or report them using the
 Nexus mods page.*
 
+Installation:
+
+1. Install [Unity Mod Manager](https://www.nexusmods.com/site/mods/21)
+2. Find your Pathfinder: Kingmaker game directory (if using Steam, this will typically be at:
+   `C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Kingmaker\`)
+3. Unzip EldritchArcana.zip into the game's Mods directory.
+
 
 General:
 
