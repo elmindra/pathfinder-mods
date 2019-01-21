@@ -1,0 +1,1475 @@
+--------------------------------------------------------------------------------
+
+The rules/game mechanics of Pathfinder are under the Open Gaming License, from
+https://www.d20pfsrd.com/legal/. The full text of the OGL license is included
+below (after the MIT license).
+
+Otherwise this Software is released under the MIT license, included below.
+
+Please also note that using this Software requires separately obtaining
+Pathfinder: Kingmaker, which is Copyright (c) Owlcat Games. Please obtain a
+license by purchasing the game from Owlcat Games or their authorized
+distributors.
+
+Using this software also requires obtaining Unity Mod Manager
+(https://github.com/newman55/unity-mod-manager) and Harmony
+(https://github.com/pardeike/Harmony). Please be sure to check the license terms
+of those projects. (As of Jan 2019, they are both released under the MIT
+license.)
+
+--------------------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2019 Jennifer Messerly
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+
+(Please note: section 15 is reproduced in full from
+https://www.d20pfsrd.com/legal/, however this Software only references a small
+subset of those sources.)
+
+Open Game License Version 1.0a
+
+The following text is the property of Wizards of the Coast, Inc. and is
+Copyright 2000 Wizards of the Coast, Inc (“Wizards”). All Rights Reserved.
+
+1. Definitions:
+
+(a) “Contributors” means the copyright and/or trademark owners who have 
+contributed Open Game Content;
+
+(b) “Derivative Material” means copyrighted material including derivative works
+and translations (including into other computer languages), potation, 
+modification, correction, addition, extension, upgrade, improvement,
+compilation, abridgment or other form in which an existing work may be recast,
+transformed or adapted;
+
+(c) “Distribute” means to reproduce, license, rent, lease, sell, broadcast,
+publicly display, transmit or otherwise distribute;
+
+(d) “Open Game Content” means the game mechanic and includes the methods,
+procedures, processes and routines to the extent such content does not embody
+the Product Identity and is an enhancement over the prior art and any additional
+content clearly identified as Open Game Content by the Contributor, and means 
+any work covered by this License, including translations and derivative works 
+under copyright law, but specifically excludes Product Identity.
+
+(e) “Product Identity” means product and product line names, logos and 
+identifying marks including trade dress; artifacts, creatures, characters, 
+stories, storylines, plots, thematic elements, dialogue, incidents, language,
+artwork, symbols, designs, depictions, likenesses, formats, poses, concepts,
+themes and graphic, photographic and other visual or audio representations;
+names and descriptions of characters, spells, enchantments, personalities,
+teams, personas, likenesses and special abilities; places, locations,
+environments, creatures, equipment, magical or supernatural abilities or
+effects, logos, symbols, or graphic designs; and any other trademark or
+registered trademark clearly identified as Product identity by the owner of the
+Product Identity, and which specifically excludes the Open Game Content;
+
+(f) “Trademark” means the logos, names, mark, sign, motto, designs that are used
+by a Contributor to identify itself or its products or the associated products
+contributed to the Open Game License by the Contributor
+
+(g) “Use”, “Used” or “Using” means to use, Distribute, copy, edit, format,
+modify, translate and otherwise create Derivative Material of Open Game Content.
+
+(h) “You” or “Your” means the licensee in terms of this agreement.
+
+2. The License: This License applies to any Open Game Content that contains a
+notice indicating that the Open Game Content may only be Used under and in terms
+of this License. You must affix such a notice to any Open Game Content that you
+Use. No terms may be added to or subtracted from this License except as
+described by the License itself. No other terms or conditions may be applied to
+any Open Game Content distributed using this License.
+
+3. Offer and Acceptance: By Using the Open Game Content You indicate Your
+acceptance of the terms of this License.
+
+4. Grant and Consideration: In consideration for agreeing to use this License,
+the Contributors grant You a perpetual, worldwide, royalty-free, non-exclusive
+license with the exact terms of this License to Use, the Open Game Content.
+
+5. Representation of Authority to Contribute: If You are contributing original
+material as Open Game Content, You represent that Your Contributions are Your
+original creation and/or You have sufficient rights to grant the rights conveyed
+by this License.
+
+6. Notice of License Copyright: You must update the COPYRIGHT NOTICE portion of
+this License to include the exact text of the COPYRIGHT NOTICE of any Open Game
+Content You are copying, modifying or distributing, and You must add the title,
+the copyright date, and the copyright holder’s name to the COPYRIGHT NOTICE of
+any original Open Game Content you Distribute.
+
+7. Use of Product Identity: You agree not to Use any Product Identity, including
+ as an indication as to compatibility, except as expressly licensed in another,
+ independent Agreement with the owner of each element of that Product Identity.
+ You agree not to indicate compatibility or co-adaptability with any Trademark
+ or Registered Trademark in conjunction with a work containing Open Game Content
+ except as expressly licensed in another, independent Agreement with the owner
+ of such Trademark or Registered Trademark. The use of any Product Identity in 
+ Open Game Content does not constitute a challenge to the ownership of that
+ Product Identity. The owner of any Product Identity used in Open Game Content
+ shall retain all rights, title and interest in and to that Product Identity.
+
+8. Identification: If you distribute Open Game Content You must clearly indicate
+ which portions of the work that you are distributing are Open Game Content.
+
+9. Updating the License: Wizards or its designated Agents may publish updated
+versions of this License. You may use any authorized version of this License to
+copy, modify and distribute any Open Game Content originally distributed under
+ any version of this License.
+
+10. Copy of this License: You MUST include a copy of this License with every
+copy of the Open Game Content You distribute.
+
+11. Use of Contributor Credits: You may not market or advertise the Open Game
+Content using the name of any Contributor unless You have written permission
+from the Contributor to do so.
+
+12. Inability to Comply: If it is impossible for You to comply with any of the
+terms of this License with respect to some or all of the Open Game Content due
+to statute, judicial order, or governmental regulation then You may not Use any
+Open Game Material so affected.
+
+13. Termination: This License will terminate automatically if You fail to comply
+with all terms herein and fail to cure such breach within 30 days of becoming
+aware of the breach. All sublicenses shall survive the termination of this
+License.
+
+14. Reformation: If any provision of this License is held to be unenforceable,
+such provision shall be reformed only to the extent necessary to make it
+enforceable.
+
+15. Copyright Notice:
+
+Pathfinder 1: Burnt Offerings. Copyright 2007, Paizo Publishing, LLC; Author: James Jacobs.
+Pathfinder 2: The Skinsaw Murders. Copyright 2007 Paizo Publishing LLC. Author: Richard Pett.
+Pathfinder 3: The Hook Mountain Massacre. Copyright 2007, Paizo Publishing, LLC; Author Nicolas Logue.
+Pathfinder 4: Fortress of the Stone Giants. Copyright 2007, Paizo Publishing, LLC; Author Wolfgang Baur.
+Pathfinder 5: Sins of the Saviors. Copyright 2007, Paizo Publishing, LLC; Author: Stephen S. Greer.
+Pathfinder 6: Spires of Xin-Shalast. Copyright 2008, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder 7: Edge of Anarchy. Copyright 2008, Paizo Publishing, LLC; Author: Nicolas Logue.
+Pathfinder 8: Seven Days to the Grave. Copyright 2008, Paizo Publishing, LLC; Author: F. Wesley Schneider.
+Pathfinder 9: Escape from Old Korvosa. Copyright 2008, Paizo Publishing, LLC; Author: Richard Pett.
+Pathfinder 10: A History of Ashes. Copyright 2008, Paizo Publishing, LLC; Author: Michael Kortes.
+Pathfinder 11: Skeletons of Scarwall. Copyright 2008, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder 12: Crown of Fangs. Copyright 2008, Paizo Publishing, LLC; Author: Tito Leati.
+Pathfinder 13: Shadow in the Sky. Copyright 2008, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder 14: Children of the Void. Copyright 2008, Paizo Publishing, LLC; Author: Mike McArtor.
+Pathfinder 15: The Armageddon Echo. Copyright 2009, Paizo Publishing, LLC; Author: Jason Bulmahn
+Pathfinder 16: Endless Night. Copyright 2008, Paizo Publishing, LLC; Author: F. Wesley Schneider.
+Pathfinder 17: A Memory of Darkness. Copyright 2009, Paizo Publishing, LLC; Author: J.D. Wiker
+Pathfinder 18: Descent into Midnight. Copyright 2009, Paizo Publishing, LLC; Author: Brian Cortijo.
+Pathfinder 19: Howl of the Carrion King. Copyright 2009, Paizo Publishing, LLC; Author: Erik Mona.
+Pathfinder 20: House of the Beast. Copyright 2009, Paizo Publishing, LLC; Author: Tim Hitchcock.
+Pathfinder 21: The Jackal’s Price. Copyright 2009, Paizo Publishing, LLC; Author: Darrin Drader.
+Pathfinder 22: The End of Eternity. Copyright 2009, Paizo Publishing, LLC; Author: Jason Nelson
+Pathfinder Adventure Path volume #22: The End of Eternity. Copyright 2009, Paizo Publishing, LLC; Author: Jason Nelson.
+Pathfinder 23: The Impossible Eye. Copyright 2008, Paizo Publishing, LLC; Author: Greg A. Vaughan
+Pathfinder Adventure Path volume #23: The Impossible Eye. Copyright 2009, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder 24, Copyright Paizo 2009. All Rights Reserved.
+Pathfinder 24: The Final Wish. Copyright 2009, Paizo Publishing, LLC; Author: Rob McCreary
+Pathfinder Adventure Path volume #24: The Final Wish. © 2009, Paizo Publishing, LLC; Author: Rob McCreary.
+Pathfinder 25: The Bastards of Erebus. Copyright 2009, Paizo Publishing, LLC; Author: Sean K Reynolds
+Pathfinder Adventure Path volume #25: Bastards of Erebus. © 2009, Paizo Publishing, LLC; Author: Sean K Reynolds.
+Pathfinder 26: The Sixfold Trial. Copyright 2009, Paizo Publishing, LLC; Author: Richard Pett
+Pathfinder Adventure Path volume #26: The Sixfold Trial. © 2009, Paizo Publishing, LLC; Author: Richard Pett.
+Pathfinder 27: What Lies in Dust. Copyright 2009, Paizo Publishing, LLC; Author: Michael Kortes
+Pathfinder Adventure Path volume #27: What Lies in Dust. © 2009, Paizo Publishing, LLC; Author: Michael Kortes.
+Pathfinder 28: The Infernal Syndrome. Copyright 2009, Paizo Publishing, LLC; Author: Clinton Boomer and James Jacobs
+Pathfinder Adventure Path volume #28: The Infernal Syndrome. © 2009, Paizo Publishing, LLC; Authors: Clinton Boomer and James Jacobs.
+Pathfinder 29: Mother of Flies. Copyright 2010, Paizo Publishing, LLC; Author: Greg A. Vaughan
+Pathfinder Adventure Path volume #29: Mother of Flies. © 2009, Paizo Publishing, LLC; Authors: Greg A. Vaughan.
+Pathfinder Adventure Path volume #30: The Twice-Damned Prince. © 2010, Paizo Publishing, LLC; Author: Brian Cortijo and James Jacobs.
+Pathfinder Adventure Path volume #31: Stolen Land. © 2010, Paizo Publishing, LLC; Author: Tim Hitchcock
+Pathfinder Adventure Path volume #32: Rivers Run Red. © 2010, Paizo Publishing, LLC; Author: Rob McCreary
+Pathfinder Adventure Path volume #33: The Varnhold Vanishing. © 2010, Paizo Publishing, LLC; Author: Greg A. Vaughan
+Pathfinder Adventure Path #34: Blood for Blood. © 2010, Paizo Publishing, LLC; Author: Neil Spicer.
+Pathfinder Adventure Path #35: War of the River Kings. © 2010, Paizo Publishing, LLC; Author: Jason Nelson.
+Pathfinder Adventure Path #36: Sound of a Thousand Screams. © 2010, Paizo Publishing, LLC; Author: Richard Pett.
+Pathfinder Adventure Path #37: Souls for Smuggler’s Shiv. © 2010, Paizo Publishing, LLC; Author: James Jacobs.
+Pathfinder Adventure Path #38: Racing to Ruin. © 2010, Paizo Publishing, LLC; Author: Tim Hitchcock.
+Pathfinder Adventure Path #39: City of Seven Spears. © 2010, Paizo Publishing, LLC; Authors: James Jacobs, Kevin Kulp, Rob McCreary, and Owen K.C. Stephens.
+Pathfinder Adventure Path #40: Vaults of Madness. © 2010, Paizo Publishing, LLC; Author Greg A. Vaughan
+Pathfinder Adventure Path #41: The Thousand Fangs Below. © 2011, Paizo Publishing, LLC; Authors: Graeme Davis and Rob McCreary.
+Pathfinder Adventure Path #42: Sanctum of the Serpent God. © 2011, Paizo Publishing, LLC; Author: Neil Spicer.
+Pathfinder Adventure Path #43: Haunting of Harrowstone. Copyright 2011, Paizo Publishing, LLC, Author: Michael Kortes
+Pathfinder Adventure Path #44: Trail of the Beast. Copyright 2011, Paizo Publishing, LLC, Author: Richard Pett
+Pathfinder Adventure Path #45: Broken Moon. © 2011, Paizo Publishing, LLC; Author: Tim Hitchcock.
+Pathfinder Adventure Path #46: Wake of the Watcher. © 2011, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder Adventure Path #47: Ashes at Dawn. © 2011, Paizo Publishing, LLC; Author: Neil Spicer.
+Pathfinder Adventure Path #48: Shadows of Gallowspire. © 2011, Paizo Publishing, LLC; Author: Brandon Hodge.
+Pathfinder Adventure Path #49: The Brinewall Legacy. © 2011, Paizo Publishing, LLC; Author: James Jacobs.
+Pathfinder Adventure Path #50: Night of Frozen Shadows. © 2011, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder Adventure Path #51: The Hungry Storm © 2011, Paizo Publishing, LLC; Author: Jason Nelson.
+Pathfinder Adventure Path #52: Forest of Spirits © 2011, Paizo Publishing, LLC; Author: Richard Pett.
+Pathfinder Adventure Path #53: Tide of Honor © 2011, Paizo Publishing, LLC; Author: Tito Leati.
+Pathfinder Adventure Path #55: The Wormwood Mutiny © 2012, Paizo Publishing, LLC; Author: Richard Pett.
+Pathfinder Adventure Path #56: Raiders of the Fever Sea © 2012, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder Adventure Path #57: Tempest Rising © 2012, Paizo Publishing, LLC; Author: Matthew Goodall.
+Pathfinder Adventure Path #58: Island of Empty Eyes © 2012, Paizo Publishing, LLC; Author: Neil Spicer.
+Pathfinder Adventure Path #60: From Hell’s Heart © 2012, Paizo Publishing, LLC; Authors: Jason Nelson and Rob McCreary.
+Pathfinder Adventure Path #61: Shards of Sin © 2012, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder Adventure Path #62: Curse of the Lady’s Light © 2012, Paizo Publishing, LLC; Author: Mike Shel.
+Pathfinder Adventure Path #63: The Asylum Stone © 2012, Paizo Publishing, LLC; Author: James L. Sutter.
+Pathfinder Adventure Path #71: Rasputin Must Die! © 2013, Paizo Publishing, LLC; Author: Brandon Hodge.
+Pathfinder Adventure Path #72: The Witch Queen's Revenge © 2013, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder Adventure Path #73: The Worldwound Incursion © 2013, Paizo Publishing, LLC; Author: Amber E. Scott.
+Pathfinder Adventure Path #75: Demon’s Heresy © 2013, Paizo Publishing, LLC; Author: Jim Groves.
+Pathfinder Adventure Path #77: Herald of the Ivory Labyrinth © 2013, Paizo Publishing, LLC; Author: Wolfgang Baur.
+Pathfinder Adventure Path #82: Secrets of the Sphinx © 2014, Paizo Inc.; Authors: Amber E. Scott, with Michael Kortes, Amber E. Scott, David Schwartz, Russ Taylor, Greg A. Vaughan, and Larry Wilhelm.
+“Aquatic Hazards” Copyright 2005, Reality Deviant Publications, Author Ewan Conradie.
+“Painted Witchdoctor” first appeared in ENArsenal: Flails, Maces, and Morningstars copyright 2006
+#1 With a Bullet Point: 10 Monster Feats. Copyright 2011, Super Genius Games. Author: Owen K.C. Stephens
+#30 Evocative Vehicles Copyright 2012 Steven D. Russell; Author Liz Smith
+#Microfeats. Copyright Owen K.C. Stephens 2010-2011; Author Owen K.C. Stephens.
+#Spelltweets. Copyright Owen K.C. Stephens 2010-2011; Auhtor Owen K.C. Stephens.
+1001 Spells Copyright 2011 Steven D. Russell; Author Steven D. Russell
+101 2nd Level Spells. Copyright 2011, Steven D. Russell; Author: Steven D. Russell.
+101 3rd Level Spells. Copyright 2011, Steven D. Russell; Author: Steven D. Russell.
+101 magical weapon properties Copyright 2010 Steven D. Russell. All rights reserved.
+101 Renegade Class Feats Copyright 2011 Steven D. Russell; Author Steven D. Russell
+101 Special Materials and Power Components Copyright 2012, Steven D. Russell; Author Steven D. Russell
+40 Alchemical Items Copyright 2005, Adamant Entertainment; Authors Steve Honeywell.
+50 New Ways to Blow Things Up: Evocation copyright Silven Publishing and Matthew J. Hanson.
+50 New Ways to turn things into other things: Transmutation copyright Silven Publishing and Matthew J. Hanson.
+A Dozen Hazards of the Dragon’s Lair Copyright 2005 Philip Reed, published by Ronin Arts www.roninarts.com
+A Dozen Hazards of the Dragon’s Lair, Copyright 2005 Philip Reed, published by Ronin Arts www.roninarts.com
+A Magical Medieval Society: Western Europe Copyright 2003, Expeditious Retreat Press; authors Suzi Yee and Joseph Browning.
+Abbey of the Golden Sparrow Copyright 2009, Tricky Owlbear Publishing, Inc.; Author Dale McCoy, Jr.
+Accidents of Birth: Deformities and Deformity Feats, Copyright 2006, Louis Porter Jr. Design, Inc.
+Adam Bank, Chris Jones, Scott Reeves, and Elton Robb.
+Advanced Bestiary, © 2004, Green Ronin Publishing, LLC; Author Matthew Sernett.
+Advanced Bestiary, Copyright 2004, Green Ronin Publishing, LLC; Author Matthew Sernett.
+Advanced Feats: Secrets of the Alchemist. Copyright 2010, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Advanced Feats: The Cavalier's Creed. Copyright 2010, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Advanced Feats: The Witch's Brew. Copyright 2010, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Advanced Feats: Visions of the Oracle. Author: Sigfried Trent Copyright 2011, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Advanced Gamemaster’s Guide, Copyright 2005, Green Ronin Publishing, LLC; Author Owen K.C. Stephens.
+Advanced Player's Guide, Player's Guide to Monks and Paladins, Relics &amp; Rituals: Excalibur, Relics &amp; Rituals: Olympus, and Strange Lands: Lost Tribes of the Scarred Lands all © 2004 White Wolf Inc.
+Advanced Player’s Guide, © 2010, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Advanced Player’s Guide. Copyright 2010, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Advanced Player’s Manual, Copyright 2004, Green Ronin Publishing, LLC; Author Skip Williams.
+Advanced Player’s Manual, Copyright 2005, Green Ronin Publishing: Author Skip Williams.
+Advanced Race Codex Drow, Copyright 2007, Green Ronin Publishing, LLC Author Mathew Serrnet,
+Advanced Races No. 1: Tieflings, © 2013, Open Design, LLC; Author: Amanda Hamon.
+Advanced Races No. 2: Darakhul, © 2013, Open Design, LLC; Author: Ben McFarland.
+Advanced Races No. 3: Gearforged, © 2013, Open Design, LLC; Author: Tom Benton.
+Advanced Races No. 4: Dragonkin, © 2013, Open Design, LLC; Author: Amanda Hamon.
+Advanced Races No. 5: Ravenfolk, © 2013, Open Design, LLC; Author: Wade Rockett.
+Advanced Races No. 6: Kobolds, © 2013, Open Design, LLC; Authors: Matt Blackie and Nicholas Milasich.
+Advanced Races:the Darakhul. Copyright 2013, Open Design LLC. www.koboldpress.com. Author: Ben McFarland.
+Adventurer’s Handbook: Genius Guide Volume 1. Copyright 2010, Super Genius Games. Authors: Owen K.C. Stephens and Stan!
+Adventuring Classes: A Fistful of Denarii. Copyright 2009, Robert J. Grady. All rights reserved.
+Aerial Adventure Guide: SkyCaptain’s Handbook, by Michael Mearls, Copyright 2004 Goodman Games
+Airships, Copyright 2003, Bastion Press, Inc.
+Akashic Nodes: The Home of Memory, Copyright 2005 Justin D. Jacobson.
+Anger of Angels. © 2003, Sean K Reynolds.
+Anger of Angels. © 2003, Sean K Reynolds.
+Animal Lord, Mouse Lord from the Tome of Horrors, Copyright 2002, Necromancer Games, Inc.; Author Scott Greene and Erica Balsely, based on original material by Gary Gygax.
+Armies of the Abyss, Copyright 2002, Green Ronin Publishing, LLC; Authors Erik Mona and Chris Pramas.
+Arms & Armor v3.5. Copyright 2004, Bastion Press Inc. Authors: Jim Butler, Steve Creech, Kevin Ruesch.
+Arms and Armor Copyright 2001, Bastion Press, Inc.
+Art of the Duel. Copyright 2008, Sinister Adventures; Author: Craig Shackleton.
+Ask Dr. Evil, Copyright 2006 Green Ronin Publishing, LLC; http://www.greenronin.com/ask_dr_evil.php
+Assassin’s Handbook, Copyright 2002, Green Ronin Publishing, LLC; Authors David “Zeb” Cook and Wolfgang Baur.
+At the Heart of Evil. Copyright 2011 , Headless Hydra Games. Author K. Axel Carlsson
+Avatar’s Handbook, Copyright 2003, Green Ronin Publishing, LLC; Author Jesse Decker. Book of Fiends, Copyright 2003, Green Ronin Publishing, LLC; Authors Aaron Loeb, Erik Mona, Chris Pramas, and Robert J. Schwalb.
+Bandits of the Tranym. Copyright 2001, Bastion Press, Inc.
+Baphomet from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Bard’s Gate Copyright 2006 Necromancer Games, Inc.; Authors Clark Peterson, Casey Christofferson and Shane Glodoski based on original material created by Clark Peterson and Bill Webb.
+Basidirond from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Bastards & Bloodlines: A Guidebook to Half-Breeds, Copyright 2003, Green Ronin Publishing; Author Owen K.C. Stephens.
+Bat, Mobat from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Bite Me! Lycanthropes, copyright 2014 © Christina Stiles; published by Misfit Studios; Authors: Mike Welham with Sean K Reynolds, Morgan Boehringer, and Jim Wettstein; Edited by Janet Bell.
+Black Flags: Piracy in the Caribbean copyright 2002, Avalanche Press, Ltd.
+Black Market: The Definitive D20 Guide to Cyberpunk Gear Copyright 2005, Adamant Entertainment.: Authors Elissa Carey & Malcolm Sheppard
+Bleeding Horror (Template) from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Clark Peterson and Scott Greene.
+Blood Bayou Copyright 2003, White Wolf Publishing, Inc.
+Blood of the Gorgon, Copyright 2008, Open Design LLC; Author: Nicolas Logue
+Bluffside: City on the Edge Copyright 2002, Thunderhead Games, Inc., and Mystic Eye Games, LLC.
+Book of Beasts: Monsters of the River Nations, copyright 2010 Jon Brazer Enterprises; Author Steven Helt.
+Book of Distinctions And Drawbacks Revised Copyright 2003 Scott Thomas Lynch
+Book of Eldritch Might III: The Nexus Copyright 2001, 2002 Monte J. Cook. All rights reserved.
+Book of Fiends. © 2003, Green Ronin Publishing; Authors: Aaron Loeb, Erik Mona, Chris Pramas, Robert J. Schwalb.
+Book of Fiends. © 2003, Green Ronin Publishing; Authors: Aaron Loeb, Erik Mona, Chris Pramas, Robert J. Schwalb.
+Book of Multifarious Munitions: Vehicles of War, © 2013, Jon Brazer Enterprises; Author Dale C. McCoy, Jr
+Book of Templates: Deluxe Edition Copyright 2003, Silverthorne Games; Authors Ian Johnston and Chris S. Sims.
+Book of Templates: Deluxe Edition, © 2005, Silverthorne Games.
+Book of the Faithful I: Power of Prayer. Copyright 2009, Jon Brazer Enterprises.
+Book of the Righteous, © 2002, Aaron Loeb.
+Bunyip from the Tome of Horrors. Copyright 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Dermot Jackson.
+Burok Torn: City Under Siege Copyright 2002, White Wolf Publishing, Inc.
+Calastia: Throne of the Black Dragon Copyright 2002, White Wolf Publishing, Inc.
+Campaign Cogs: Finwicket's Bestiary- Along the Faerie Path. Copyright 2011, Allen Taliesin, All rights reserved.
+Campaign Cogs: Morithal, Lord of Unceasing Hunger. Copyright 2012, Allen Taliesin, All rights reserved.
+Carrion Crown Player’s Guide. © 2011, Paizo Publishing, LLC; Author: Mark Moreland.
+Castle Shadowcrag, Copyright 2007, Wolfgang Baur, www.wolfgangbaur.com All rights reserved.
+Castlemourn Campaign Setting Copyright 2007, Margaret Weis Productions, Ltd.
+Castlemourn Campaign Setting, Copyright 2007, Margaret Weis Productions, Ltd.
+Cave Fisher from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Lawrence Schick.
+Cave Moray from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Cerulean Seas © 2010 Alluria Publishing.
+Chaos Rising Copyright 2003, Necromancer Games, Inc.; Author James Collura
+Character Clip Art & Color Customizing Studio. Copyright 2002, Elmore Productions, Inc.; Authors Larry Elmore and Ken Whitman, art and illustrations by Larry Elmore.
+Character Drawbacks, Copyright 2007, Adamant Entertainment. Author: Walt Ciechanowski.
+Character Portraits: Fantasy Heroes copyright 2003, Mongoose Publishing
+Christina Stiles Presents: Races Revised - Cackle of the Gnolls, ©2013 Super Genius Games; Author: Mike Welham; Text ©2013 Christina Stiles.
+City Guide Nautical Necessities, Copyright 2005, Dark Quest Games.
+City of Brass Copyright 2007, Necromancer Games, Inc.; Authors Casey Christofferson and Scott Greene, with Clark Peterson.
+Cityscapes: New Settlement Options for the Pathfinder RPG. Copyright 2012, Otherverse Games. Author Chris A. Field
+Classes of Legend: The Cavalier Copyright 2005, Lion’s Den Press; Author Ari Marmell
+Classes of NeoExodus: Machinesmith Copyright 2012, Louis Porter Jr. Design, Inc.
+Classic Monsters Revisited. Copyright 2008, Paizo Publishing, LLC; Authors: Wolfgang Baur, Jason Bulmahn, Joshua J. Frost, James Jacobs, Nicolas Logue, Mike McArtor, James L. Sutter, Greg A. Vaughan, Jeremy Walker.
+Cloud Warriors, Copyright 2003, Fast ForwardEntertainment
+Condition Cards.  Copyright 2010, Paizo Publishing, LLC.  Author: Jason Bulmahn.
+Convergent Paths: Students of Arcanum Archetypes Copyright 2013 Steven D. Russell; Author: Eric Morton
+Council of Thieves Player’s Guide. Copyright 2009, Paizo Publishing, LLC; Author: James Jacobs, F. Wesley Schneider, Amber Scott, and Hank Woon.
+Courts of the Shadow Fey. Copyright 2013, Open Design LLC. Authors: Wolfgang Baur, Ben McFarland.
+Creature Collection 2: Dark Menagerie Copyright 2001, White Wolf Publishing, Inc.
+Creature Collection Copynght 2000, Clark Peterson.
+Creature Collection III: Savage Bestiary Copyright 2003, White Wolf Publishing, Inc.
+Creature Collection Revised Copyright 2003, White Wolf Publishing, Inc.
+Creatures of Freeport, Copyright 2004, Green Ronin Publishing; Authors Keith Baker and Graeme Davis.
+Crime and Punishment, Copyright 2003, Trident Inc. d/b/a Atlas Games; author Keith Baker
+Crime and Punishment, Copyright 2003, Trident Inc. d/b/a Atlas Games; author Keith Baker.
+Crucible of Freya Copyright 2000 Clark Peterson and Bill Webb, Necromancer Games, Inc.
+Cry Havoc © 2003 Skip Williams. All rights reserved.
+Crypt Thing from the Tome of Horrors, Revised. © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Roger Musson.
+Crystal Ooze from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Curse of the Crimson Throne Player’s Guide. Copyright 2008 Paizo Publishing, LLC; Author: James Jacobs and Mike McArtor.
+Curses! Copyright © 2002 Kosala Ubayasekara. All Rights Reserved. Author Eytan Bernstein
+d20 Freeport Companion, Copyright 2008, Green Ronin Publishing, LLC; Author Robert J. Schwalb
+D20 Modern System Reference Document, Copyright 2002, Wizards of the Coast, Inc.; Authors Bill Slavicsek, Jeff Grubb, Rich Redman, Charles Ryan, based on material by Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker, Peter Adkison, Bruce R. Cordell, John Tynes, Andy Collins, and JD Wiker.
+D20PFSRD Critical Hit Shirt; Copyright 2010 Tim Green; Author: Tim Green
+d20pfsrd.com. Copyright 2010, John Reyst.
+Daemon, Ceustodaemon from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Ian McDowall.
+Daemon, Derghodaemon from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, Hydrodaemon from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, Oinodaemon from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, Piscodaemon from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Dark Creeper from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Rik Shepard.
+Dark Stalker from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Simon Muth.
+DC Adventures Hero’s Handbook, Copyright 2010, Green Ronin Publishing; Author Steve Kenson.
+Dead Man's Chest © 2005 Necromancer Games, Inc.; Authors: Lance Hawvermale, Rob Mason, Robert Hunter, Patrick Goulah, Greg Ragland, Matt McGee, Chris Bernhardt, Casey W. Christofferson, Chad Coulter, Skeeter Green, and Travis Hawvermale, with additional contributions by Erica Balsley, Lindsey Barrentine, Jay Decker, Rachel Mason, and Nadine Oatmeyer.
+Death in Freeport Revised, Copyright 2000–2004, Green Ronin Publishing, LLC; Author Chris Pramas.
+Deep Magic. © 2014 Open Design LLC. Authors: Wolfgang Baur, Tom Benton, Creighton Broadhurst, Jason Bulmahn, Ross Byers, Charles Lee Carrier, Tim Connors, Adam Daigle, Jonathan Drain, Mike Franke, Ed Greenwood, Frank Gori, Jim Groves, Amanda Hamon Kunz, Sam Harris, Brandon Hodge, Phillip Larwood, Jeff Lee, John Ling, Jr., Chris Lozaga, Ben McFarland, Nicholas Milasich, Carlos Ovalle, Richard Pett, Marc Radle, Stephen Radney-MacFarland, Wade Rockett, Stephen Rowe, Adam Roy, Amber E. Scott, Neil Spicer, Owen K.C. Stephens, Joshua Stevens, Christina Stiles, Matt Stinson, Stefen Styrsky, Dan Voyce, and Mike Welham.
+Demon, Stirge from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog Godz Games; Authors Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Demons and Devils Copyright 2000 Clark Peterson and Bill Webb, Necromancer Games, Inc.
+Demons and Devils Copyright 2001, Bill Webb and Clark Peterson, Necromancer Games Inc.
+Demons and Devils: Epic Quests, Copyright 2001, Bill Webb and Clark Peterson, Necromancer Games, Inc.
+Diomin Copyright 2000, OtherWorld Creations; Authors: R. Hyrum Savage, Chad Cunningham, and Christopher T. Miller.
+Divine Favor: the Cleric. Author: Stefen Styrsky © 2011, Open Design LLC, www.koboldquarterly.com.
+Divine Favor: the Druid. Author: Stefen Styrsky Copyright 2011, Open Design LLC, www.koboldquarterly.com.
+Divine Favor: the Inquisitor. Author: Stefen Styrsky © 2011, Open Design LLC, www.koboldquarterly.com.
+Divine Favor: the Oracle. Author: Stefen Styrsky Copyright 2011, Open Design LLC, www.koboldquarterly.com.
+Divine Favor: the Paladin. Author: Stefen Styrsky Copyright 2011, Open Design LLC, www.koboldquarterly.com.
+Dracolisk from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Dread Codex II: The Necromancer's Tome Copyright 2005, Adamant Entertainment. Author K. Axel Carlsson
+Druids & Druidism Copyright 2003, Bastion Press, Inc.
+Dwarves of the Ironcrags, © 2009. Authors: Wolfgang Baur, Adam Daigle, Michael Furlanetto, Brandon Hodge, Joshua Stevens, and Dan Voyce.
+Dynasties and Demagogues, Copyright 2003, Trident, Inc. d/b/a Atlas Games; Author Chris Aylott
+Dynasties and Demagogues, Copyright 2003, Trident, Inc. d/b/a Atlas Games; Author Chris Aylott.
+E.N. Guild – Monster Hunters’ Guild, Copyright 2005, E.N. Publishing; Author Aeryn Rudel
+E.N. Guild-Monster Hunters' Guild, Copyright 2005, E.N. Publishing; Author Aeryn Rudel.
+Eldritch Secrets (c) 2010 HEADLESS HYDRA GAMES. All rights reserved.
+Eldritch Sorcery Copyright 2005, Necromancer Games, Inc.; Authors Patrick Lawinger, Scott Greene, and David Mannes, with Erica Balsley, Chris Bernhardt,
+Empire of the Ghouls, Copyright 2007 Wolfgang Baur, www.wolfgangbaur.com All rights reserved.
+Empire of the Ghouls, Copyright 2007 Wolfgang Baur, www.wolfgangbaur.com. All rights reserved.
+Encyclopedia Arcane: Necromancy - Beyond the Grave Copyright 2001, Mongoose Publishing.
+Energy Cantrips from SeanKReynolds.com Copyright 2001, 2002 Sean K Reynolds. All rights reserved.
+Evil Eye from The Iconic Bestiary: Classics of Fantasy Copyright 2005, Lions Den Press; Author: Ari Marmell
+Fading Suns: D20, Copyright 2001, Holistic Design, Inc; Authors Bill Bridges and Andy Harmon
+Fading Suns: D20, Copyright 2001, Holistic Design, Inc; Authors Bill Bridges and Andy Harmon.
+Falthar’s Curios, © 2000, Green Ronin Publishing, LLC; Author Chris Pramas.
+Fang & Fury: A Guidebook to Vampires. © 2003, Green Ronin Publishing; Author: Jim Bishop.
+Fantasy Firearms Copyright 2007, Mark Cathro & Skortched Urf Studios; Author Eric Karnes.
+Fantasy Occupations Copyright 2007, Adamant Entertainment.: Author: Walt Ciechanowski
+Fatal Flaws, Copyright 2005, Basic Action Games
+Feats 101. Copyright 2009, Steven D. Russell.
+Feats Copyright 2000, AEG
+Fehr's Ethnology: Complete © 2013, Purple Duck Games; Author: Perry Fehr.
+Figurines of Wondrous Power. ©Raging Swan Press 2011; Author: Creighton Broadhurst.
+Focus on Freeport #7: The Jade Serpent of Yig, Copyright 2001, Green Ronin Publishing, LLC; Author William Simoni.
+Freeport Companion: Pathfinder Roleplaying Game Edition © 2008, Green Ronin Publishing, LLC; Authors: Robert J. Schwalb; Adam Daigle; Brandon Hodge; John E. Ling, Jr.; and Greg A. Vaughan.
+Freeport: The City of Adventure, Copyright 2002, Green Ronin Publishing, LLC; Authors Matt Forbeck and Chris Pramas.
+Friends & Familiars, Copyright 2003, Talisman Studios, Inc.; Authors Kristen Schlicht and J.D. Douglas.
+Frog, Giant Dire (Abyssal) from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Frog, Giant Dire from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Froghemoth from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Froghemoth from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Frost & Fur Copyright 2004, MonkeyGod Enterprises
+GameMastery Module D0: Hollow’s Last Hope, Copyright 2007 Paizo Publishing, LLC. Author: Jason Bulmahn and F. Wesley Schneider.
+GameMastery Module D1: Crown of the Kobold King, Copyright 2007 Paizo Publishing, LLC. Author: Nicolas Logue.
+GameMastery Module D2: Seven Swords of Sin. Copyright 2007 Paizo Publishing, LLC. Author: James Lafond Sutter.
+GameMastery Module D3: The Demon Within. Copyright 2008, Paizo Publishing, LLC. Authors: Stephen S. Greer and Tim Hitchcock.
+GameMastery Module E1: Carnival of Tears, Copyright 2007 Paizo Publishing, LLC. Authors: Tim Hitchcock and Nicolas Logue.
+GameMastery Module J1: Entombed with the Pharaohs. Copyright 2007 Paizo Publishing, LLC. Author: Michael Kortes.
+GameMastery Module J2: Guardians of Dragonfall. Copyright 2007 Paizo Publishing, LLC. Author: Anson Caralya.
+GameMastery Module J3: Crucible of Chaos. Copyright 2008, Paizo Publishing, LLC. Author: Wolfgang Baur.
+GameMastery Module TC1: Into the Haunted Forest. Copyright 2007 Paizo Publishing, LLC. Author: Greg A. Vaughan.
+GameMastery Module U1: Gallery of Evil. Copyright 2007 Paizo Publishing, LLC. Author: Stephen S. Greer.
+GameMastery Module U2: Hangman’s Noose. Copyright 2008, Paizo Publishing, LLC. Author: Nicolas Logue.
+GameMastery Module W1: Conquest Of Bloodsworn Vale. Copyright 2007, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+GameMastery Module W2: River Into Darkness. Copyright 2008, Paizo Publishing, LLC. Author: Greg A. Vaughan.
+Gazae et Monstri. Copyright 2010, Spes Magna Games; Mark L. Chance.
+Genius Guide to the Godling Ascendant. Copyright 2011, Super Genius Games, LLC; Author: Owen K.C. Stephens
+Geon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene and Clark Peterson.
+Giant Slug from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Gods and Magic. Copyright 2008, Paizo Publishing, LLC; Author: Sean K Reynolds.
+Gods of Mor Aldenn: Ehlora. Copyright 2009, Headless Hydra Games; Author K. Axel Carlsson
+Greymalkin from The Iconic Bestiary: Classics of Fantasy Copyright 2005, Lions Den Press; Author: Ari Marmell
+Grim Tales, Copyright 2004, Benjamin R. Durbin, published by Bad Axe Games, LLC.
+Gryph from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Peter Brown.
+Guide to Korvosa. Copyright 2008, Paizo Publishing, LLC; Author: Mike McArtor.
+Guide to Pathfinder Society Organized Play v2.2. Copyright 2010, Paizo Publishing, LLC; Author: Joshua J. Frost.
+Halls of the Mountain-King. Copyright 2009. Open Design LLC. www.koboldquarterly.com. All rights reserved.
+Hammer & Helm. Copyright 2002, Green Ronin Publishing; Author Jesse Decker
+Heroes of the Fenian Triarchy © 2013, Purple Duck Games; Author: Josh McCrowell.
+Hollowfaust: City of the Necromancers Copyright 2001, White Wolf Publishing, Inc.
+Hornsaw: Forest of Blood Copyright 2003, White Wolf Publishing, Inc.
+Horror at Dagger Rock Copyright 2009, Sagawork Studios; Author Andrew C Gale
+Horrors of the North, Copyright 2011, Jason Stoffa. All rights reserved.
+Hot Pursuit, Copyright 2005, Corey Reid, published by Adamant Entertainment, Inc.
+Household Knight Copyright 2006, Alea Publishing Group.
+Hungry Little Monsters. Copyright 2005 Sean K Reynolds Games. Author: Sean K Reynolds.
+Hyperconscious: Explorations in Psionics Copyright 2004 Bruce R Cordell.  All rights reserved.
+Hyperconscious: Explorations in Psionics, Â© 2004, Bruce R Cordell. All rights reserved.
+Ice Golem from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene.
+Ice Golem from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene.
+If Thoughts Could Kill Copyright 2001-2004 Bruce R. Cordell. All rights reserved.
+If Thoughts Could Kill, © 2001-2004, Bruce R. Cordell. All rights reserved. Mindscapes, Â© 2003-2004, Bruce R. Cordell. All rights reserved.
+Immortals Handbook, Copyright 2003, Craig Cochrane.
+Imperial Gazetteer, Copyright 2010, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Imperial Gazetteer: The Principality of Morgau and Doresh, and Subterranean Realms, © 2012, Open Design, LLC; Authors: Wolfgang Baur and Scott Gable.
+In One's Blood. Copyright 2010, Spes Magna Games; Mark L. Chance.
+In the Company of Dragons Copyright 2014 Steven D. Russell; Authors Wendall Roy
+In the Company of Fey Copyright 2013 Steven D. Russell; Authors Wendall Roy
+In the Company of Monsters. Copyright 2011, Steven D. Russell; Authors: Jonathan McAnulty T.H. Gulliver, and Steven D. Russell.
+In the Company of Tengu copyright 2011, Steve D. Russell and Michael Tumey. All rights reserved; Author: Jonathan McAnulty
+Indulgence: Art of the Duel, Copyright 2008, Sinister Adventures, LLC. Author Craig Shackleton.
+Initiative Cards v2.0 Copyright 2003, The Game Mechanics, Inc.; Author JD Wiker.
+Ink & Quill. Copyright 2002, Bastion Press, Inc. Author: Thomas Knauss.
+Inkantations. Copyright 2011, 4 Winds Fantasy Gaming; Authors Sean O’Connor and Rogan Hamby, with CJ Ruby and Patricia Willenborg.
+Interludes: Brief Expeditions to Bluffside Copyright 2001, Thunderhead Games, Inc., and Mystic Eye Games, LLC.
+Into the Darklands. Copyright 2008, Paizo Publishing, LLC; Authors: James Jacobs and Greg A. Vaughan.
+Iron Cobra from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Philip Masters.
+Iron Kingdoms ‘Full Metal Fantasy’ Character Guide, copyright © 2004, Privateer Press, Inc.
+Iron Kingdoms World Guide: Full Metal Fantasy, Volume Two, copyright 2005 Privateer Press, Inc.
+Iron Lords of Jupiter, Copyright 2003 Paizo Publishing, Author: Lizard -- Used With Permission.
+Island at the Axis of the World. Copyright 2011, EN Publishing; Author: Ryan Nock.
+Jade Regent Player’s Guide © 2011, Paizo Publishing, LL C; Authors: James Jacobs and Patrick Renie.
+Joe's Book of Enchantment Copyright 2002, Joseph Mucchiello, Jr. Published by Throwing Dice Games.
+Journeys to the West, © 2012, Open Design LLC; Author: Christina Stiles.
+Jubilex from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Killer Frog from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Kobold Ecologies, Volume 1. Copyright 2009. Open Design LLC. www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly #7. Copyright 2008, Open Design; Author; Wolfgang Baur, Philip Larwood, et al.
+Kobold Quarterly Blog, 2009, http://www.koboldquarterly.com/k/front-page6138.php
+Kobold Quarterly Blog, 2010, http://www.koboldquarterly.com/k/front-page3595.php
+Kobold Quarterly Blog, 2010, http://www.koboldquarterly.com/k/front-page6556.php
+Kobold Quarterly Blog, 2010, http://www.koboldquarterly.com/k/front-page6582.php
+Kobold Quarterly Blog, 2010, http://www.koboldquarterly.com/k/front-page6594.php
+Kobold Quarterly Blog, 2010, http://www.koboldquarterly.com/k/front-page6596.php
+Kobold Quarterly Blog, 2010, http://www.koboldquarterly.com/k/front-page6947.php
+Kobold Quarterly Blog, 2011, http://www.koboldquarterly.com/k/front-page10447.php
+Kobold Quarterly Blog, 2011, http://www.koboldquarterly.com/k/front-page5074.php
+Kobold Quarterly Issue 1, © 2007, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 10, Copyright 2009, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Issue 11, © 2009, Open Design LLC, www.koboldpress.com.
+Kobold Quarterly issue 12, Copyright 2009, Open Design LLC, www.koboldquarterly.com. All Rights Reserved.
+Kobold Quarterly issue 13, Copyright 2010, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 14, Copyright 2010, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 15, Copyright 2010, Open Design LLC, www.koboldquarterly.com. All Rights Reserved.
+Kobold Quarterly issue 16, Copyright 2011, Open Design LLC, www.koboldquarterly.com. All Rights Reserved.
+Kobold Quarterly issue 19, Copyright 2011, Open Design LLC, www.koboldquarterly.com. All Rights Reserved.
+Kobold Quarterly issue 2, Copyright 2007, Wolfgang Baur, www.wolfgangbaur.com.
+Kobold Quarterly issue 2, Copyright 2007, Wolfgang Baur, www.wolfgangbaur.com. All rights reserved.
+Kobold Quarterly Issue 20, © 2012, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Issue 21, © 2012, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 21, Copyright 2012, Open Design LLC,
+Kobold Quarterly Issue 23, © 2012, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 23. © 2012, Open Design, LLC; www.koboldpress.com.
+Kobold Quarterly issue 3, Copyright 2008, Wolfgang Baur, www.wolfgangbaur.com. All rights reserved.
+Kobold Quarterly issue 4, Copyright 2008, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Issue 5, © 2008, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Issue 6, © 2008, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 6, Copyright 2008, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Issue 7, © 2008, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 7, Copyright 2008, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Issue 8, © 2009, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 8, Copyright 2009, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Issue 9, © 2009, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly issue 9, Copyright 2009, Open Design LLC, www.koboldquarterly.com. All rights reserved.
+Kobold Quarterly Web Site, © 2009, Open Design LLC.
+Kobold Quarterly, Copyright 2007, Wolfgang Baur, www.wolfgangbaur.com. All rights reserved.
+Kobold Quarterly, Copyright 2007, Wolfgang Baur, www.wolfgangbaur.com. All rights reserved. (Issue #1)
+Kostchtchie from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Latina Facta. Copyright 2010, Mark L. Chance, published by Spes Magna Games.
+Legacy of the Dragons, Copyright 2004 Monte J. Cook.
+Legendary Classes: Covenant Magic, © 2013, Purple Duck Games; Author: David Nicholas Ross.
+Legendary IV: Legendary Shields © 2011, Purple Duck Games; Author: Marc Radle.
+Legendary Races: Cyclops, © 2010, Published by Purple Duck Games; Author: Stefen Styrsky.
+Legendary Races: Harpy © 2012, Purple Duck Games; Authors: Josh McCrowell. Additional Writing: Perry Fehr, Sam Hing.
+Legendary Races: Medusa. © 2011, Published by Purple Duck Games; Author: Stefen Styrsky
+Legendary Races: Rakshasa © 2011, Published by Purple Duck Games; Authors: Mark Gedak, Stefen Styrsky
+Legendary VI: Legendary Armor © 2012, Purple Duck Games; Author: Marc Radle.
+Legions of Hell, Copyright 2001, Green Ronin Publishing, LLC; Author Chris Pramas.
+Liber Mechanika, copyright 2005 Privateer Press, Inc.
+Lock & Load: Iron Kingdoms Character Primer, copyright © 2002 Privateer Press Inc.
+Love and War, Copyright 2004, Trident, Inc. d/b/a Atlas Games; Author David Chart
+Love and War, copyright 2004, Trident, Inc. d/b/a Atlas Games; Author David Chart.
+Lucky Break, Lucky Totem, and Fortune’s Frown from the Book of Roguish Luck copyright 2005 by Wolfgang Baur. All rights reserved.
+Luven Lightfinger’s Gear and Treasure Shop. Copyright 2010, 4 Winds Fantasy Gaming; Authors Sean O’Connor, Connie J. Thomson and Robert W. Thomson.
+Madness in Freeport Revised, Copyright 2001–2004, Green Ronin Publishing, LLC; Author William Simoni.
+Magic of Arcanis, Copyright 2005, Paradigm Concepts, Inc.
+Making Craft Work. Copyright 2010, Spes Magna Games; Mark L. Chance.
+Marid from the Tome of Horrors III. © 2005, Necromancer Games, Inc.; Author: Scott Greene.
+MARS: A Roleplaying Game of Planetary Romance, Copyright 2006, Adamant Entertainment. Authors: Lizard, Gareth-Michael Skarka, Ian Sturrock
+Material from http://home.gwi.net/~rdorman/frilond/ Copyright 2001–2005 R. Dorman. All rights reserved.
+Material from SeanKReynolds.com Copyright 2001, 2002 Sean K Reynolds. All rights reserved.
+Midgard Bestiary for Pathfinder Roleplaying Game, © 2012 Open Design LLC; Author: Adam Daigle with Chris Harris, Michael Kortes, James MacKenzie, Rob Manning, Ben McFarland, Carlos Ovalle, Jan Rodewald, Adam Roy, Christina Stiles, James Thomas, and Mike Welham.”
+Midgard Bestiary for Pathfinder RPG. © 2012 Open Design LLC; Author: Adam Daigle with Chris Harris, Michael Kortes, James MacKenzie, Rob Manning, Ben McFarland, Carlos Ovalle, Jan Rodewald, Adam Roy, Christina Stiles, James Thomas, and Mike Welham.
+Midgard Campaign Setting, © 2012, Open Design, LLC; Authors: Wolfgang Baur, Jeff Grubb, Brandon Hodge, Christina Stiles, and Dan Voyce.
+Mindscapes Copyright 2003-2004 Bruce R. Cordell. All rights reserved.
+Minions v3.5 Copyright 2003, Bastion Press, Inc. Authors: Greg Dent, Brian Goings, Brian Patterson, Charles W. Plemons III, Christopher West, Cyril Martin, James O’Rance, Jesse Orozco & Karl Rodriguez, Jim Butler, John Kubisz, Kristin J. Johnson, Michael Nickovich, Owen Kuhn, Peter Whalley, Rasmus Pechuel & William Ehgoetz, Todd Morasch, Tristan Uecker, Troye Grgurin, Wolfgang Baur, Yannick Zogg, and Alexander M. Freed.
+Minions: Fearsome Foes, Copyright 2001, Bastion Press
+Minions: Rebirth. Copyright 2002, Bastion Press, Inc. Authors: Greg Dent, Brian Patterson, Charles W. Plemons III, Christopher West, Cyril Martin, James O’Rance, Jesse Orozco & Karl Rodriguez, Jim Butler, John Kubisz, Kristin J. Johnson, Owen Kuhn, Peter Whalley, Rasmus Pechuel & William Ehgoetz, Troye Grgurin, Wolfgang Baur, Yannick Zogg, Michael Nickovich, Brian Goings, Todd Morasch, and Tristan Uecker.
+Mite from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Ian Livingstone and Mark Barnes.
+Mithril: City of the Golem Copyright 2001, White Wolf Publishing, Inc.
+Modern Player’s Companion, Copyright 2003, The Game Mechanics, Inc.; Author: Stan!
+Modern System Reference Document, Copyright 2002-2004, Wizards of the Coast, Inc.; Authors Bill Slavicsek, Jeff Grubb, Rich Redman, Charles Ryan, Eric Cagle, David Noonan, Stan!, Christopher Perkins, Rodney Thompson, and JD Wiker, based on material by Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker, Peter Adkison, Bruce R. Cordell, John Tynes, Andy Collins, and JD Wiker.
+Mongrelman from the Tome of Horrors Revised, Copyright 2002, Necromancer Games, Inc.; Author Scott Greene, based on original material by Gary Gygax.
+Monster Encyclopedia I. © 2004, Mongoose Publishing Ltd.
+Monster Focus: Ghouls. Copyright 2013, Jason Bulmahn; Author: Jason Bulmahn.
+Monster Focus: Skeletons. Copyright 2013, Jason Bulmahn; Author: Jason Bulmahn.
+Monster Modifier, Copyright 2008, Adamant Entertainment. Author: Gareth-Michael Skarka
+Monster’s Handbook Copyright 2002, Fantasy Flight Publishing, Inc. Monte Cook?s Arcana Unearthed, Copyright 2003, Monte J. Cook. All rights reserved.
+Monsternomicon Volume 1 – Denizens of the Iron Kingdoms V3.5, copyright 2005 Privateer Press, Inc.
+Monsternomicon: Volume 1, Denizens of the Iron Kingdoms and Lock & Load: Iron Kingdoms Character Primer are copyrights © 2002 Privateer Press Inc.; Iron Kingdoms: Full Metal Fantasy: Character Guide is a copyright © 2004, Privateer Press, Inc; Iron Kingdoms World Guide: Full Metal Fantasy, Volume Two, The Monsternomicon Volume 1: Denizens of the Iron Kingdoms V3.5, and the Liber Mechanika are copyrights 2005 Privateer Press, Inc.
+Monsternomicon: Volume 1, Denizens of the Iron Kingdoms, copyright © 2002 Privateer Press Inc.
+Monsters of Illusion. Copyright 2005, Reality Deviant Publications; Author K. Axel Carlsson
+Monsters: Demons (monsters-2.d.2011) Copyright © 2010, 2011 Doug Morrison-Cleary (Universes of Imagination™) [licensing@universes.info].
+Monstrous Races, copyright 2011, Purple Duck Games; Authors: Mark Gedak, Stefen Styrsky
+Monstrous Races: Second Horde, copyright 2011, Purple Duck Games; Author: Thomas Baumbach.
+Monte Cook's Arcana Evolved, Copyright 2005 Monte J. Cook. All rights reserved.
+Monte Cook’s Arcana Unearthed Copyright 2003 Monte J. Cook. All rights reserved.
+Monte Cook’s Arcana Unearthed DM’s Screen and Player’s Guide Copyright 2003 Monte J. Cook. All rights reserved.
+Monte Cook’s Arcana Unearthed. © 2003, Monte J. Cook.
+More Ultimate Equipment, Copyright 2003, Mongoose Publishing
+Mutants & Masterminds Hero’s Handbook, Copyright 2011, Green Ronin Publishing; Author Steve Kenson.
+Mutants & Masterminds, Copyright 2002, Green Ronin Publishing; Author Steve Kenson.
+Mutants & Masterminds, Second Edition, Copyright 2005, Green Ronin Publishing; Author Steve Kenson.
+Mutants &amp; Masterminds Copyright 2002, Green Ronin Publishing.
+Mutants and Masterminds, Copyright 2002, Green Ronin Publishing, LLC; Author Steve Kenson.
+Mystic Secrets: The Lore of Word and Rune, Copyright 2004 Monte J. Cook.
+Nabasu Demon from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Nabasu Demon from the Tome of Horrors, Revised. © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Neville White.
+Nabasu from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Necropolis, Copyright 2002, Necromancer Games, Inc; Authors Gary Gygax, Scott Greene, Clark Peterson and Bill Webb; based on oiginal material by Gary Gygax.
+Neo-Exodus Campaign Setting. Copyright 2011, LPJ Designs. Author: JP Chapleau, Louis Porter Jr.
+New Argonauts. Copyright 2004 Sean K Reynolds. All rights reserved.
+New Paths Compendium. © 2013 Open Design LLC; Authors: Marc Radle, Crystal Frasier, John Ling, Jr., and Jerall Toi.</p>
+New Paths: The Expanded Battle Scion © 2013, Kobold Press; Author: Radle.
+New Paths: The Expanded Gunslinger © 2013, Kobold Press; Author: Crystal Frasier.
+New Paths: the Expanded Monk and Ninja, © 2013, Open Design, LLC; Author: Jerall Toi.
+New Paths: The Expanded Shaman Copyright 2012, Open Design LLC.; Author: Marc Radle.
+New Paths: The Expanded Shaman, © 2012, Open Design LLC; Author: Marc Radle.
+New Paths: The Expanded Spell-less Ranger, © 2013, Open Design LLC; Author: Marc Radle.
+New Paths: The Expanded White Necromancer Copyright 2013, Open Design LLC.; Author: Marc Radle.
+Northlands © 2011, Open Design LLC; Author: Dan Voyce; www.koboldquarterly.com.
+Northlands, © 2011, Open Design, LLC; Author: Dan Voyce; www.koboldquarterly.com.
+Nyambe: African Adventures. Copyright 2002, Trident, Inc, d/b/a Atlas Games; Author: Christopher W. Dolunt.
+Oathbound Eclipse: The Haunted Fort. Copyright 2011 Epidemic Books Co. Authors: Jeff Welker with Greg Dent.
+Oathbound Eclipse. Copyright 2010 Epidemic Books Co. Authors: Todd Morasch with Greg Dent
+Oathbound Seven. Copyright 2010 Epidemic Books Co. Authors: Greg Dent with Tom Knauss, Tim Hitchcock
+Oathbound: Arena, Copyright 2004, Bastion Press
+Oathbound: Domains of the Forge, Copyright 2002, Bastion Press
+Oathbound: Mysteries of Arena, Copyright 2004, Bastion Press
+Oathbound: Wrack &amp; Ruin, Copyright 2003, Bastion Press
+Occult Lore, Copyright 2002, Trident, Inc. d/b/a Atlas Games; Authors Keith Baker,
+Occult Lore, Copyright 2002, Trident, Inc. d/b/a Atlas Games; Authors Keith Baker, Adam Bank, Chris Jones, Scott Reeves, and Elton Robb
+OGL Horror, Copyright 2003, Mongoose Publishing, Inc.
+One Million Magic Items, Copyright 2007, Adamant Entertainment. Author: Gareth-Michael Skarka
+One Night Stands: Dread Saecaroth, Copyright 2012, Frog God Games, Author James C. Boney
+One Night Stands: Jungle Ruins of Madaro-Shanti, Copyright 2010, Frog God Games, Author Scott Casper.
+One Night Stands: Spire of Iron and Crystal, Copyright 2011, Frog God Games, Author Scott Casper.
+Open game content from Classic Play - The Book of the Planes is copyright 2004, Mongoose Publishing Ltd.
+Open game content from Encyclopaedia Divine: Shamans copyright 2002, Mongoose Publishing.
+Open game content from Heroes of Fantasy copyright 2005, Mongoose Publishing Ltd.
+Open game content from The Quintessential Druid copyright 2002, Mongoose Publishing.
+Open game content from The Quintessential Kobold copyright 2004, Mongoose Publishing Ltd.
+Open game content from The Quintessential Witch copyright 2002, Mongoose Publishing.
+Open Game Content from The Tide of Years Copyright 2001, Michelle A. Brown Nephew.
+Open Game Content www.andycollins.net Copyright 2001-2003 Andy Collins.
+Oracle's Curse, copyright 2014 by RJ Grady, published by Tripod Machine.
+Orc, Black from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Casey Christofferson.
+Orcish Warclops. Copyright 2011; Author Jason Bulmahn
+Orcus from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Original Spell Name Compendium Copyright 2002 Clark Peterson; based on NPC-named spells from the Player’s Handbook that were renamed in the System Reference Document. The Compendium can be found on the legal page of www.necromancergames.com.
+Paizo Blog. Copyright 2010–2011, Paizo Publishing, LLC; Author: Paizo Publishing, LLC, or as credited in individual blog entries.
+Pantheon and Pagan Faiths © 2004 Mystic EyeGames.
+Paragons: Scalykind Copyright 2006 Highmoon Media Productions; Author Mark Gedak, David Jarvis, Daniel M. Perez. www.highmoonmedia.com.
+Path of the Magi. © 2002 Citizen Games/Troll Lord Games; Authors: Mike McArtor, W. Jason Peck, Jeff Quick, and Sean K Reynolds.
+Path of War, © 2014, Dreamscarred Press.
+Pathfinder Adventure Path #78: City of Locusts © 2014, Paizo Publishing, LLC; Author: Richard Pett.
+Pathfinder Adventure Path #81: Shifting Sands © 2014, Paizo Inc.; Authors: Richard Pett, with Benjamin Bruck, Adam Daigle, Thurston Hillman, Michael McCarthy, Patrick Renie, Amber E. Scott, and Russ Taylor.
+Pathfinder Adventure Path #81: Shifting Sands © 2014, Paizo Inc.; Authors: Richard Pett, with Benjamin Bruck, Adam Daigle, Thurston Hillman, Michael McCarthy, Patrick Renie, Amber E. Scott, and Russ Taylor.
+Pathfinder Adventure Path #84: Pyramid of the Sky Pharaoh © 2014, Paizo Inc.; Authors: Mike Shel, with Tyler Beck, Adam Daigle, F. Wesley Schneider, and Amber E. Scott.
+Pathfinder Adventure Path: Rise of the Runelords Anniversary Edition © 2012, Paizo Publishing, LLC; Authors: Wolfgang Baur, Stephen S. Greer, James Jacobs, Nicolas Logue, Richard Pett, and Greg A. Vaughan.
+Pathfinder Campaign Setting: Artifacts &amp; Legends</b> © 2012, Paizo Publishing, LLC; Author: F. Wesley Schneider.
+Pathfinder Campaign Setting: Castles of the Inner Sea © 2013, Paizo Publishing, LLC; Authors: Alyssa Faden and Tim Hitchcock.
+Pathfinder Campaign Setting: Chronicle of the Righteous. © 2013 Paizo Publishing, LLC; Author: Amber Scott.
+Pathfinder Campaign Setting: Dragon Empires Gazetteer © 2011, Paizo Publishing, LLC; Authors: Matthew Goodall, Dave Gross, James Jacobs, Steve Kenson, Michael Kortes, Colin McComb, Rob McCreary, Richard Pett, F. Wesley Schneider, Mike Shel, and Todd Stewart.
+Pathfinder Campaign Setting: Dungeons of Golarion. © 2011, Paizo Publishing, LLC. Authors: Jason Bulmahn, Matthew Goodall, Brandon Hodge, Anthony Pryor, and Mike Shel.
+Pathfinder Campaign Setting: Horsemen of the Apocalypse: Book of the Damned, Vol. 3 © 2011, Paizo Publishing, LLC; Author: Todd Stewart.
+Pathfinder Campaign Setting: Inner Sea Combat © 2014, Paizo Inc.; Authors: Dennis Baker, Jesse Benner, John Compton, and Thurston Hillman.
+Pathfinder Campaign Setting: Inner Sea Gods © 2014, Paizo Publishing, LLC; Authors: Sean K Reynolds, with Amanda Hamon, James Jacobs, John Ling, Mark Moreland, David N. Ross, F. Wesley Schneider, Amber E. Scott, Tork Shaw, James L. Sutter, Jerome Virnich.
+Pathfinder Campaign Setting: Inner Sea Magic. © 2011, Paizo Publishing, LLC; Authors: Jesse Benner, Jason Nelson, Sean K Reynolds, Owen K.C. Stephens, Russ Taylor.
+Pathfinder Campaign Setting: Inner Sea NPC Codex © 2013, Paizo Publishing, LLC; Authors: John Compton, Paris Crenshaw, Adam Daigle, Josh Foster, Rob McCreary, Mark Moreland, and Russ Taylor.
+Pathfinder Campaign Setting: Isles of the Shackles © 2012, Paizo Publishing, LLC; Author: Mike Shel.
+Pathfinder Campaign Setting: Lands of the Linnorm Kings © 2011, Paizo Publishing, LLC; Authors: Matthew Goodall, Jonathan Keith, Colin McComb, and Rob McCreary.
+Pathfinder Campaign Setting: Lords of Chaos: Book of the Damned, Vol. 2. Copyright 2010, Paizo Publishing LLC; Author: James Jacobs
+Pathfinder Campaign Setting: Lost Cities of Golarion. © 2011, Paizo Publishing, LLC. Authors: Tim Hitchcock, Brandon Hodge, Michael Kortes, Jason Nelson, and Russ Taylor
+Pathfinder Campaign Setting: Lost Kingdoms © 2012, Paizo Publishing, LLC; Authors: Wolfgang Baur, Adam Daigle, Jeff Erwin, and F. Wesley Schneider.
+Pathfinder Campaign Setting: Lost Treasures © 2014, Paizo Inc.; Authors: Judy Bauer, Savannah Broadway, John Compton, Ron Lundeen, Levi Miles, Justin Riddler, F. Wesley Schneider, Mike Shel, Christina Stiles, James L. Sutter, and Jerome Virnich.
+Pathfinder Campaign Setting: Misfit Monsters Redeemed Copyright 2010, Paizo Publushing, LLC; Authors: Adam Daigle, Crystal Frasier, Colin McComb, Rob McCreary, Jason Nelson, and James L. Sutter.
+Pathfinder Campaign Setting: Mythic Realms © 2013, Paizo Publishing, LLC; Authors: Benjamin Bruck, Jason Bulmahn, Amanda Hamon, Nicolas Logue, Jason Nelson, F. Wesley Schneider, and Russ Taylor.
+Pathfinder Campaign Setting: Numeria, Land of Fallen Stars © 2014, Paizo Inc.; Authors: Jim Groves and Russ Taylor.
+Pathfinder Campaign Setting: Occult Mysteries © 2014, Paizo Inc.; Authors: Jason Bulmahn, Crystal Frasier, Jim Groves, Brandon Hodge, James Jacobs, Erik Mona, F. Wesley Schneider, and Jerome Virnich. 
+Pathfinder Campaign Setting: Osirion, Legacy of Pharaohs © 2014, Paizo Publishing, LLC; Authors: Alex Greenshields, Amanda Hamon, Jonathan H. Keith, Ron Lundeen, and David N. Ross.
+Pathfinder Campaign Setting: Pathfinder Society Field Guide. © 2011, Paizo Publishing, LLC. Authors: Erik Mona, Mark Moreland, Russ Taylor, and Larry Wilhelm.
+Pathfinder Campaign Setting: Paths of Prestige © 2012, Paizo Publishing, LLC; Authors: Benjamin Bruck, Jason Bulmahn, Matt Goodall, and Jason Nelson.
+Pathfinder Campaign Setting: Rival Guide. © 2011, Paizo Publishing, LLC; Authors: Brandon Hodge, Colin McComb, and Jason Nelson.
+Pathfinder Campaign Setting: Rival Guide. © 2011, Paizo Publishing, LLC. Authors: Brian Cortijo, Adam Daigle, Tim Hitchcock, Brandon Hodge, Colin McComb, Jason Nelson, Amber Scott, Neil Spicer, and Todd Stewart.
+Pathfinder Campaign Setting: Ships of the Inner Sea © 2014, Paizo Inc.; Authors: Benjamin Bruck, Paris Crenshaw, Chris A. Jackson, Amanda Hamon Kunz, Philip A. Lee, and John Mangrum.
+Pathfinder Campaign Setting: Technology Guide Update 1.0 © 2015, Paizo Inc.; Author: James Jacobs.
+Pathfinder Campaign Setting: The Inner Sea World Guide. © 2011, Paizo Publishing, LLC; Authors: Keith Baker, Wolfgang Baur, Clinton J. Boomer, Jason Bulmahn, Joshua J. Frost, Ed Greenwood, Stephen S. Greer, Jeff Grubb, James Jacobs, Michael Kortes, Tito Leati, Mike McArtor, Rob McCreary, Erik Mona, Jason Eric Nelson, Jeff Quick, Sean K Reynolds, F. Wesley Schneider, Leandra Christine Schneider, David Schwartz, Amber E. Scott, Stan!, Owen K.C. Stephens, Todd Stewart, James L. Sutter, Greg A. Vaughan, Jeremy Walker, and JD Wiker.
+Pathfinder Campaign Setting: The Worldwound © 2013, Paizo Publishing, LLC; Authors: James Jacobs, Jonathan Keith, Jason Nelson, Todd Stewart, and Tanith Tyrr.
+Pathfinder Campaign Setting: Undead Revisited. © 2011, Paizo Publishing, LLC. Authors: Eric Cagle, Brian Cortijo, Brandon Hodge, Steve Kenson, Hal Maclean, Colin McComb, Jason Nelson, Todd Stewart, and Russ Taylor.
+Pathfinder Campaign Setting: Undead Unleashed © 2014, Paizo Inc.; Authors: Adam Daigle, Dave Gross, Mark Moreland, David N. Ross, Todd Stewart, and Jerome Virnich.
+Pathfinder Character Traits Web Enhancement. Copyright 2009, Paizo Publishing, LLC. Author: James Jacobs and F. Wesley Schneider.
+Pathfinder Chronicles Campaign Setting. Copyright 2008, Paizo Publishing, LLC; Authors: Mike McArtor, Keith Baker, Wolfgang Baur, Clinton J. Boomer, Jason Bulmahn, Joshua J. Frost, Ed Greenwood, Stephen S. Greer, Jeff Grubb, James Jacobs, Michael Kortes, Tito Leati, Mike McArtor, Rob McCreary, Erik Mona, Jason Eric Nelson, Jeff Quick, Sean K Reynolds, F. Wesley Schneider, Leandra Christine Schneider, David Schwartz, Amber E. Scott, Stan!, Owen K.C. Stephens, Todd Stewart, James L. Sutter, Greg A. Vaughan, Jeremy Walker, JD Wiker.
+Pathfinder Chronicles: Cities of Golarion. Copyright 2009, Paizo Publishing, LLC; Authors: Joshua J. Frost, Tim Hitchcock, Jonathan Keith, Rob McCreary, Jason Nelson, and Jeff Quick.
+Pathfinder Chronicles: City of Strangers. Copyright 2010, Paizo Publishing, LLC; Author: James L. Sutter.
+Pathfinder Chronicles: Classic Horrors Revisited. Copyright 2009, Paizo Publishing, LLC; Authors: James Jacobs, Rob McCreary, and F. Wesley Schneider.
+Pathfinder Chronicles: Classic Treasures Revisited. Copyright 2010, Paizo Publishing, LLC; Authors: Jacob Burgess, Brian Cortijo, Jonathan H. Keith, Michael Kortes, Jeff Quick, Amber Scott, Todd Stewart, and Russ Taylor.
+Pathfinder Chronicles: Dark Markets, A Guide to Katapesh. Copyright 2009, Paizo Publishing, LLC; Authors: Stephen S. Greer, Amber Scott, Greg A. Vaughan, and Sean K Reynolds.
+Pathfinder Chronicles: Dragons Revisited. Copyright 2009, Paizo Publishing, LLC; Author: Mike McArtor.
+Pathfinder Chronicles: Dungeon Denizens Revisited. Copyright 2009, Paizo Publishing, LLC; Authors: Clinton Boomer, Jason Bulmahn, Joshua J. Frost, Nicolas Logue, Robert McCreary, Jason Nelson, Richard Pett, Sean K Reynolds, James L. Sutter, and Greg A. Vaughan.
+Pathfinder Chronicles: Faction Guide. Copyright 2010, Paizo Publishing, LLC; Authors: Joshua J. Frost, Jason Nelson, and Sean K Reynolds.
+Pathfinder Chronicles: Guide to Absalom. Copyright 2008, Paizo Publishing, LLC; Author: Owen K.C. Stephens.
+Pathfinder Chronicles: Guide to the River Kingdoms. Copyright 2010, Paizo Publishing, LLC; Authors: Eric Bailey, Kevin Carter, Elaine Cunningham, Adam Daigle, Mike Ferguson, Joshua J. Frost, Steve Kenson, Rob Manning, Alison McKenzie, Colin Moulder-McComb, China Miéville, Brock Mitchel-Slentz, Jason Nelson, Richard Pett, Chris Pramas, Je' Quick, Sean K Reynolds, F. Wesley Schneider, Lisa Stevens, Neil Spicer, Matthew Stinson, and John Wick.
+Pathfinder Chronicles: Heart of the Jungle. Copyright 2010, Paizo Publishing, LLC; Authors: Tim Hitchcock, Jason Nelson, Amber Scott, Chris Self, and Todd Stewart.
+"Pathfinder Chronicles: NPC Guide. Copyright 2010, Paizo Publishing, LLC; Authors: Jason Bulmahn, Christopher Carey, Crystal Frasier, Jesse Heinig, James Jacobs, Jonathan Keith, Hal Maclean, Rob McCreary, Erik Mona, Tim Nightengale, Jeff Quick, Sean K Reynolds, F. Wesley Schneider, Amber Scott, James L. Sutter, John
+Wick, and Hank Woon."
+Pathfinder Chronicles: Princes of Darkness, Book of the Damned Vol. I. Copyright 2009, Paizo Publishing, LLC; Author: F. Wesley Schneider.
+Pathfinder Chronicles: Princes of Darkness, Book of the Damned, Vol. I. Copyright 2009, Paizo Publishing, LLC; Author: F. Wesley Schneider.
+Pathfinder Chronicles: Seekers of Secrets. Copyright 2009, Paizo Publishing, LLC; Authors: Tim Hitchcock, Erik Mona, Sean K Reynolds, James L. Sutter, and Russ Taylor.
+Pathfinder Chronicles: The Great Beyond, A Guide to the Multiverse. Copyright 2009, Paizo Publishing, LLC; Author: Todd Stewart.
+Pathfinder Companion: Adventurer’s Armory. Copyright 2010, Paizo Publishing, LLC; Authors: Jonathan Keith, Hal Maclean, Jeff Quick, Christopher Self, JD Wiker, and Keri Wiker.
+Pathfinder Companion: Andoran, Spirit of Liberty. Copyright 2010, Paizo Publishing, LLC; Authors:Jonathan Keith, Hal Maclean, Colin Moulder-McComb, Jason Nelson, and Hank Woon.
+Pathfinder Companion: Cheliax, Empire of Devils. Copyright 2009, Paizo Publishing, LLC; Authors: Jonathan H. Keith, Colin McComb, Steven E. Schend, Leandra Christine Schneider, and Amber E. Scott.
+Pathfinder Companion: Dwarves of Golarion. Copyright 2009, Paizo Publishing, LLC; Authors: David A. Eitelbach, Russ Taylor, JD Wiker, Keri Wiker, and Hank Woon.
+Pathfinder Companion: Elves of Golarion, Copyright 2008, Paizo Publishing, LLC; Authors Jeff Quick and Hal Maclean.
+Pathfinder Companion: Gnomes of Golarion. Copyright 2010, Paizo Publishing, LLC; Authors: Hal Maclean, Colin McComb, Mark Moreland, Jeff Quick, Sean K Reynolds, Steven Schend, and Owen K. C. Stephens.
+Pathfinder Companion: Legacy of Fire Player’s Guide. Copyright 2009, Paizo Publishing, LLC; Authors: Brian Cortijo, Stephen S. Greer, James Jacobs, Jonathan H. Keith, F. Wesley Schneider, Amber E. Scott, and James L. Sutter.
+Pathfinder Companion: Orcs of Golarion. Copyright 2010, Paizo Publishing, LLC; Authors: Steve Kenson, Rob McCreary, Richard Pett, Sean K Reynolds, and JD Wiker.
+Pathfinder Companion: Osirion, Land of Pharaohs, Copyright 2008, Paizo Publishing, LLC; Authors: Jason Nelson and Todd Stewart.
+Pathfinder Companion: Qadira, Gateway to the East. Copyright 2009, Paizo Publishing, LLC; Author: Brian Cortijo.
+Pathfinder Companion: Sargava, the Lost Colony. Copyright 2010, Paizo Publishing, LLC; Author: JD Wiker.
+Pathfinder Companion: Second Darkness Player’s Guide. Copyright 2008, Paizo Publishing, LLC; Authors: James Jacobs, F. Wesley Schneider, Amber Scott, Greg A. Vaughan.
+Pathfinder Companion: Taldor, Echoes of Glory. Copyright 2009, Paizo Publishing, LLC; Author: Joshua J. Frost.
+Pathfinder Module D1.5: Revenge of the Kobold King, Copyright 2008, Paizo Publishing, LLC. Author: Nicholas Logue.
+Pathfinder Module D4: Hungry Are the Dead, Copyright 2008, Paizo Publishing, LLC. Author: Tim Hitchcock.
+Pathfinder Module E2: Blood of Dragonscar, Copyright 2009, Paizo Publishing, LLC. Author: Keith Baker.
+Pathfinder Module J4: The Pact Stone Pyramid, Copyright 2008, Paizo Publishing, LLC. Author: Michael Kortes.
+Pathfinder Module J5: Beyond the Vault of Souls, Copyright 2009, Paizo Publishing, LLC. Author: Colin McComb.
+Pathfinder Module LB1: Tower of the Last Baron, Copyright 2008, Paizo Publishing, LLC. Author: Stephen S. Greer.
+Pathfinder Module LB2: Treasure of Chimera Cove, Copyright 2008, Paizo Publishing, LLC. Author: Anson Caralya.
+Pathfinder Module S1: Clash of the Kingslayers, Copyright 2009, Paizo Publishing, LLC. Author: Leandra Christine Schneider.
+Pathfinder Module: Academy of Secrets. © 2011, Paizo Publishing, LLC; Author: Brian Cortijo.
+Pathfinder Module: Carrion Hill. Copyright 2009, Paizo Publishing, LLC. Author: Richard Pett.
+Pathfinder Module: City of Golden Death. Copyright 2010, Paizo Publishing, LLC. Author: Joshua J. Frost.
+Pathfinder Module: Crypt of the Everflame Copyright 2009, Paizo Publishing, LLC. Author: Jason Bulmahn.
+Pathfinder Module: Cult of the Ebon Destroyers. © 2011, Paizo Publishing, LLC; Author: Matthew Goodall.
+Pathfinder Module: Curse of the Riven Sky. © 2010, Paizo Publishing, LLC; Author: Monte Cook.
+Pathfinder Module: Emerald Spire, © 2014, Paizo Publishing, LLC; Authors: Keith Baker, Richard Baker, Wolfgang Baur, Jason Bulmahn, Ed Greenwood, Tim Hitchcock, James Jacobs, Nick Logue, Frank Mentzer, Erik Mona, Chris Pramas, Sean K Reynolds, F. Wesley Schneider, Michael A. Stackpole, Lisa Stevens, and James Sutter.
+Pathfinder Module: Feast of Ravenmoor. © 2011, Paizo Publishing, LLC; Author: Brandon Hodge.
+Pathfinder Module: From Shore to Sea. © 2010, Paizo Publishing, LLC; Author: Brandon Hodge.
+Pathfinder Module: Masks of the Living God. Copyright 2009, Paizo Publishing, LLC. Author: Jason Bulmahn.
+Pathfinder Module: Master of the Fallen Fortress. © 2010, Paizo Publishing, LLC; Author: Rob McCreary.
+Pathfinder Module: Murder's Mark© 2012, Paizo Publishing, LLC; Author: Jim Groves.
+Pathfinder Module: Murder’s Mark © 2012, Paizo Publishing, LLC; Author: Jim Groves.
+Pathfinder Module: Realm of the Fellknight Queen. © 2010, Paizo Publishing, LLC; Author: Neil Spicer.
+Pathfinder Module: The Dragon’s Demand © 2013, Paizo Publishing, LLC; Author: Mike Shel.
+Pathfinder Module: The Emerald Spire Superdungeon © 2014, Paizo Inc.; Authors: Keith Baker, Richard Baker, Wolfgang Baur, Jason Bulmahn, Ed Greenwood, Tim Hitchcock, James Jacobs, Nicolas Logue, Frank Mentzer, Erik Mona, Chris Pramas, Sean K Reynolds, F. Wesley Schneider, Michael A. Stackpole, Lisa Stevens, and James L. Sutter.
+Pathfinder Module: The Godsmouth Heresy. © 2010, Paizo Publishing, LLC; Author: Rob McCreary.
+Pathfinder Module: The Harrowing. © 2011, Paizo Publishing, LLC; Author: Crystal Frasier.
+Pathfinder Module: The Moonscar © 2012, Paizo Publishing, LLC; Author: Richard Pett.
+Pathfinder Module: The Ruby Phoenix Tournament © 2012, Paizo Publishing, LLC; Author: Tim Hitchcock.
+Pathfinder Module: The Witchwar Legacy. © 2010, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder Module: Tomb of the Iron Medusa. © 2011, Paizo Publishing, LLC; Author: Mike Shel.
+Pathfinder Player Companion: Bastards of Golarion © 2014, Paizo Publishing, LLC; Authors: Judy Bauer, Neal Litherland, Ryan Macklin, and David N. Ross.
+Pathfinder Player Companion: Blood of Angels © 2012, Paizo Publishing, LLC; Author: Amber E. Scott.
+Pathfinder Player Companion: Blood of Fiends © 2012, Paizo Publishing, LLC; Authors: Hal Maclean and Colin McComb.
+Pathfinder Player Companion: Blood of the Elements © 2014, Paizo Inc.; Authors: Tim Akers, Judy Bauer, Jim Groves, Chris Lites, Dale C. McCoy, Jr., and Cassidy Werner.
+Pathfinder Player Companion: Champions of Corruption © 2014, Paizo Inc.; Authors: Paris Crenshaw, Jim Groves, Sean McGowen, and Philip Minchin.
+Pathfinder Player Companion: Champions of Purity © 2013, Paizo Publishing, LLC; Authors: Jessica Blomstrom, Adam Daigle, Shaun Hocking, Daniel Marthaler, Tork Shaw, and Christina Stiles.
+Pathfinder Player Companion: Dragon Empires Primer © 2011, Paizo Publishing, LLC; Authors: Tim Hitchcock and Colin McComb.
+Pathfinder Player Companion: Dragonslayer's Handbook © 2013, Paizo Publishing, LLC; Authors: Shaun Hocking, Marie Small, and Jerome Virnich.
+Pathfinder Player Companion: Dungeoneer's Handbook © 2013, Paizo Publishing, LLC; Authors: Amanda Hamon, Gareth Hanrahan, David Ross, and Jerome Virnich.
+Pathfinder Player Companion: Faiths of Balance. © 2011, Paizo Publishing, LLC; Author: Colin McComb.
+Pathfinder Player Companion: Faiths of Corruption © 2011, Paizo Publishing, LLC; Author: Colin McComb.
+Pathfinder Player Companion: Giant Hunter's Handbook © 2014, Paizo Inc.; Authors: Alexander Augunas, Luis Loza, Ron Lundeen, and David Ross.
+Pathfinder Player Companion: Halflings of Golarion. Copyright 2010, Paizo Publishing, LLC; Authors: Hal MacLean and Amber E. Scott.
+Pathfinder Player Companion: Humans of Golarion. © 2011, Paizo Publishing, LLC; Authors: James Jacobs, Colin McComb, Sean K Reynolds, Amber Scott, and Larry Wilhelm.
+Pathfinder Player Companion: Inner Sea Primer. Copyright 2010, Paizo Publishing, LLC; Author: Colin McComb.
+Pathfinder Player Companion: Knights of the Inner Sea © 2012, Paizo Publishing, LLC; Authors: Gareth Hanrahan, Steve Kenson, Patrick Renie, Tork Shaw, and Jerome Virnich.
+Pathfinder Player Companion: Mythic Origins © 2013, Paizo Publishing, LLC; Authors: Dennis Baker, Philip Minchin, and Russ Taylor.
+Pathfinder Player Companion: Pathfinder Society Primer © 2013, Paizo Publishing, LLC; Authors: John Compton and Mark Moreland.
+Pathfinder Player Companion: People of the River © 2014, Paizo Inc.; Authors: Tim Akers, Jason Brick, Ethan Day-Jones, James Jacobs, Nick Salestrom, David Schwartz, and William Thrasher.
+Pathfinder Player Companion: People of the Sands © 2013, Paizo Publishing, LLC; Authors: Shaun Hocking, Rob McCreary, and Jason Nelson.
+Pathfinder Player Companion: Quests & Campaigns © 2013, Paizo Publishing, LLC; Authors: Amanda Hamon and David N. Ross.
+Pathfinder Player Companion: Ranged Tactics Toolbox © 2014, Paizo Inc.; Authors: David N. Ross, David Schwartz, and Kaitlyn Sprague.
+Pathfinder Player Companion: The Harrow Handbook © 2014, Paizo Inc.; Authors: Crystal Frasier, Will McCardell, and David Schwartz.
+Pathfinder Roleplaying Game Advanced Class Guide © 2014, Paizo Inc.; Authors: Dennis Baker, Ross Byers, Jesse Benner, Savannah Broadway, Jason Bulmahn, Jim Groves, Tim Hitchcock, Tracy Hurley, Jonathan H. Keith, Will McCardell, Dale C. McCoy, Jr., Tom Phillips, Stephen Radney-MacFarland, Thomas M. Reid, Sean K Reynolds, Tork Shaw, Owen K.C. Stephens, and Russ Taylor.
+Pathfinder Roleplaying Game Advanced Race Guide © 2012, Paizo Publishing, LLC; Authors: Dennis Baker, Jesse Benner, Benjamin Bruck, Jason Bulmahn, Adam Daigle, Jim Groves, Tim Hitchcock, Hal MacLean, Jason Nelson, Stephen Radney-MacFarland, Owen K.C. Stephens, Todd Stewart, and Russ Taylor.
+Pathfinder Roleplaying Game Bestiary 2, © 2010, Paizo Publishing, LLC; Authors: Wolfgang Baur, Jason Bulmahn, Adam Daigle, Graeme Davis, Crystal Frasier, Joshua J. Frost, Tim Hitchcock, Brandon Hodge, James Jacobs, Steve Kenson, Hal MacLean, Martin Mason, Rob McCreary, Erik Mona, Jason Nelson, Patrick Renie, Sean K Reynolds, F. Wesley Schneider, Owen K.C. Stephens, James L. Sutter, Russ Taylor, and Greg A. Vaughan, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+Pathfinder Roleplaying Game Bestiary 3, © 2011, Paizo Publishing, LLC; Authors Jesse Benner, Jason Bulmahn, Adam Daigle, James Jacobs, Michael Kenway, Rob McCreary, Patrick Renie, Chris Sims, F. Wesley Schneider, James L. Sutter, and Russ Taylor, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+Pathfinder Roleplaying Game Bestiary 4 © 2013, Paizo Publishing, LLC; Authors: Dennis Baker, Jesse Benner, Savannah Broadway, Ross Byers, Adam Daigle, Tim Hitchcock, Tracy Hurley, James Jacobs, Matt James, Rob McCreary, Jason Nelson, Tom Phillips, Stephen Radney-MacFarland, Sean K Reynolds, F. Wesley Schneider, Tork Shaw, and Russ Taylor.
+Pathfinder Roleplaying Game Bestiary Preview. Copyright 2009, Paizo Publishing, LLC. Author: Jason Bulmahn, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+Pathfinder Roleplaying Game Bestiary. © 2009, Paizo Publishing, LLC; Author: Jason Bulmahn, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+Pathfinder Roleplaying Game Beta Playtest Edition. Copyright 2008, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Pathfinder Roleplaying Game Core Rulebook. © 2010, Paizo Publishing, LLC; Author: Jason Buhlman, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+Pathfinder Roleplaying Game Monster Codex © 2014, Paizo Inc.; Authors: Dennis Baker, Jesse Benner, Logan Bonner, Jason Bulmahn, Ross Byers, John Compton, Robert N. Emerson, Jonathan H. Keith, Dale C. McCoy, Jr., Mark Moreland, Tom Phillips, Stephen Radney-MacFarland, Sean K Reynolds, Thomas M. Reid, Patrick Renie, Mark Seifter, Tork Shaw, Neil Spicer, Owen K.C. Stephens, and Russ Taylor.
+Pathfinder Roleplaying Game Mythic Adventures, © 2013, Paizo Publishing, LLC; Authors: Jason Bulmahn, Stephen Radney-MacFarland, Sean K Reynolds, Dennis Baker, Jesse Benner, Ben Bruck, Jim Groves, Tim Hitchcock, Tracy Hurley, Jonathan Keith, Jason Nelson, Tom Phillips, Ryan Macklin, F. Wesley Schneider, Amber Scott, Tork Shaw, Russ Taylor, and Ray Vallese.
+Pathfinder Roleplaying Game Ultimate Combat. © 2011, Paizo Publishing, LLC; Authors: Jason Bulmahn, Tim Hitchcock, Colin McComb, Rob McCreary, Jason Nelson, Stephen Radney-MacFarland, Sean K Reynolds, Owen K.C. Stephens, and Russ Taylor
+Pathfinder Roleplaying Game Ultimate Combat. © 2011, Paizo Publishing, LLC; Authors: Jason Bulmahn, Tim Hitchcock, Colin McComb, Rob McCreary, Jason Nelson, Stephen Radney-MacFarland, Sean K Reynolds, Owen K.C. Stephens, and Russ Taylor.
+Pathfinder Roleplaying Game Ultimate Equipment © 2012, Paizo Publishing, LLC; Authors: Dennis Baker, Jesse Benner, Benjamin Bruck, Ross Byers, Brian J. Cortijo, Ryan Costello, Mike Ferguson, Matt Goetz, Jim Groves, Tracy Hurley, Matt James, Jonathan H. Keith, Michael Kenway, Hal MacLean, Jason Nelson, Tork Shaw, Owen KC Stephens, and Russ Taylor.
+Pathfinder Roleplaying Game Ultimate Magic. © 2011, Paizo Publishing, LLC; Authors: Jason Bulmahn, Tim Hitchcock, Colin McComb, Rob McCreary, Jason Nelson, Stephen Radney-MacFarland, Sean K Reynolds, Owen K.C. Stephens, and Russ Taylor.
+Pathfinder Roleplaying Game, Beta Playtest Edition Magic Item Addendum. Copyright 2008, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Pathfinder Roleplaying Game, Beta Playtest Edition Prestige Classes. Copyright 2008, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Pathfinder Roleplaying Game, Beta Playtest Edition Web Enhancement. Copyright 2008, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Pathfinder Roleplaying Game: Bonus Bestiary. Copyright 2009, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Pathfinder Roleplaying Game: Ultimate Campaign. © 2013, Paizo Publishing, LLC; Authors: Jesse Benner, Benjamin Bruck, Jason Bulmahn, Ryan Costello, Adam Daigle, Matt Goetz, Tim Hitchcock, James Jacobs, Ryan Macklin, Colin McComb, Jason Nelson, Richard Pett, Stephen Radney-MacFarland, Patrick Renie, Sean K Reynolds, F. Wesley Schneider, James L. Sutter, Russ Taylor, and Stephen Townshend.
+Pathfinder Roleplaying Game: Ultimate Equipment. © 2012, Paizo Publishing, LLC; Authors: Dennis Baker, Jesse Benner, Benjamin Bruck, Ross Byers, Brian J. Cortijo, Ryan Costello, Mike Ferguson, Matt Goetz, Jim Groves, Tracy Hurley, Matt James, Jonathan H. Keith, Michael Kenway, Hal MacLean, Jason Nelson, Tork Shaw, Owen KC Stephens, Russ Taylor, and numerous RPG Superstar contributors.
+Pathfinder RPG Bestiary. Copyright 2009, Paizo Publishing, LLC; Author: Jason Bulmahn, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+Pathfinder RPG Core Rulebook. Copyright 2009, Paizo Publishing, LLC; Author: Jason Bulmahn, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+Pathfinder RPG GameMastery Guide, © 2010, Paizo Publishing, LLC; Authors: Cam Banks, Wolfgang Baur, Jason Bulmahn, Jim Butler, Eric Cagle, Graeme Davis, Adam Daigle, Joshua J. Frost, James Jacobs, Kenneth Hite, Steven Kenson, Robin Laws, Tito Leati, Rob McCreary, Hal Maclean, Colin McComb, Jason Nelson, David Noonan, Richard Pett, Rich Redman, Sean K Reynolds, F. Wesley Schneider, Amber Scott, Doug Seacat, Mike Selinker, Lisa Stevens, James L. Sutter, Russ Taylor, Penny Williams, Skip Williams, Teeuwynn Woodruff.
+Pathfinder Society Scenario 01: Silent Tide. Copyright 2008, Paizo Publishing, LLC; Author: Michael Kortes.
+Pathfinder Society Scenario 02: The Hydra’s Fang Incident. Copyright 2008, Paizo Publishing, LLC; Author: Tim Hitchcock.
+Pathfinder Society Scenario 03: Murder on the Silken Caravan. Copyright 2008, Paizo Publishing, LLC; Author: Greg A. Vaughan.
+Pathfinder Society Scenario 04: The Frozen Fingers of Midnight. Copyright 2008, Paizo Publishing, LLC; Author: Craig Shackleton.
+Pathfinder Society Scenario 2–18: The Forbidden Furnace of Forgotten Koor. © 2011, Paizo Publishing, LLC; Author: Larry Wilhelm.
+Pathfinder Society Scenario 2–22: Eyes of the Ten Part IV: Nothing Ventured, Nothing Gained. © 2011, Paizo Publishing, LLC; Author: Tim Hitchcock.
+Pathfinder Society Scenario 3–05: Tide of Twilight © 2011, Paizo Publishing, LLC; Author: Ron Lundeen.
+Pathfinder Society Scenario 3–10: The Immortal Conundrum © 2011, Paizo Publishing, LLC; Author: Larry Wilhelm.
+Paths of Power. Copyright 2009, 4 Winds Fantasy Gaming; Authors Sean O’Connor and Patricia Willenborg, with Connie J. Thomson and Robert W. Thomson.
+Pathways #1 Copyright 2011 Steven D. Russell;
+Pathways #2 Copyright 2011 Steven D. Russell;
+Pathways #3 Copyright 2011 Steven D. Russell;
+Pathways #4 Copyright 2011 Steven D. Russell;
+Pazuzu from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Phantasia Zoologica I: Dogs. Copyright 2010, 4 Winds Fantasy Gaming; Authors Connie J. Thomson and Robert W. Thomson
+Piercers from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Pirates of the Western Ocean, © 2012, Open Design, LLC; Author: Ben McFarland; www.koboldquarterly.com.
+Player Races: High Goblins. Copyright 2010, Jon Brazer Enterprises.
+Player's Guide to the Crossroads, © 2012, Open Design, LLC; www.koboldpress.com.
+Player's Guide to the Dragon Empire, © 2012, Open Design, LLC; Author: Adam Roy.
+Player’s Guide to Clerics and Druids Copyright 2003, White Wolf Publishing, Inc, Player’s Guide to Rangers and Rogues Copyright 2003, White Wolf Publishing
+Player’s Guide to Fighters and Barbarians Copyright 2003, White Wolf Publishing, Inc.
+Player’s Guide to Rangers and Rogues Copyright 2003, White Wolf Publishing
+Player’s Guide to the Crossroads, © 2012, Open Design, LLC; www.koboldquarterly.com.
+Player’s Guide to the Dragon Empire, © 2012, Open Design, LLC; Author: Adam Roy.
+Player’s Guide to the Seven Cities, © 2013, Open Design, LLC; Author: Adam Roy.
+Player’s Guide to Wizards, Bards & Sorcerers Copyright 2003, White Wolf Publishing, Inc.
+Plexus - Open Spells Collection Copyright 2002 Mark Alexander Clover.
+Plexus - Potent Portals Copyright 2002 Mark Alexander Clover.
+Plot & Poison: A Guidebook to Drow. Copyright 2002 Green Ronin Publishing; Author: Matthew Sernett.
+Plunder and Murder: Pirate Queen Pelaegos, Copyright 2001, 2002, Skald Books.
+Poisoncraft: The Dark Art, Copyright 2004, Justin D. Jacobson.
+Poltergeist from the Tome of Horrors, Revised. © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Lewis Pulsipher.
+Possessors: Children of the Outer Gods Copyright 2003, Philip Reed and Christopher Shy, www.philipjreed.com and www.studioronin.com
+Possessors: Children of the Outer Gods Copyright 2003, Philip Reed and Christopher Shy, www.philipjreed.com and www.studioronin.com.
+Psionics Expanded. Copyright 2011, Dreamscarred Press.
+Psionics Unleashed.  Copyright 2010, Dreamscarred Press.
+Psionics Unleashed. Copyright 2010, Dreamscarred Press.
+Ptolus: Monte Cook’s City by the Spire ©2006 Monte J. Cook.
+Quid Novi? Issue X, Volume I Copyright 2010, Spes Magna Games; Mark L. Chance.
+Quid Novi? Issue XI, Volume I Copyright 2010, Spes Magna Games; Mark L. Chance.
+Quid Novi? Issue XII, Volume I Copyright 2010, Spes Magna Games; Mark L. Chance.
+Quid Novi? Issue XIII, Volume I Copyright 2010, Spes Magna Games; Mark L. Chance.
+Quid Novi? Issue XIV, Volume I Copyright 2010, Spes Magna Games; Mark L. Chance.
+Random Fantasy Adventure Generator, Copyright 2007, Adamant Entertainment. Author: Gareth-Michael Skarka
+Rappan Athuk II—The Dungeon of Graves: The Middle Levels Copyright 2001 Bill Webb and Clark Peterson, Necromancer Games, Inc.
+Rappan Athuk III—The Dungeon of Graves: The Lower Levels Copyright 2002 Necromancer Games, Inc., Authors Bill Webb, W.D.B. Kenower and Clark Peterson.
+Rappan Athuk Reloaded Copyright 2006 Necromancer Games, Inc.; Authors Bill Webb, Clark Peterson, WDB Kenower, Casey Christofferson, and Greg Raglund; based on the original creation of Bill Webb.
+Rappan Athuk—The Dungeon of Graves: The Upper Levels Copyright 2000 Clark Peterson and Bill Webb, Necromancer Games, Inc.
+Rel-Draxa: Dark Throne of the Western Shore Copyright 2010, Sagawork Studios; Author Andrew C Gale
+Relics & Rituals 2: Lost Lore Copyright 2002, White Wolf Publishing, Inc.
+Relics & Rituals Copyright 2001, Clark Peterson
+Relics and Rituals Copyright 2001, Clark Peterson
+Remarkable Races: Compendium of Unusual PC Races, Pathway to Adventure Edition. Copyright 2009, Alluria Publishing; Author: J. Matthew Kubisz
+Remarkable Races. Copyright 2009, Alluria Publishing; Author: J. Matthew Kubisz
+Return of the Drow: Alternate Racial Traits and Race Traits © Copyright 2013, Fat Goblin Games. Written by Rick Hershey
+Rise of the Ghouls is copyright © 2005 Adam Windsor.
+Rise of the Runelords Player’s Guide. Copyright 2007 Paizo Publishing LLC. Author F. Wesley Schneider.
+Rules+. Copyright Owen K.C. Stephens 2010-2011; Author Owen K.C. Stephens.
+Russet Mold from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Saga: An Optional Story-Based Combat System ©2013 Adamant Entertainment. Authors Shannon Kalvar and Gareth-Michael Skarka
+Salon du Masque, Copyright 2002, Green Ronin Publishing, LLC; Author Chris Pramas.
+Scarred Lands Camapaign Setting: Ghelspad, Copyright 2002, White Wolf Publishing, Inc.
+Scarred Lands Campaign Setting: Termana Copyright 2003, White Wolf Publishing
+Scarred Lands Gazetteer: Termana Copyright 2002, White Wolf Publishing, Inc.
+Seafarer’s Handbook Copyright 2001, Fantasy Flight, Inc.
+Seas of Blood - Fantasy on the High Seas Copyright 2001, Mongoose Publishing.
+Secret College of Necromancy, Copyright 2002, Green Ronin Publishing, LLC; Authors David “Zeb” Cook and Wolfgang Baur.
+Secret College of Necromancy, Copyright 2002, Green Ronin Publishing; Authors David “Zeb” Cook and Wolfgang Baur
+Secrets and Societies Copyright 2002, White Wolf Publishing, Inc.
+Serpent in the Fold: Serpent Amphora Cycle, Book I Copyright 2002, White Wolf Publishing, Inc.
+Shadow Demon from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Neville White.
+Shadow Demon from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Neville White.
+Shadows over Vathak, Copyright 2012, Fat Goblin Games. Jason Stoffa and Rick Hershey.
+Shelzar: City of Sins Copyright 2003, White Wolf Publishing, Inc.
+Shock & Awe: Morale for All D20 Games Copyright 2005, Adamant Entertainment.: Author: Malcolm Sheppard
+Silver Age Sentinels d20, Copyright 2002, Guardians of Order, Inc.; Authors Stephen Kenson, Mark C. Mackinnon, Jeff Mackintosh, Jesse Scoble.
+Sinobian from Tome of Horrors II Copyright 2004, Necromancer Games, Inc.; Author Scott Greene; Additional Authors: Erica Balsley, Kevin Baase, Casey Christofferson, Jim Collura, Meghan Greene, Lance Hawvermale, Travis Hawvermale, Bill Kenower, Patrick Lawinger, Nathan Paul, Clark Peterson, Bill Webb and Monte Cook.
+Skillful Stunts Copyright 2006, Adamant Entertainment.: Author: Barak Blackburn
+Skreyn's Register: The Bonds of Magic, Vol. 1: Cabal and Skreyn's Register: The Bonds of Magic,Vol. 2: The Faithful Copyright 2002 Sean K Reynolds. All rights reserved.
+Skreyn's Register: The Bonds of Magic. © 2002, Sean K Reynolds.
+Skreyn’s Register: The Bonds of Magic. © 2002, Sean K Reynolds.
+Skull & Bones © 2003, Green Ronin Publishing, LLC; Authors Ian Sturrock, T.S. Luikart, and Gareth-Michael Skarka.
+Skull & Shackles Player's Guide © , Paizo Publishing, LLC; Author: Rob McCreary.
+Slumbering Tsar: Temple-City of Orcus, Part 1 -The Tower of Weeping Sores - Copyright 2010 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: Temple-City of Orcus, Part 2 -The Lower City - Copyright 2010 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: Temple-City of Orcus, Part 3 -The Harrow Lanes - Copyright 2010 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: Temple-City of Orcus, Part 4 -The Crooked Tower- Copyright 2010 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: Temple-City of Orcus, Part 5 -Foundations of Infamy- Copyright 2011 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Desolation, Part 1 -The Edge of Oblivion- Copyright 2010 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Desolation, Part 2 -The Ghosts of Victory- Copyright 2010 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Desolation, Part 3 -The Western Front- Copyright 2010 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Hidden Citadel, Part 1 -At the Feet of Orcus - Copyright 2011 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Hidden Citadel, Part 2 -Echoes of Despair - Copyright 2011 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Hidden Citadel, Part 3 -The Throne of the Demon Prince - Copyright 2011 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Hidden Citadel, Part 4 - In the Belly of the Beast- Copyright 2011 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Hidden Citadel, Part 5 - The Mind of Chaos- Copyright 2012 Bill Webb and Greg Vaughan, Frog God Games
+Slumbering Tsar: The Hidden Citadel, Part 6 - Caverns of the Barrier - Copyright 2012 Bill Webb and Greg Vaughan, Frog God Games
+Sorcery & Steam. Copyright 2003, Fantasy Flight Publishing, Inc.
+Spells & Spellcraft Copyright 2002, Fantasy Flight, Inc.
+Spells &amp; Spellcraft Copyright 2002, Fantasy Flight, Inc.
+Spheres of Power © 2014 Drop Dead Studios LLC; Authors: Adam Meyers, Owen Stephens, Thomas Keene, and Ryan Ricks
+Splinters of Faith, Copyright 2010, Author Gary Schotter & Jeff Harkness.
+Spycraft Copyright 2002, Alderac Entertainment Group.
+Steam & Brass Copyright 2006, Wolfgang Baur, www.wolfgangbaur.com.
+Steam & Brass Copyright 2006, Wolfgang Baur, www.wolfgangbaur.com. All Rights Reserved.
+Steam & Brass, Copyright 2006, Wolfgang Baur, www.wolfgangbaur.com. All Rights Reserved
+Steam & Steel Copyright 2004 E.N.Publishing
+Steam & Steel, Copyright 2004 E.N.Publishing
+Strategists and Tacticians. Copyright 2010, 4 Winds Fantasy Gaming; Author Ryan Costello, Jr.
+Streets of Zobeck. Copyright 2011, Open Design LLC, Authors: Ben McFarland, Mike Franke, Richard Pett, Christina Stiles, Matthew Stinson.
+Sunken Empires Copyright 2010, Open Design, LL C; Authors: Brandon Hodge, David “Zeb” Cook, and Stefen Styrsky. www.koboldquarterly.com
+Sunken Empires, © 2010, Open Design, LLC; Authors: Brandon Hodge, David “Zeb” Cook, and Stefen Styrsky. www.koboldquarterly.com.
+Sunken Empires. Copyright 2010, Open Design, LLC; Authors: Brandon Hodge, David “Zeb” Cook, and Stefen Styrsky. www.koboldquarterly.com
+Swords of Our Fathers Copyright 2003, The Game Mechanics.
+System Reference Document. Copyright 2000, Wizards of the Coast, Inc.; Authors: Jonathan Tweet, Monte Cook, Skip Williams, based on material by E. Gary Gygax and Dave Arneson.
+Tactical Implant: The Definitive D20 Guide to Cyberpunk Combat Options opyright 2005, Adamant Entertainment.: Author: Malcolm Sheppard
+Tales of Freeport, Copyright 2003, Green Ronin Publishing, LLC; Author Graeme Davis.
+Tales of the Old Margreve, © 2010, Open Design LLC; Authors: Eileen Connors and Tim Connors.
+Tales of the Old Margreve. Copyright 2010, Open Design, LLC; Authors: Tim and Eileen Connors, Michael Furlanetto, Jonathan McAnulty, Ben McFarland, Richard Pett, Steven Robert, and Dan Voyce. www.koboldquarterly.com
+Tales of Zobeck, Copyright 2008, Open Design LLC; Authors: Wolfgang Baur, Bill Collins, Tim & Eileen Connors, Ed Greenwood, Jim Groves, Mike McArtor, Ben McFarland, Joshua Stevens, Dan Voyce
+Tattlebox #2, © 2012 Zombie Sky Press; Author: John Pingo, John Bennett, Will McCardell, Scott Gable.
+Tattlebox #3, © 2012 Zombie Sky Press; Author: John Bennett, Scott Gable, Thomas LeBlanc, John Pingo, Christina Stiles.
+Temporary Enchantments Copyright 2006, Adamant Entertainment.: Author: Barak Blackburn
+Tentamort from the Tome of Horrors. Copyright 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Mike Roberts.
+Terror in Freeport Revised, Copyright 2001–2004, Green Ronin Publishing, LLC; Author Robert J. Toth. Seas of Blood, Copyright © 2001, Mongoose Publishing.
+Testament: Roleplaying in the Biblical Era. Copyright 2003, Green Ronin Publishing; Author: Scott Bennie.
+The Archives of Nethys. Copyright 2010, Blake Davis.
+The Assassin's Handbook, Copyright 2002 Green Ronin Publishing. All rights reserved.
+The Assassin’s Handbook, Copyright 2002 Green Ronin Publishing. All rights reserved.
+The Avatar’s Handbook, Copyright 2003, Green Ronin Publishing, LLC: Authors Jesse Decker and Chris Thomasson
+The Black Monastery- Copyright 2011 Bill Webb and Mark R. Shipley, Frog God Games
+The Book of Arcane Magic. Copyright 2009, 4 Winds Fantasy Gaming; Authors Connie J. Thomson and Robert W. Thomson
+The Book of Divine Magic. © 2009, 4 Winds Fantasy Gaming; Authors: Connie J. Thomson and Robert W. Thomson, with Katheryn Bauer and Sean O’Connor.
+The Book of Drakes, ©2011 Open Design LLC. Authors Adam Daigle and Mike Welham.
+The Book of Eldritch Might, Copyright 2004 Monte J. Cook. All rights reserved.
+The Book of Erotic Fantasy. Copyright 2006, Arthaus, Inc.; Authors: Gwendolyn F.M. Kestrel and Duncan Scott
+The Book of Experimental Might. Copyright 2008, Malhavoc Press; Author: Monte J. Cook.
+The Book of Fiends, © 2003, Green Ronin Publishing; Authors Aaron Loeb, Erik Mona, Chris Pramas, Robert J. Schwalb.
+The Book of Fiends.© 2003, Green Ronin Publishing.; Authors: Aaron Loeb, Erik Mona, Chris Pramas, and Robert J. Schwalb.
+The Book of Hallowed Might. © 2002, Monte J. Cook.
+The Book of Roguish Luck, Copyright 2005 Wolfgang Baur. All rights reserved.
+The Book of Taverns Copuright 2002, Necromancer Games, Inc; Author Chris Jones
+The Book of the Righteous, Copyright 2002, Aaron Loeb.
+The Cavalier’s Handbook, Copyright 2004, Green Ronin Publishing; Author Robert J. Schwalb
+The Compleat Librum of Gar.Udok.s Necromantic Artes Copyright 2002, Ambient Inc.; Authors M Jason Parent, Denise Robinson, Chester Douglas II
+The Complete Advanced Feats, © 2011 Open Design LLC. Author: Siegfried Trent.
+The Complete Book of Eldritch Might Copyright 2004 Monte J. Cook. All rights reserved.
+The Crucible of Freya Copyright 2000 Clark Peterson and Bill Webb, Necromancer Games, Inc.
+The Crucible of Freya Copyright 2000, Clark Peterson and Bill Webb, Necromancer Games, Inc.
+The Deductionist. Copyright, September 4, 2013, Total Party Kill Games. Author(s): Brian Berg, Matt Everhart, David A. Hill
+The Deep. Copyright 2003, Mystic Eye Games, LLC; Authors: Becky Glenn, Stefon Mears, Susannah Redelfs, and Robin Wise.
+The Diamond Throne Copyright 2003 Monte J. Cook. All rights reserved.
+The Direlock Base Class © 2013 Forest Guardian Press. Authors: Morgan Boehringer and Jim Wettstein.
+The Divine and the Defeated Copyright 2001, White Wolf Publishing, Inc.
+The Expanded Elven Archer, © 2012, Open Design LLC; Authors: Charles Lee Carrier, John Ling, Jr., and Nicholas Milasich.
+The Expanded Shaman, © 2012, Open Design LLC; Author: Marc Radle.
+The Expanded White Necromancer, © 2013, Open Design LLC; Author: Marc Radle.
+The Faithful and the Forsaken Copyright 2003, White Wolf Publishing
+The Fane of the Fallen, Copyright 2010, Author William Loran Christensen.
+The Freeport Trilogy, Copyright 2005, Green Ronin Publishing, LLC; Authors Chris Pramas, William Simoni, and Robert J. Toth.
+The Genius Guide To Feats of Battle, © 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide to Loot 4 Less #1: Armor and Weapons. Copyright 2009, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide to the Armiger. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens.
+The Genius Guide to the Death Mage. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide to the Dragonrider. Copyright 2009, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide to the Time Thief. Copyright 2009, Super Genius Games. Author: Owen K.C. Stephens.
+The Genius Guide To: Air Magic. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: Favored Class Options. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: Feats of Critical Combat. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: Feats of Metamagic. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: Hoof and Horn Racial Options. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: Martial Archetypes. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: Mystic Godlings. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: Races of Hoof and Horn. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: The Archon. Copyright 2009, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: The Armiger. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens.
+The Genius Guide To: The Godling. © 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: The Order of Vigilance. Copyright 2010, Super Genius Games. Authors: Stan! and R. Hyrum Savage
+The Genius Guide To: The Time Thief. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: The Vanguard. Copyright 2010, Super Genius Games. Author: Marc Radle
+The Genius Guide to: The War Master Copyright 2010, Super Gen ius Games. Author: Owen K.C. Stephens
+The Genius Guide To: The War Master. Copyright 2010, Rogue Genius Games. Author: Owen K.C. Stephens
+The Genius Guide To: The Witch Hunter. Copyright 2010, Super Genius Games. Author: Owen K.C. Stephens
+The Gods of Porphyra © 2012, Purple Duck Games; Authors: Christopher Kaiser, Perry Fehr, Mark Gedak, August Hahn, John Hazen, Sean Holland, Sam Hing, James H. Lewis, Chris Longhurst, Scott Messer, Sean O'Connor, David Nicholas Ross, and Jeremy Whalen
+The Grand OGL Wiki, http://grandwiki.wikidot.com Copyright 2008-2009 Purple Duck Creations; Authors: Mark Gedak, Alex Schroeder, Joel Arellano, George Fields, Yair Rezek, Mike Whalen, Shane O’Connor, Mike Rickard, John Whamond, Bill Browne, Eric Williamson, Slatz Grubnik, Charles R. Wenzler Jr.
+The Great City Player’s Guide © by Øone Roleplaying Games
+The Great City Urban Creatures & Lairs - the Harvestman © by Øone Roleplaying Games.
+The Hollow Mountain, Copyright 2011, Author Uri Kurlianchik.
+The Iconic Bestiary: Classics of Fantasy Copyright 2005, Lions Den Press; Author Ari Marmell
+The Koboldnomicon, Copyright 2006 Bards and Sages.
+The Lost Lands: Stoneheart Valley Copyright 2013 Frog God Games, LLC; Authors Clark Peterson and Bill Webb.
+The New Argonauts: Serpent Archer. Copyright © 2004 Sean K Reynolds. All rights reserved.
+The Noble Wild Copyright 2009 by Lee Garvin and Skirmisher Publishing LLC.
+The Noble’s Handbook, Copyright 2003, Green Ronin Publishing, LLC; Author Rodney Thompson.
+The Northlands Saga: Beyond the Wailing Mountains, Copyright 2011, Frog God Games, Author Kenneth Spencer.
+The Northlands Saga: The Curse of Sven Oakenfist, Copyright 2011, Frog God Games, Author Kenneth Spencer.
+The Northlands Saga: Vengeance of the Long Serpent, Copyright 2010, Frog God Games, Author Kenneth Spencer.
+The Pathfinder Chronicles Campaign Setting Copyright 2008, Paizo Publishing; Author: Stan!, Keith Baker, Wolfgang Baur, Clinton J. Boomer, Jason Bulmahn, Joshua J. Frost, Ed Greenwood, Stephen S. Greer, Jeff Grubb, James Jacobs, Michael Kortes, Tito Leati, Mike McArtor, Rob McCreary, Erik Mona, Jason Eric Nelson, Jeff Quick, Sean K Reynolds, David Schwartz, Leandra Christine Schneider, F. Wesley Schneider, Amber E. Scott, Owen K.C. Stephens, Todd Stewart, James L. Sutter, Greg A. Vaughan, Jeremy Walker, JD Wiker.
+The Penumbral Dragon Copyright 2003, White Wolf Publishing, Inc.
+The Priest Base Class, © 2014 Alex Abel.
+The Psychic’s Handbook, Copyright 2004, Green Ronin Publishing, LLC; Author Steve Kenson
+The Psychic’s Handbook, Copyright 2004, Green Ronin Publishing; Author Steve Kenson
+The Pugilist Class and NPC.  Copyright 2010, Wordcasting Entertainment; Author Ryan Stanford.
+The Raven's Call, © 2013, Open Design LLC; Author: Wolfgang Baur.
+The Secrets of Adventuring Copyright 2013 Steven D. Russell; Authors Steven D. Russell, David Mallon, Jonathan McAnulty, Will McCardell, Benjamin Rombeaut
+The Secrets of Adventuring. Copyright 2013 Steven D. Russell, Authors: Steven D. Russell, Jonathan McAnulty, and T.H. Gulliver
+The Secrets of Divine Channeling Copyright 2010 Steven D. Russell Author Jonathan McAnulty
+The Secrets of Tactical Archetypes. Copyright 2011, Steven D Russell; Author Will McCardell
+The Secrets of the Divine: Adventure, Earth, Magic & Water Copyright © 2014 Steven D. Russell, Author Steven D. Russell.
+The Secrets of the Luckbringer Copyright 2011, Steven D Russell; Author Steven D. Russell
+The Secrets of the Taskshaper, Copyright 2010, Steven D. Russell; Author: Steven D. Russell
+The Serpend and the Scepter: Serpent Amphora Cycle, Book II, White Wolf Publishing, Inc.
+The Serpent Citadel: Serpent Amphora Cycle, Book III, White Wolf Publishing, Inc.
+The Shaman Copyright 2006, OtherWorld Creations; Authors: R. Hyrum Savage.
+The Shaman Pathfinder Edition Copyright 2009, Super Genius Games; Authors: R. Hyrum Savage.
+The Shaman’s Handbook. Copyright 2002, Green Ronin Publishing; Author Steve Kenson
+The Slumbering Tsar Saga- Copyright 2012 Bill Webb and Greg Vaughan, Frog God Games
+The Tome of Horrors IV, Copyright 2013, Frog God Games, LLC; Authors: Erica Balsley, Casey Christofferson, Jim Collura, Lance Hawvermale, Patrick Lawinger, Phillip Larwood, Greg A. Vaughan, and Bill Webb, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+The Unholy Warrior’s Handbook, Copyright 2003, Green Ronin Publishing, LLC; Author Robert J. Schwalb.
+The War of the Goblin King. Copyright 2010 Necromancers of the Northwest, LLC; Authors: Alex Riggs, Joshua Zaback, Justin Holloway.
+The Way of the Samurai copyright 2012, Steven D. Russell and Michael Tumey, all rights reserved; Author Jonathan McAnulty
+The Way of the Yakuza copyright 2011, Steven D. Russell and Michael Tumey, all rights reserved; Author Jonathan McAnulty
+The Wise & the Wicked Copyright 2001, White Wolf Publishing, Inc.
+The Wizard’s Amulet Copyright 2000-2002, Necromancer Games, Inc., Author Clark Peterson and Bill Webb.
+The Wizard’s Amulet Copyright 2000-2002, Necromancer Games, Inc., Authors Clark Peterson and Bill Webb.
+Tin Man, Copyright 2010, 4 Winds Fantasy Gaming; Author Ryan Costello, Jr.
+Tomb of Abysthor Copyright 2001, Necromancer Games, Inc., Authors Clark Peterson and Bill Webb.
+Tomb of Abysthor Copyright 2001, Necromancer Games, Inc., Authors Clark Peterson and Bill Webb.
+Tome of Horrors 4 © 2013, Frog God Games, LLC; Authors: Scott Greene, Erica Balsley, Casey Christofferson, Jim Collura, Lance Hawvermale, Patrick Lawringer, Phillip Larwood, and Bill Webb.
+Tome of Horrors Complete. © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Tome of Horrors II. Copyright 2004, Necromancer Games, Inc.; Author: Scott Greene; Additional Authors: Erica Balsley, Kevin Baase, Casey Christofferson, Jim Collura, Meghan Greene, Lance Hawvermale, Travis Hawvermale, Bill Kenower, Patrick Lawinger, Nathan Paul, Clark Peterson, Bill Webb, and Monte Cook.
+Tome of Horrors III. Copyright 2005 Necromancer Games, Inc. Author Scott Greene, with Casey Christofferson, Erica Balsley, Kevin Baase, Lance Hawvermale, Travis Hawvermale, Ian S. Johnson, Patrick Lawringer, Nathan Paul, Clark Peterson, Greg Ragland, Robert Schwalb, and Bill Webb.
+Tome of Horrors, Revised. Copyright 2002 Necromancer Games, Inc. Authors: Scott Greene, with Erica Balsley, Kevin Baase, Casey Christofferson, Lance Hawvermale, Travis Hawvermale, Patrick Lawringer, Clark Peterson, Greg Ragland, and Bill Webb; Based on original content from TSR.
+Tome of Horrors. Copyright 2002, Necromancer Games, Inc.; Authors: Scott Greene, with Clark Peterson, Erica Balsley, Kevin Baase, Casey Christofferson, Lance Hawvermale, Travis Hawvermale, Patrick Lawinger, and Bill Webb; Based on original content from TSR.
+Tome of Secrets, Copyright 2009, Adamant Entertainment, Inc. Authors: Walt Ciechanowski and Gareth-Michael Skarka.
+Trailblazer. Copyright 2009, Benjamin R. Durbin, published by Bad Axe Games, LLC.
+Traps and Treachery, copyright 2001, Fantasy Flight Inc.; Authors Greg Benage, Kurt Brown, Mark Chance, Brian Ferrenz, Lizard, David Lyons, Brian Patterson, Scott Stoecker, Wil Upchurch.
+True20 Adventure Roleplaying, Copyright 2005, Green Ronin Publishing; Author Steve Kenson.
+Tsathar from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Clark Peterson, Bill Webb, and Scott Greene.
+Tsathar Scourge from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Clark Peterson, Bill Webb, and Scott Greene.
+Ultimate Combat Playtest. © 2011, Paizo Publishing, LLC; Authors: Jason Bulmahn and Stephen Radney-MacFarland.
+Ultimate Equipment 2 Copyright 2005, Mongoose Publishing Ltd.
+Ultimate Equipment Guide Copyright 2002, Mongoose Publishing
+Ultimate Magic Playtest, Round 3. Copyright 2010, Paizo Publishing, LLC; Author: Jason Bulmahn.
+Ultimate Magic Supplement: Ultimate Cantrips. © 2011, Paizo Publishing, LLC; Authors: Jason Bulmahn, Tim Hitchcock, Colin McComb, Rob McCreary, Jason Nelson, Stephen Radney-MacFarland, Sean K Reynolds, Owen K.C. Stephens, and Russ Taylor.
+Ultramodern Firearms d20, Copyright 2002, Charles McManus Ryan.
+Undefeated 1, Copyright 2009, Louis Porter Jr. Design, Inc.
+Undefeated 8, Copyright 2009, Louis Porter Jr. Design, Inc.
+Underdark Adventure Guide by Mike Mearls and Dean Poisso, Copyright 2003 Goodman Games (contact goodmangames@mindspring.com, or see www.goodman-games.com)
+Unearthed Arcana Copyright 2004, Wizards of the Coast, Inc.; Andy Collins, Jesse Decker, David Noonan, Rich Redman.
+Unearthed Arcana Copyright 2004,Wizards of the Coast, Inc.; Authors Andy Collins, Jesse Decker, David Noonan, Rich Redman
+Unhallowed Halls. Copyright 2002, Trident, Inc. d/b/a Atlas Games; author Christina Stiles.
+Vegepygmy from the Tome of Horrors Revised.© 2002, Necromancer Games, Inc.; Author: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Vegepygmy from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Vigil Watch: Secrets of the Asaatthi Copyright 2003, White Wolf Publishing
+Vigil Watch: Warrens of the Ratmen Copyright 2002, White Wolf Publishing, Inc.
+Villains: Rebirth. Copyright 2003, Bastion Press, Inc. Author: James Jacobs.
+Vilstrak from the Tome of Horrors, Copyright 2002, Necromancer Games., Inc.; Author Scott Greene, based on original material by Gary Gygax.
+Wayfinder #1. © 2009, Paizo Fans United. Author: Adam Daigle, Charles Evans, Clinton J. Boomer, Colter "Dreamweaver" Guthrie, Craig "flash_cxxi" Johnston, Cristian "Cicattrix" Bodea, Dennis "daOgre" Baker, Eric "Epic Meepo" Morton, Ernesto "Montalve" Ramirez, Guy Humual, Hal Maclean, Ian "cappadocious" Cunningham, Kelly "Gotrek22" Gragg, Jeff "Shadowborn" Lee, Jonathan "Wicht" McAnulty, Joshua "Zynete" Blazej, Justin "Black Fang" Sluder, Larry "Larcifer" Wilhelm, Lissa "SunshineGrrrl" Guillet, Matthew "The Twitching King" Stinson, Michael "Ask a Shoanti" Kortes, Mike "taig" Welham, Neil Spicer, Ross Byers, Russ Taylor, Paris Crenshaw, Tae-Bin "Nerrat Dei" Gulliver, Theodore "Zuxius" Thompson, Troy E. Taylor.
+Wayfinder #2. © 2010, Paizo Fans United. Author: Thomas Baumbach, Mark Becker, Tom Beckett, Eoin Brennan, Ryan Costello Jr., Liz Courts, Paris Crenshaw, Russell Estes, Crystal Frasier, David Fryer, Scott Gable, Trevor Gulliver, Michael Kortes, Elizabeth Leib, Hal Maclean, Dave Mallon, Jonathan McAnulty, Thomas Morrison, Eric Morton, Dain Nielsen, Ernesto Ramirez, Joseph Scott, Jason Sonia, Neil Spicer, Ian Turner, Larry Wilhelm.
+Wayfinder #3 © 2010, Paizo Fans United; Magic of the Inner Sea: Arcanamirium Bond Masters, author Marc Radle
+Wayfinder #4. © 2011, Paizo Fans United. Author: Adam Strasser, Carl Rossi, Charles Evans, Dane Pitchford, Darrin Drader, Dave Gross, David Schwartz, Dustin Nelson, Elaine Cunningham, Elizabeth Leib, Guy Fox, Jesper Haglund, Jess Door, Jodi Reynolds, John C. Rock, Jonathan McAnulty, Justin Sluder, Michael Kortes, Mike Richards, Mike Welham, Neil Spicer, Oliver von Spreckelsen, Phil Tucker, Robert Andrade, Robert Gresham, Russell Estes, Ryan Costello Jr., Theodore Thompson, Trevor Gulliver, Troy E. Taylor, Truly Clark.
+Wayfinder #5 © 2011, Paizo Fans United; Of Steel and Spell: The Battle Scion, author Marc Radle
+Wayfinder #5. © 2011, Paizo Fans United; Authors: Ryan Costello, Jr., Liz Courts, Paris Crenshaw, Darrick Dahl, Adam Daigle, Blake Davis, Jess Door, Jeffrey Erwin, J. Russell Estes, Charles Evans, Dawn Fischer, Christoph Gimmler, Robert Gresham, Jesper Haglund, Eric Hindley, Michael Kelley, Michael Kortes, Michael Lane, Thomas LeBlanc, Jeffrey Lee, Tom McQueen, Kevin Andrew Murphy, Tom Phillips, Dane Pitchford, Marc Radle, John C. Rock, Carl Rossi, Joseph Scott, K. Neil Shackleton
+Wayfinder #7. © 2012, Paizo Fans United; Authors: Thomas Baumbach, John Bennett, Morgan Boehringer, Clinton J. Boomer, Dylan Brooks, Jess Carson, James B. Cline, Will Cooper, Ryan Costello, Jr., Sarah Counts, Paris E. Crenshaw III, Rich Crotty, Ewan Cummins, Matt Drozdowski, Robert Feather, Dawn Fischer, Guy Fox, Caleb T. Gordan, Robert Gresham, Wojciech Gruchala, Eric Hindley, Scott Janke, Michael Kortes, Michael Lane, Thomas LeBlanc, Jeff Lee, Gary McBride, Will McCardell, Kevin Andrew Murphy, Dustin James Nelson, Joseph Prozinski, Matt Rupprecht, Joseph Scott, Liz Smith, Neil Spicer, Russ Taylor, and Margherita Tramontano.
+What Evil Lurks Copyright 2002, Necromancer Games, Inc.; Author Lance Hawvermale.
+When the Sky Falls Copyright 2003 Bruce R. Cordell. All rights reserved.
+Wild Spellcraft Copyright, 2002 ENWorld.
+Wilderlands of High Fantasy Player’s Guide Copyright 2003, Necromancer Games, Inc. and Judges Guild; Authors Bob Bledsaw and Clark Peterson based on original material by Bob Bledsaw, Bill Owen and Bryan Hinnen.
+Wilderness & Wasteland Copyright 2002, White Wolf Publishing, Inc.
+Wildscape Copyright 2003, Fantasy Flight Publishing, Inc.
+Wildwood, Copyright 2004, Bastion Press, Inc.
+Winter’s Waste Copyright 2002, Paul Stefko
+Witch’s Handbook, Copyright 2002, Green Ronin Publishing; Author Steve Kenson
+Witchfire Trilogy: Legions of Lost Souls, copyright © 2001 Privateer Press, Inc.
+Witchfire Trilogy: Shadow of the Exile, copyright © 2001 Privateer Press, Inc.
+Witchfire Trilogy: The Longest Night, copyright © 2001 Privateer Press, Inc.
+Witchfire Trilogy: The Longest Night, Witchfire Trilogy: Shadow of the Exile, and Witchfire Trilogy: Legions of Lost Souls are copyrights © 2001 Privateer Press, Inc.;
+Wizard's Path, Chapter One. Copyright 2009, Headless Hydra Games; Author Sean Holland
+Wondrous Lands, Nexelan Island Necropolis, Copyright 2004, Legion Publishing.
+Wood Golem from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Authors: Scott Greene and Patrick Lawinger.
+WOTC Community Forums - Monsters and Races - Monster Lore Compendium. Copyright 2007-2008, Authors: Eric Cagle, "Dracomortis", John W. Mangrum, "Evandar_TAybara"
+Yellow Musk Creeper from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Albie Fiore.
+Yellow Musk Zombie from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Albie Fiore.
+Yeti from the Tome of Horrors, © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Zeitgeist Players’ Guide. Copyright 2011, EN Publishing; Author: Ryan Nock.
+Zobeck Gazatteer, © 2012, Open Design LLC; Authors: Wolfgang Baur &amp; Christina Stiles.
+Zobeck Gazetteer for the Pathfinder RPG, Copyright 2012, Open Design LLC. Authors: Wolfgang Baur and Christina Stiles. www.koboldquarterly.com
+Zobeck Gazetteer Volume 2: Dwarves of the Ironcrags Copyright 2009, Open Design LLC., www. koboldquarterly.com. All rights reserved.
+Zobeck Gazetteer Volume 2: Dwarves of the Ironcrags, Copyright 2009, Open Design LLC., www.koboldquarterly.com. All rights reserved.
+Zobeck Gazetteer, Copyright 2008, Open Design LLC; Author: Wolfgang Baur
+Zombie, Juju from the Tome of Horrors, Revised. © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Weapon Mastery: Shang Gou © 2015 Octopus Apocalypse. Author: Zigmund Gosch
+Pathfinder Campaign Setting: Belkzen, Hold of the Orc Hordes © 2015, Paizo Inc.; Authors: Tyler Beck, Jason Garrett, Alex Greenshields, and David Schwartz.
+Pathfinder Module: Plunder & Peril © 2014, Paizo Inc.; Authors: Alex Greenshields, Matthew Goodall, Steven T. Helt, and Ben McFarland.
+Pathfinder Module: The Dragon's Demand © 2013, Paizo Publishing, LLC; Author: Mike Shel.
+Pathfinder Player Companion: Melee Tactics Toolbox © 2015, Paizo Inc.; Authors: Paris Crenshaw, Ron Lundeen, and David Schwartz.
+Pathfinder Adventure Path #91: Battle of Bloodmarch Hill © 2015, Paizo Inc.; Authors: Patrick Renie, with Tyler Beck, Adam Daigle, Richard Pett, Stephen Radney-MacFarland, and David Schwartz.
+Kaiju Codex. © copyright 2015 Steven D. Russell; Authors Elaine Betts and Justin P. Sluder
+Terrors of Obsidian Apocalypse: Haunts Copyright 2015, Louis Porter Jr. Design, Inc.
+Obsidian Apocalypse Copyright 2013, Louis Porter Jr. Design, Inc.
+Book of Lost Spells - Copyright 2015, Frog God Games, LLC
+Advanced Bestiary, Copyright 2014, Green Ronin Publishing, LLC; Author Jeff Hersh, Developer Owen K.C. Stephens
+Pathfinder Adventure Path #85: Fires of Creation © 2014, Paizo Inc.; Authors: Neil Spicer, with Mark Garringer, Amber E. Scott, Russ Taylor, and Mike Wellham.
+Pathfinder Adventure Path #86: Lords of Rust © 2014, Paizo Inc.; Authors: Nicolas Logue, with Adam Daigle, Jim Groves, James Jacobs, Sean K Reynolds, and Amber E. Scott.
+Pathfinder Adventure Path #87: The Choking Tower © 2014, Paizo Inc.; Authors: Ron Lundeen, with Paris Crenshaw, Mark Garringer, Patrick Renie, and Amber E. Scott.
+NeoExodus Chronicles: Weapons of Machinesmith Destruction Copyright 2014, Louis Porter Jr. Design, Inc.
+Pathfinder Roleplaying Game Pathfinder Unchained © 2015, Paizo Inc.; Authors: Dennis Baker, Jesse Benner, Ross Beyers, Logan Bonner, Jason Bulmahn, Robert Emerson, Tim Hitchcock, Jason Nelson, Tom Phillips, Stephen Radney-MacFarland, Thomas M. Reid, Robert Schwalb, Mark Seifter, and Russ Taylor.
+Mystical: Kingdom of Monsters, © 2015, Northwinter Press; author Kevin Glusing.
+The Secrets of Adventuring. Copyright 2013 Steven D. Russell, Authors: Steven D. Russell, Jonathan McAnulty, and T.H. Gulliver
+Pathfinder Campaign Setting: Inner Sea Monster Codex © 2015, Paizo Inc.; Authors: John Compton, Paris Crenshaw, Mike Myler, Tork Shaw, and Larry Wilhelm.
+Pathfinder Roleplaying Game Occult Adventures © 2015, Paizo Inc.; Authors: John Bennett, Logan Bonner, Robert Brookes, Jason Bulmahn, Ross Byers, John Compton, Adam Daigle, Jim Groves, Thurston Hillman, Eric Hindley, Brandon Hodge, Ben McFarland, Erik Mona, Jason Nelson, Tom Phillips, Stephen Radney-MacFarland, Thomas M. Reid, Alex Riggs, Robert Schwalb, Mark Seifter, Russ Taylor, and Steve Townshend.
+Pathfinder Campaign Setting: Occult Bestiary © 2015, Paizo Inc.; Authors: Josh Colon, John Compton, Paris Crenshaw, Adam Daigle, Eleanor Ferron, James Jacobs, Joe Homes, Mikko Kallio, Mike Kimmel, Ron Lundeen, Kate Marshall, Kalervo Oikarinen, Stephen Radney-MacFarland, and F. Wesley Schneider.
+Pathfinder Player Companion: Dirty Tactics Toolbox © 2015, Paizo Inc.; Authors: Alexander Augunas, Mikko Kallio, Anthony Li, Luis Loza, and Andrew Marlowe.
+Adherer from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Clark Peterson, based on original material by Guy Shearer. 
+Aerial Servant from the Tome of Horrors Complete © 2011, Necromancer Games, Inc.; Published and distributed by Frog God Games; Authors: Clark Greene and Clark Peterson, based on original material by Gary Gygax.
+Amphisbaena from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax. 
+Angel, Monadic Deva from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax. 
+Animal Lord, Cat Lord from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax. 
+Ascomoid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Atomie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Aurumvorax from the Tome of Horrors, Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax. 
+Axe Beak from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Basidirond from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax. 
+Bat, Mobat from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Beetle, Slicer from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Blindheim from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Brownie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Bunyip from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Dermot Jackson.
+Carbuncle from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Albie Fiore.
+Caryatid Column from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Jean Wells.
+Cave Fisher from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Lawrence Schick.
+Crypt Thing from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Daemon, Derghodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, Guardian from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian McDowall.
+Daemon, Hydrodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, Piscodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, The Oinodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dark Creeper from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Rik Shepard.
+Dark Stalker from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Muth.
+Death Worm from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene and Erica Balsley.
+Decapus from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Jean Wells.
+Demodand, Shaggy from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demodand, Slime from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demodand, Tarry from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demon, Alu- from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demon, Nabasu from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demon, Shadow from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Neville White.
+Demon Lord, Baphomet from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Demon Lord, Dagon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Demon Lord, Jubilex from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Demon Lord, Kostchtchie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Demon Lord, Orcus from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene and Clark Peterson, based on material by Gary Gygax.
+Demon Lord, Pazuzu from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Devil, Geryon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Devil, Moloch from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dire Corby from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Jeff Wyndham.
+Disenchanter from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson. 
+Dracolisk from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dragon, Faerie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Brian Jaeger and Gary Gygax.
+Dragon Horse from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dust Digger from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Tracy and Laura Hickman.
+Executioner’s Hood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Flail Snail from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Tilbrook.
+Flind and flindbar from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by J.D. Morris. XXinclude flindbar citation only if relevant.
+Flumph from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian McDowell and Douglas Naismith.
+Foo Creature from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Forlarren from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian Livingstone.
+Froghemoth from the Tome of Horrors Complete © 2011, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax. 
+Genie, Marid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Giant Slug from the Tome of Horrors © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax. 
+Giant, Wood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene, based on original material by Wizards of the Coast.
+Gloomwing from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Golem, Wood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Patrick Lawinger.
+Grippli from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Gryph from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Peter Brown.
+Hangman Tree from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Hippocampus from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Erica Balsley, based on original material by Gary Gygax.
+Huecuva from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Underworld Oracle.
+Ice Golem from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene. 
+Iron Cobra from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Philip Masters. 
+Jackalwere from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Kamadan from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Nick Louth. 
+Kech from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Kelpie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Lawrence Schick.
+Korred from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Leprechaun from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Mihstu from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Mite from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian Livingstone and Mark Barnes. 
+Mongrelman from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Moon Dog from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Muckdweller from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Necrophidius from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Tillbrook.
+Nereid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Ooze, Crystal from the Tome Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Ooze, Magma from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Pech from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Phycomid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Poltergeist from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Lewis Pulsipher.
+Quickling from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Quickwood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Rot Grub from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Clark Peterson, based on original material by Gary Gygax. 
+Russet Mold from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax. 
+Sandman from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Scarecrow from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Skulk from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Muth.
+Slime Mold from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Slithering Tracker from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Soul Eater from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by David Cook.
+Spriggan from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Erica Balsley, based on original material by Roger Moore and Gary Gygax. 
+Tenebrous Worm from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax. 
+Tentamort from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Mike Roberts. 
+Tick, Dragon from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax. 
+Tick, Giant from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax. 
+Trapper from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Troll, Ice from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Russell Cole. 
+Troll, Rock from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene. 
+Vegepygmy from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Wolf-in-Sheep’s-Clothing from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Yellow Musk Creeper from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Albie Fiore. 
+Yellow Musk Zombie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Albie Fiore. 
+Yeti from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Zombie, Juju from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Tome of Horrors II © 2004, Necromancer Games, Inc.; Author: Scott Greene; Additional Authors: Erica Balsley, Kevin Baase, Casey Christofferson, Jim Collura, Meghan Greene, Lance Hawvermale, Travis Hawvermale, Bill Kenower, Patrick Lawinger, Nathan Paul, Clark Peterson, Bill Webb and Monte Cook.
+Tome of Horrors III © 2005, Necromancer Games, Inc; Author: Scott Greene, with Casey Christofferson, Erica Balsley, Kevin Baase, Lance Hawvermale, Travis Hawvermale, Ian S. Johnston, Patrick Lawinger, Nathan Paul, Clark Peterson, Greg Ragland, Robert Schwalb and Bill Webb.
+Tome of Horrors 4 (the OGl callout for this book isn’t actually printed in the book. What follows is directly from Greg Vaughan and the information will be added to their website to help others in the future.)
+The Tome of Horrors IV © 2013 Frog God Games, LLC. Authors: Erica Balsley, Casey Christofferson, Jim Collura, Lance Hawvermale, Patrick Lawinger, Phillip Larwood, Greg A. Vaughan, and Bill Webb, based on material by Jonathan Tweet, Monte Cook, and Skip Williams.
+The Book of Fiends © 2003, Green Ronin Publishing; Authors: Aaron Loeb, Erik Mona, Chris Pramas, and Robert J. Schwalb.
+Midgard Bestiary for Pathfinder RPG, © 2012 Open Design LLC; Author: Adam Daigle with Chris Harris, Michael Kortes, James Mackenzie, Rob Manning, Ben McFarland, Carlos Ovalle, Jan Rodewald, Adam Roy, Christina Stiles, James Thomas, and Mike Welham
+Kobold Quarterly, Issue 7, © 2008, Open Design LLC, www.koboldquarterly.com; Authors John Baichtal, Wolfgang Baur, Ross Byers, Matthew Cicci, John Flemming, Jeremy Jones, Derek Kagemann, Phillip Larwood, Richard Pett, and Stan!
+Abyssal Harvester from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene.
+Abyssal Larva from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene.
+Adherer from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Clark Peterson, based on original material by Guy Shearer.
+Aerial Servant from the Tome of Horrors Complete © 2011, Necromancer Games, Inc.; Published and distributed by Frog God Games; Authors: Clark Greene and Clark Peterson, based on original material by Gary Gygax.
+Afanc from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene.
+Ahlinni from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Scott Greene and Erica Balsley.
+Algoid from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Authors Scott Greene and Clark Peterson, based on original material by Mike Ferguson.
+Al-mi'raj from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Scott Greene and Clark Peterson, based on original material by Roger Musson.
+Psionic Al-mi'raj from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Scott Greene and Clark Peterson, based on original material by Roger Musson.
+Amphisbaena from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Great Sea Anemone from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene.
+Angel, Chalkydri from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene.
+Angel, Empyreal from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene.
+Angel, Monadic Deva from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Angel, Monadic Deva from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene, based on original material by Gary Gygax.
+Angel, Movanic Deva from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene, based on original material by Gary Gygax.
+Animal Lord, Cat Lord from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Animal Lord, Mouse Lord from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors Scott Greene and Erica Balsley.
+Ant Lion from the Tome of Horrors Complete, Copyright 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author Scott Greene, based on original material by Gary Gygax.
+Ascomoid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Atomie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Aurumvorax from the Tome of Horrors, Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Axe Beak from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Basidirond from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Bat, Mobat from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Beetle, Slicer from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Blindheim from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Brownie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Bunyip from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Dermot Jackson.
+Carbuncle from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Albie Fiore.
+Caryatid Column from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Jean Wells.
+Cave Fisher from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Lawrence Schick.
+Crypt Thing from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Daemon, Derghodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, Guardian from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian McDowall.
+Daemon, Hydrodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, Piscodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Daemon, The Oinodaemon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dark Creeper from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Rik Shepard.
+Dark Stalker from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Muth.
+Death Worm from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene and Erica Balsley.
+Decapus from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Jean Wells.
+Demodand, Shaggy from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demodand, Slime from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demodand, Tarry from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demon Lord, Baphomet from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Demon Lord, Dagon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Demon Lord, Jubilex from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Demon Lord, Kostchtchie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Demon Lord, Orcus from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene and Clark Peterson, based on material by Gary Gygax.
+Demon Lord, Pazuzu from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on material by Gary Gygax.
+Demon, Alu- from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demon, Nabasu from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Demon, Shadow from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Neville White.
+Devil, Moloch from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Devil, Geryon from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dire Corby from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Jeff Wyndham.
+Disenchanter from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Dracolisk from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dragon Horse from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Dragon, Faerie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Brian Jaeger and Gary Gygax.
+Dust Digger from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Tracy and Laura Hickman.
+Executioner’s Hood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Flail Snail from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Tilbrook.
+Flind from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by J.D. Morris.
+Flumph from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian McDowell and Douglas Naismith.
+Foo Creature from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Forlarren from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian Livingstone.
+Froghemoth from the Tome of Horrors Complete © 2011, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Genie, Marid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Giant Slug from the Tome of Horrors © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Giant, Wood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene, based on original material by Wizards of the Coast.
+Gloomwing from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Ice Golem from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Golem, Wood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Patrick Lawinger.
+Grippli from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Gryph from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Peter Brown.
+Hangman Tree from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Hippocampus from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Erica Balsley, based on original material by Gary Gygax.
+Huecuva from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Underworld Oracle.
+Iron Cobra from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Philip Masters.
+Zombie, Juju from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Kamadan from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Nick Louth.
+Kech from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Kelpie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Lawrence Schick.
+Korred from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Leprechaun from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Mihstu from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Mite from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Ian Livingstone and Mark Barnes.
+Mongrelman from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Moon Dog from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Muckdweller from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Necrophidius from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Tillbrook.
+Nereid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Ooze, Magma from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Pech from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Phycomid from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Poltergeist from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Lewis Pulsipher.
+Quickling from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Quickwood from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Rot Grub from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Clark Peterson, based on original material by Gary Gygax.
+Russet Mold from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Sandman from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Scarecrow from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Roger Musson.
+Skulk from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Simon Muth.
+Slime Mold from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Slithering Tracker from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Soul Eater from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by David Cook.
+Spriggan from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Authors: Scott Greene and Erica Balsley, based on original material by Roger Moore and Gary Gygax.
+Tenebrous Worm from the Tome of Horrors, Revised © 2002, Necromancer Games, Inc.; Author: Scott Greene, based on original material by Gary Gygax.
+Tentamort from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Mike Roberts.
+Jackalwere from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Tick, Giant from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Trapper from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Troll, Ice from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Russell Cole.
+Troll, Rock from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene.
+Vegepygmy from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Wolf-in-Sheep’s-Clothing from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Yellow Musk Creeper from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Albie Fiore.
+Yellow Musk Zombie from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Albie Fiore.
+Yeti from the Tome of Horrors Complete © 2011, Necromancer Games, Inc., published and distributed by Frog God Games; Author: Scott Greene, based on original material by Gary Gygax.
+Fields of Blood © 2015 Frog God Games, LLC. Author: Tom Knauss
+Player Paraphernalia #23 Old School Cavalier (New Cavalier Archetype) ©2015, The Knotty-Works; Author John Buckley.
+Southlands Bestiary for Pathfinder Roleplaying Game. © 2015 Open Design. Authors: Kristian Ahonen, Eric Anderson, Anonymous, Joshua Banks, Wolfgang Baur, dpb, Clinton Boomer, Marina de Santiago Buey, Angelica Burns, Jarrod Camiré, Aaron Cheung, Jim Davis, Lee DeBoer, Dan Dillon, John Doh, Chris Doyle, Harold Farmer, John Foster, Erik Freund, Leonard Grand, Amanda Hamon Kunz, Andrew Harshman, Jacob Haywood, Steven T. Helt, Jeffrey Hersh, Andrew Hind, Richard Iversen, Alex Kanous, Henry S. Kurtz, Richard Lawson, Jeff Lee, Chris Lockey, Ari Marmell, Ben McFarland, Jesse McGatha, Brett A. McLean, Brian Wiborg Mønster, Matt Morrissette, Robert H. Nichols, Stacy Nichols, Kalervo Oikarinen, Gunnar Ólafsson, Richard Rossi, Stephen Rowe, Adam Roy, Wendall Roy, Matt Rupprecht, Allen F. Schell, Brian Suskind, Troy Taylor, James Thomas, John Tolios, James Whittaker, Clarence Wisdom, and Henry Wong. 
+Pathfinder Adventure Path #97: In Hell's Bright Shadow © 2015, Paizo Inc.; Authors: Crystal Frasier, with Eric Hindley, Stephanie Lorée, and Michael McCarthy.
+Pathfinder Adventure Path #95: Anvil of Fire © 2015, Paizo Inc.; Authors: Sean K Reynolds, with Benjamin Bruck, Mikko Kallio, David Schwartz, Russ Taylor, Jerome Virnych, and Wendy N. Wagner.
+Pathfinder Campaign Setting: Inner Sea Races © 2015, Paizo Inc.; Authors: Ross Byers, John Compton, Adam Daigle, Crystal Frasier, Matthew Goodall, Alex Greenshields, James Jacobs, Amanda Hamon Kunz, Ron Lundeen, Rob McCreary,  Jessica Price, David N. Ross, Owen K.C. Stephens, James L. Sutter, Russ Taylor, and Jerome Virnich.
+Pathfinder Campaign Setting: Distant Shores © 2015, Paizo Inc.; Authors: John Compton, Adam Daigle, Crystal Frasier, Amanda Hamon Kunz, Rob McCreary, Mark Moreland, James L. Sutter, and Owen K.C. Stephens.
+Pathfinder Player Companion: Occult Origins © 2015, Paizo Inc.; Authors: Robert Brookes, Ben McFarland, Jason Nelson, and Mark Seifter.
+Pathfinder Roleplaying Game Bestiary 5 © 2015, Paizo Inc.; Authors: Dennis Baker, Jesse Benner, John Bennett, Logan Bonner, Creighton Broadhurst, Robert Brookes, Benjamin Bruck, Jason Bulmahn, Adam Daigle, Thurston Hillman, Eric Hindley, Joe Homes, James Jacobs, Amanda Hamon Kunz, Ben McFarland, Jason Nelson, Thom Phillips, Stephen Radney-MacFarland, Alistair Rigg, Alex Riggs, David N. Ross, Wes Schneider, David Schwartz, Mark Seifter, Mike Shel, James L. Sutter, and Linda Zayas-Palmer.
+Ultimate Options: Power of the Ninja © 2011, Rogue Genius Games, LLC; Author: Owen K.C. Stephens.
+Pathfinder Player Companion: Champions of Balance © 2014, Paizo Publishing, LLC; Authors: Matt Goodall, Ron Lundeen, Philip Minchin, Patrick Renie, Jason Ridler, and David Schwartz.
+Pathfinder Campaign Setting: Demons Revisited © 2013, Paizo Publishing, LLC; Author: James Jacobs.
+Pathfinder Campaign Setting: Occult Realms © 2015, Paizo Inc.; Authors: Robert Brookes, Thurston Hillman, Thomas M. Reed, and Mark Seifter.
+Pathfinder Player Companion: Weapon Master’s Handbook © 2015, Paizo Inc.; Authors: Alexander Augunas and David N. Ross.
+Wrath of the Righteous Player’s Guide © 2013, Paizo Publishing, LLC; Authors: Adam Daigle and Jay Loomis.
+Pathfinder Campaign Setting: Cheliax, The Infernal Empire © 2015, Paizo Inc.; Authors: Amanda Hamon Kunz, Ron Lundeen, and Mark Moreland.
+The Four Horsemen Present: Character Options - Gods in the Void © 2015, Rogue Genius Games. Author: Steven T. Helt.
+Pathfinder Adventure Path #100: A Song of Silver © 2015, Paizo Inc.; Authors: James Jacobs, with Adam Daigle, Crystal Frasier, Jim Groves, Tim Hitchcock, Brandon Hodge, Nicolas Logue, Stephanie Lorée, Rob McCreary, Erik Mona, Jason Nelson, Richard Pett, Sean K Reynolds, F. Wesley Schneider, Amber E. Scott, Mike Shel, Neil Spicer, and Greg A. Vaughan.
+Pathfinder Adventure Path #99: Dance of the Damned © 2015, Paizo Inc.; Authors: Richard Pett, with Stephanie Lorée, Michael McCarthy, Alistair Rigg, F. Wesley Schneider, and Todd Stewart.
+Pathfinder Player Companion: Arcane Anthology © 2016, Paizo Inc.; Authors: Alexander Augunas, Steven T. Helt, and David N. Ross.
+Pathfinder Player Companion: Blood of Shadows © 2016, Paizo Inc.; Authors: Alexander
+ Augunas, Steven T. Helt, Luis Loza, and Ron Lundeen.
+Pathfinder Campaign Setting: Darklands Revisited © 2016, Paizo Inc.; Author: Thurston Hillman.
+Pathfinder Roleplaying Game Ultimate Intrigue © 2016, Paizo Inc.; Authors: Jesse Benner, John Bennett, Logan Bonner, Robert Brookes, Jason Bulmahn, Ross Byers, Robert N. Emerson, Amanda Hamon Kunz, Steven Helt, Thurston Hillman, Tim Hitchcock, Mikko Kallio, Rob McCreary, Jason Nelson, Tom Phillips, Stephen Radney-MacFarland, Thomas M. Reid, Alexander Riggs, David N. Ross, David Schwartz, Mark Seifter, Linda Zayas-Palmer.
+The War of the Goblin King. Copyright 2010 Necromancers of the Northwest, LLC; Authors: Alex Riggs, Joshua Zaback, Justin Holloway.
+Royal Class © 2016 Playground Adventures; Author: Stephen Rowe
+Pathfinder Campaign Setting: Path of the Hellknight © 2016, Paizo Inc.; Author: F. Wesley Schneider.
+Pathfinder Player Companion: Spymaster’s Handbook © 2016, Paizo Inc.; Authors: Alexander Augunas, David N. Ross, and Owen K.C. Stephens.
+Pathfinder Player Companion: Magic Tactics Toolbox © 2016, Paizo Inc.; Authors: Alexander Augunas, Steven T. Helt, Thurston Hillman, and Ron Lundeen.
+Pathfinder Player Companion: Armor Master’s Handbook © 2016, Paizo Inc.; Authors: Alexander Augunas, Robert Brookes, Anthony Li, Luis Loza, and David Schwartz.
+Pathfinder Campaign Setting: Heaven Unleashed © 2016, Paizo Inc.; Authors: Judy Bauer, Crystal Frasier, Jim Groves, Amanda Hamon Kunz, Jenny Jarzabski, Jason Keeley, Luis Loza, Ron Lundeen, and Jessica Price.
+Mysteries of the Dead Side: The Sacred Necromancer, © 2012 Zombie Sky Press; Author: Scott Gable, Will McCardell, Matthew Pauze. 
+Ultimate Options: Power of the Ninja. Copyright 2011, Super Genius Games, LLC; Author: Owen K.C. Stephens.
+Pathfinder Player Companion: Demon Hunter’s Handbook © 2013, Paizo Publishing, LLC; Authors: Philip Minchin, F. Wesley Schneider, and Jerome Virnich.
+Pathfinder Roleplaying Game Horror Adventures © 2016, Paizo Inc.; Authors: John Bennett, Clinton J. Boomer, Logan Bonner, Robert Brookes, Jason Bulmahn, Ross Byers, Jim Groves, Steven Helt, Thurston Hillman, Eric Hindley, Brandon Hodge, Mikko Kallio, Jason Nelson, Tom Phillips, Stephen Radney-MacFarland, Alistair Rigg, Alex Riggs, David N. Ross, F. Wesley Schneider, David Schwartz, Mark Seifter, and Linda Zayas-Palmer.
+Pathfinder Player Companion: Divine Anthology © 2016, Paizo Inc.; Authors: Alexander Augunas, Russ Brown, John Compton, Alex Riggs, and David Ross.
+Pathfinder Campaign Setting: Planes of Power © 2016, Paizo Inc.; Authors: John Compton, Paris Crenshaw, Eleanor Ferron, Thurston Hillman, and Jessica Price.
+Pathfinder Player Companion: Haunted Heroes Handbook © 2016, Paizo Inc.; Authors: Alexander Augunas, Thurston Hillman, Isabelle Lee, Stephen Rowe, and Christopher Wasko.
+Pathfinder Campaign Setting: The First World, Realm of the Fey © 2016, Paizo Inc.; Author: James L. Sutter.
+The Lost Lands: The Northlands Saga Complete © 2015, Frog God Games, LLC; Authors: Kenneth Spencer, Greg A. Vaughan, and Kevin Wright. NLS5: The Hidden Huscarl, © 2016, Frog God Games, LLC; Author: Casey Christofferson.
+The Lost Lands: Bard’s Gate © 2016, Frog God Games, LLC; Authors: Casey Chrisofferson, Matt Finch, Skeeter Green, and Greg A. Vaughan with additional new material by James M. Spahn; Based on original content from Necromancer Games.
+Spheres of Power © 2014 Drop Dead Studios LLC, Author Adam Meyers
+Scarred Lands Player's Guide © 2016, Onyx Path and Nocturnal Publishing, LLC; Authors Bill Ashbless, Jason Bolte, Tanya Cohan-Diaz, Chris Cowger, Steffie de Vaan, Adam Eichelberger, Matt Franklin, Nathan Knaack, Eddy Webb
+Player’s Options: Elves ©2013 Purple Duck Games. Sean O’Connor, Mark Gedak and Perry Fehr.
+Pathfinder Player Companion: Bastards of Golarion © 2014, Paizo Publishing, LLC; Authors: Judy Bauer, Neal Litherland, Ryan Macklin, and David N. Ross.
+Psionics Unleashed. Copyright 2010, Dreamscarred Press.
+Wilds. ©2003 Alderac Entertainment Group.
+Fall of Man, © 2015 Rogue Genius Games; Authors: Ken Shannon, Doug Herring, Kevin Glusing.
+Wardens of the Wild. Copyright, 2015 Total Party Kill Games. Author(s): PJ Harn and Brian Berg.
+Bloodforge, © 2014, Dreamscarred Press, LLC; Author: Matthew Ryan Medeiros, Jade Ripley, based on material by Owen K.C. Stephens.
+Psionics Unleashed © 2010, Dreamscarred Press.
+Psionics Augmented © 2013, Dreamscarred Press
+Ultimate Psionics. © 2013, Dreamscarred Press; Authors: Andreas Rönnqvist, Jeremy Smith
+Path of War © 2014 Dreamscarred Press
+Path of War Expanded © 2016 Dreamscarred Press
+Kemonomimi: Moe Races © 2016, Amora Game; Authors: Wojciech Gruchała, Greg LaRose
+Pathfinder Roleplaying Game Ultimate Wilderness © 2017, Paizo Inc.; Authors: Alexander Augunas, John Bennett, Robert Brookes, John Compton, Dan Dillon, Steven T. Helt, Thurston Hillman, Eric Hindley, Mikko Kallio, Jason Keeley, Isabelle Lee, Jason Nelson, Stephen Radney-MacFarland, Alex Riggs, David N. Ross, David Schwartz, Mark Seifter, Jeffery Swank, and Linda Zayas-Palmer.
+Pathfinder Adventure Path #122: Into the Shattered Continent © 2017, Paizo Inc.; Authors: Robert Brookes, with Ayla Arthur, Adam Daigle, Lucas J.W. Johnson, Robin Loutzenhiser, Ron Lundeen, and Mark Moreland.
+Pathfinder Adventure Path #123: The Flooded Cathedral © 2017, Paizo Inc.; Authors: Mikko Kallio, with John Compton, Adam Daigle, Kalervo Oikarinen, and David Schwartz.
+Pathfinder Adventure Path #125: Tower of the Drowned Dead © 2017, Paizo Inc.; Authors: Ron Lundeen, with Nathan King, Isabelle Lee, Erik Mona, Kalervo Oikarinen, and David Schwartz.
+Pathfinder Campaign Setting: Taldor, The First Empire © 2017, Paizo Inc.; Authors: Mark Moreland, with Crystal Frasier, Violet Hargrave, and Isabelle Lee.
+Pathfinder Player Companion: Potions & Poisons © 2017, Paizo Inc.; Authors: Kate Baker, Eleanor Ferron, Nathan King, Lyz Liddell, Luis Loza, Alex Putnam, Alex Riggs, and David Schwartz.
+Pathfinder Roleplaying Game Villain Codex © 2016, Paizo Inc.; Authors: Alexander Augunas, Logan Bonner, Paris Crenshaw, Dan Dillon, Crystal Frasier, Amanda Hamon Kunz, Eric Hindley, Mikko Kallio, Dale C. McCoy, Jr., Stephen Radney-MacFarland, Thomas M. Reid, Alistair Rigg, Alex Riggs, Mark Seifter, and Linda Zayas-Palmer.
+Pathfinder Player Companion: Healer’s Handbook © 2016, Paizo Inc.; Authors: Alexander Augunas, David N. Ross, and Stephen Rowe.
+Pathfinder Adventure Path #125: Tower of the Drowned Dead © 2017, Paizo Inc.; Authors: Ron Lundeen, with Nathan King, Isabelle Lee, Erik Mona, Kalervo Oikarinen, and David Schwartz.
+Pathfinder Campaign Setting: Taldor, The First Empire © 2017, Paizo Inc.; Authors: Mark Moreland, with Crystal Frasier, Violet Hargrave, and Isabelle Lee.
+Pathfinder Player Companion: Potions & Poisons © 2017, Paizo Inc.; Authors: Kate Baker, Eleanor Ferron, Nathan King, Lyz Liddell, Luis Loza, Alex Putnam, Alex Riggs, and David Schwartz.
+Affordable Arcana: Magic Rings, © 2017, d20pfsrd.com Publishing; Author: Mark Thomas.
+Affordable Arcana – Wands. © 2017 d20pfsrd.com Publishing; Author: Kyle Christie.
+Pathfinder Adventure Path #124: City in the Deep © 2017, Paizo Inc.; Authors: Amber E. Scott, with Alex Greenshields, Mikko Kallio, Mark Moreland, Tim Nightengale, and Kalervo Oikarinen.
+Pathfinder Player Companion: People of the Wastes © 2017, Paizo Inc.; Authors: Logan Bonner, John Compton, Nathan King, Luis Loza, Christopher Wasko, and Linda Zayas-Palmer.
+Pathfinder Adventure Path #123: The Flooded Cathedral © 2017, Paizo Inc.; Authors: Mikko Kallio, with John Compton, Adam Daigle, Kalervo Oikarinen, and David Schwartz.
+Pathfinder Player Companion: Blood of the Coven © 2017, Paizo Inc.; Authors: John Compton, Eleanor Ferron, Crystal Frasier, Lissa Guillet, Elisa Mader, Adrian Ng, Mark Seifter, and Linda Zayas-Palmer.
+Pathfinder Adventure Path #122: Into the Shattered Continent © 2017, Paizo Inc.; Authors: Robert Brookes, with Ayla Arthur, Adam Daigle, Lucas J.W. Johnson, Robin Loutzenhiser, Ron Lundeen, and Mark Moreland.
+Pathfinder Player Companion: Antihero’s Handbook © 2017, Paizo Inc.; Authors: Emily Brumfield, Violet Hargrave, Susann Hessen, Mikko Kallio, Lyz Liddell, Adrian Ng, Joe Pasini, Lacy Pellazar, Kyle T. Raes, David N. Ross, and Kendra Leigh Speedling.
+Pathfinder Roleplaying Game Book of the Damned © 2017, Paizo Inc.; Authors: John Compton, Adam Daigle, Amanda Hamon Kunz, James Jacobs, Isabelle Lee, F. Wesley Schneider, Todd Stewart, and Josh Vogt.
+Pathfinder Roleplaying Game: The World of Vampire Hunter D © 2016, Paizo Inc.; Author: F. Wesley Schneider.
+The Bleak Harvest. Copyright, 2017, Total Party Kill Games. Author(s): Jason LeMaitre and Mark Hart.
+Shibaten of Porphyra © 2016, Purple Duck Games; Author Carl Cramér.
+Sandy Petersen’s Cthulhu Mythos, © 2017, Petersen Games; Authors: Sandy Petersen, Arthur Petersen, Ian Starcher.
+Aventyr Bestiary © 2017 AAW GAMES LLC Authors Mike Myler, Jonathan G. Nelson Developers, Michael Allen, Curtis Baum, Wolfgang Baur, Brian Berg, Adam Daigle, Jeffrey Gomez, Joshua Gullion, Jacob Kellogg, Jared Jeanquart, Juan Lucha, Justin Andrew Mason, Jonathan McAnulty, Michael McCarthy, Raven Mimura, Brian Wiborg Monster, Will Myers, Mike Myler, Jason Nelson, Jonathan G. Nelson, Owen K.C. Stephens, Colin Stricklin, Cory Vickruck, Stephen Yeardley Jonathan G. Nelson
+Pathfinder Adventure Path #131: The Reaper’s Right Hand © 2018, Paizo Inc.; Authors: John Compton, with Jason Keeley, Nathan King, Crystal Malarsky, and Greg A. Vaughan.
+Spheres of Power © 2014, Drop Dead Studios; Authors: Adam Meyers, Tyler Keene, Ryan Ricks, Owen Stephens
+Spheres of Power: Expanded Options © 2015, Authors: Adam Meyers, J Gray, James Mars, Michael Sayre & Douglas Schaub
+The Abjurer’s Handbook © 2018, Drop Dead Studios; Authors: Andrew Gibson
+The Auspician’s Handbook, © 2018, Drop Dead Studios, Authors: Jeff Collins, Adam Meyers
+The Battlemage's Handbook © 2016, Drop Dead Studios; Author: Andrew J. Gibson
+The Creator's Handbook © 2016, Drop Dead Studios; Author: Michael Uhland
+The Destroyer's Handbook © 2016, Drop Dead Studios; Author: Andrew Stoeckle
+The Diviner's Handbook © 2016, Drop Dead Studios; Author: Derfael Oliveira
+The Enhancer's Handbook © 2016, Drop Dead Studios; Author: Marcus Dirr
+The Geomancer's Handbook © 2015, Drop Dead Studios; Author: Derfael Oliveira
+The Illuminator's Handbook © 2016, Drop Dead Studios; Author: Amber Underwood
+The Mentalist’s Handbook © 2017, Drop Dead Studios; Author: John Little
+The Nyctomancer's Handbook © 2016, Drop Dead Studios; Author: Steven Loftus
+The Shapeshifter's Handbook © 2016, Drop Dead Studios; Author: Andrew Stoeckle
+The Telekinetic's Handbook © 2015, Drop Dead Studios; Author: Amber Underwood
+The Vivomancer's Handbook © 2017, Drop Dead Studios; Author: Andrew Gibson
+Wild Magic © 2018, Drop Dead Studios; Author: Andrew Stoeckle
+Spheres Apocrypha: Dark Talents © 2018, Drop Dead Studios; Author: Amber Underwood
+Spheres Apocrypha: Destruction Talents © 2017, Drop Dead Studios; Author: Amber Underwood
+Spheres Apocrypha: Nature Talents: Fire © 2018, Drop Dead Studios; Author: Derfael Oliveira
+Spheres Apocrypha: Nature Talents: Earth © 2018, Drop Dead Studios; Author: Derfael Oliveira
+Spheres Apocrypha: Nature Talents: Spirit © 2018, Drop Dead Studios; Author: Derfael Oliveira
+Worlds of Power © 2015, Drop Dead Studios; Authors: Wm Jay Carter III, Richard Cramer, and Alexander Corrin
+The Player's Guide to Skybourne © 2016, Drop Dead Studios; Author: Adam Meyers, Mike Myler, and David Silver
+Spheres of Might © 2017, Drop Dead Studios LLC; Authors: Adam Meyers, Michael Sayre, Andrew Stoeckle, N. Jolly
+Champions of the Spheres © 2017, Drop Dead Studios LLC; Authors: Adam Meyers, Andrew Stoeckle, N. Jolly, Michael Sayre
+Spheres of Power Wiki Content © 2018, Spheres of Power Wiki; Author: Rednal
+Alien Codex © 2018, Legendary Games; Lead Designer: Jason Nelson. Authors: Anthony Adam, Kate Baker, John Bennet, Eytan Bernstein, Robert Brookes, Russ Brown, Duan Byrd, Paris Crenshaw, Jeff Dahl, Robyn Fields, Joel Flank, Matt Goodall, Robert J. Grady, Jim Groves, Steven T. Helt, Thurston Hillman, Tim Hitchcock, Nick Hite, Daniel Hunt, Mike Kimmel Marshall, Isabelle Lee, Jeff Lee, Lyz Liddell, Jason Nelson, Richard Pett, Tom Phillips, Jeff Provine, Alistair J. Rigg, Alex Riggs, Wendall Roy, Mike Shel, Neil Spicer, Todd Stewart, Russ Taylor, Rachel Ventura, Mike Welham, George Loki Williams, Scott Young.
+Spheres of Power: Expanded Options © 2015, Authors: Adam Meyers, J Gray, James Mars, Michael Sayre & Douglas Schaub
+The Abjurer’s Handbook © 2018, Drop Dead Studios; Authors: Andrew Gibson
+The Auspician’s Handbook, © 2018, Drop Dead Studios, Authors: Jeff Collins, Adam Meyers
+The Battlemage's Handbook © 2016, Drop Dead Studios; Author: Andrew J. Gibson
+The Creator's Handbook © 2016, Drop Dead Studios; Author: Michael Uhland
+The Destroyer's Handbook © 2016, Drop Dead Studios; Author: Andrew Stoeckle
+The Diviner's Handbook © 2016, Drop Dead Studios; Author: Derfael Oliveira
+The Enhancer's Handbook © 2016, Drop Dead Studios; Author: Marcus Dirr
+The Geomancer's Handbook © 2015, Drop Dead Studios; Author: Derfael Oliveira
+The Illuminator's Handbook © 2016, Drop Dead Studios; Author: Amber Underwood
+The Mentalist’s Handbook © 2017, Drop Dead Studios; Author: John Little
+The Nyctomancer's Handbook © 2016, Drop Dead Studios; Author: Steven Loftus
+The Shapeshifter's Handbook © 2016, Drop Dead Studios; Author: Andrew Stoeckle
+The Telekinetic's Handbook © 2015, Drop Dead Studios; Author: Amber Underwood
+The Vivomancer's Handbook © 2017, Drop Dead Studios; Author: Andrew Gibson
+Wild Magic © 2018, Drop Dead Studios; Author: Andrew Stoeckle
+Spheres Apocrypha: Dark Talents © 2018, Drop Dead Studios; Author: Amber Underwood
+Spheres Apocrypha: Destruction Talents © 2017, Drop Dead Studios; Author: Amber Underwood
+Spheres Apocrypha: Nature Talents: Fire © 2018, Drop Dead Studios; Author: Derfael Oliveira
+Spheres Apocrypha: Nature Talents: Earth © 2018, Drop Dead Studios; Author: Derfael Oliveira
+Spheres Apocrypha: Nature Talents: Metal, Plant, Water © 2018, Drop Dead Studios; Author: Derfael Oliveira
+Spheres Apocrypha: Nature Talents: Spirit © 2018, Drop Dead Studios; Author: Derfael Oliveira
+Worlds of Power © 2015, Drop Dead Studios; Authors: Wm Jay Carter III, Richard Cramer, and Alexander Corrin
+The Player's Guide to Skybourne © 2016, Drop Dead Studios; Author: Adam Meyers, Mike Myler, and David Silver
+Spheres of Might © 2017, Drop Dead Studios LLC; Authors: Adam Meyers, Michael Sayre, Andrew Stoeckle, N. Jolly
+Champions of the Spheres © 2017, Drop Dead Studios LLC; Authors: Adam Meyers, Andrew Stoeckle, N. Jolly, Michael Sayre
+Pathfinder Adventure Path #133: Secrets of Roderic’s Cove © 2018, Paizo Inc.; Authors: Adam Daigle, with James Jacobs, Mikko Kallio, Luis Loza, Jacob W. Michaels, and Conor J. Owens.
+Pathfinder Player Companion: Plane-Hopper’s Handbook © 2018, Paizo Inc.; Authors: James Case, John Compton, Leo Glass, Avi Kool, Adrian Ng, Lacy Pellazar, Daniel Reed, Mikhail Rekun, Amber E. Scott, Tork Shaw, and Linda Zayas-Palmer.
+Pathfinder Player Companion: Heroes from the Fringe © 2018, Paizo Inc.; Authors: Saif Ansari, Kate Baker, Michelle Jones, Isabelle Lee, Adrian Ng, Alex Riggs, Owen K.C. Stephens.
+Pathfinder Campaign Setting: Distant Realms © 2018, Paizo Inc.; Authors: John Compton, Crystal Frasier, Thurston Hillman, Amanda Hamon Kunz, Lyz Liddell, and David Schwartz.
+Pathfinder Roleplaying Game Planar Adventures © 2018, Paizo Inc.; Authors: Robert Brookes, John Compton, Paris Crenshaw, Eleanor Ferron, Thurston Hillman, James Jacobs, Isabelle Lee, Lyz Liddell, Ron Lundeen, Joe Pasini, Lacy Pellazar, Jessica Price, Mark Seifter, F. Wesley Schneider, Todd Stewart, James L. Sutter, and Linda Zayas-Palmer.
+WOTC Community Forums – Monsters and Races – Monster Lore Compendium. Copyright 2007-2008, Author: Evandar_TAybara
+Pathfinder Player Companion: Blood of the Ancients © 2018, Paizo Inc.; Authors: John Compton, Andrew Hoskins, James Jacobs, Mikko Kallo, Alex Riggs, Stephen Rowe, and Jeffrey Swank.
+Pathfinder Player Companion: Legacy of the First World © 2017, Paizo Inc.; Authors: Jake Alley, Judy Bauer, John Compton, Mikko Kallio, Jason Keeley, Joe Pasini, Mark Seifter, Kendra Leigh Speedling, Josh Vogt, and Linda Zayas-Palmer.
+Pathfinder Player Companion: Legacy of Dragons © 2016, Paizo Inc.; Authors: Alexander Augunas, Robert Brookes, Thurston Hillman, Michelle Jones, Mikko Kallio, and Mark Seifter.

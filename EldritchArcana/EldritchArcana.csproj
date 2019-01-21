@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorelib">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\mscorlib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="0Harmony12">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\0Harmony12.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Info.json" />
+    <Content Include="Feats\EldritchHeritage.cs" />
+    <Content Include="FavoredClassBonus.cs" />
+    <Content Include="Traits.cs" />
+    <Content Include="Helpers.cs" />
+    <Content Include="Main.cs" />
+    <Content Include="Oracle\Oracle.cs" />
+    <Content Include="Oracle\DragonMystery.cs" />
+    <Content Include="Oracle\OracleCurses.cs" />
+    <Content Include="Oracle\BattleMystery.cs" />
+    <Content Include="Oracle\OracleArchetypes.cs" />
+    <Content Include="Oracle\FlameMystery.cs" />
+    <Content Include="Oracle\LifeMystery.cs" />
+    <Content Include="Spells\ExperimentalSpells.cs" />
+    <Content Include="Oracle\HeavensMystery.cs" />
+    <Content Include="Oracle\TimeMystery.cs" />
+    <Content Include="Spells\Wish.cs" />
+    <Content Include="Feats\MagicFeats.cs" />
+    <Content Include="Feats\Metamagic.cs" />
+    <Content Include="Feats\PrestigiousSpellcaster.cs" />
+    <Content Include="Repository.json" />
+    <Content Include="Sorcerer\Crossblooded.cs" />
+    <Content Include="Sorcerer\Bloodlines.cs" />
+    <Content Include="Warpriest\Warpriest.cs" />
+    <Content Include="Testing\SaveCompatibility.cs" />
+    <Content Include="Testing\baseline_assets.txt" />
+    <Content Include="Spells\PrestigiousSpellcaster.cs" />
+    <Content Include="Spells\Metamagic.cs" />
+    <Content Include="Spells\MagicFeats.cs" />
+    <Content Include="Spells\TimeStop.cs" />
+    <Content Include="Spells\Fly.cs" />
+    <Content Include="Spells\FireSpells.cs" />
+    <Content Include="Spells\Spells.cs" />
+    <Content Include="Spells\KnockDetectSecrets.cs" />
+    <Content Include="Spells\KnockAndDetectSecrets.cs" />
+    <Content Include="Spells\DismissSpell.cs" />
+    <Content Include="Spells\ReplaceSpell.cs" />
+    <Content Include="Prestige\ArcaneSavant.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    xcopy /y "$(SolutionDir)\EldritchArcana\bin\$(Configuration)\$(TargetFramework)\EldritchArcana.dll" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+    xcopy /y "$(SolutionDir)\EldritchArcana\Info.json" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+    xcopy /y "$(SolutionDir)\EldritchArcana\Testing\baseline_assets.txt" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

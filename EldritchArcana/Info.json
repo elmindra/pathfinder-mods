@@ -1,0 +1,9 @@
+{
+  "Id": "EldritchArcana",
+  "DisplayName": "Eldritch Arcana",
+  "Author": "Elmindra",
+  "Version": "0.9.0",
+  "ManagerVersion": "0.12.2",
+  "EntryMethod": "EldritchArcana.Main.Load",
+  "HomePage": "https://github.com/jennyem/pathfinder-mods"
+}
