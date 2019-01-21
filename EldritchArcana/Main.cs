@@ -1,4 +1,4 @@
-﻿/// Copyright (c) 2019 Jennifer Messerly
+﻿// Copyright (c) 2019 Jennifer Messerly
 // This code is licensed under MIT license (see LICENSE for details)
 
 using System;
@@ -27,14 +27,6 @@ namespace EldritchArcana
         {
             static void Postfix(LibraryScriptableObject __instance)
             {
-                // TODO: for release
-                //
-                // Add Releases to info.json once github is public
-                //
-                // Testing:
-                // - test curses (Lame, Wasting)
-                // - test new spell scrolls show up at vendors
-
                 var self = __instance;
                 if (Main.library != null) return;
                 Main.library = self;

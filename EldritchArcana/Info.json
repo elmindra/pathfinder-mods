@@ -5,5 +5,6 @@
   "Version": "0.9.0",
   "ManagerVersion": "0.12.2",
   "EntryMethod": "EldritchArcana.Main.Load",
-  "HomePage": "https://github.com/jennyem/pathfinder-mods"
+  "HomePage": "https://github.com/jennyem/pathfinder-mods",
+  "Repository": "https://raw.githubusercontent.com/jennyem/pathfinder-mods/master/EldritchArcana/Repository.json"
 }

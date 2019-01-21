@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Jennifer Messerly
+// Copyright (c) 2019 Jennifer Messerly
 // This code is licensed under MIT license (see LICENSE for details)
 
 using System;
@@ -96,8 +96,8 @@ namespace EldritchArcana
             // Check that all baseline assets are still found.
             var success = DiffAndReportAssets(baseline, current, "Missing", $"Error: missing assets from baseline {baselinePath}");
             // Also report new components, to indicate the baseline needs to be updated.
-            DiffAndReportAssets(current, baseline, "New", $"Info: new assets, baseline needs to be updated at {baselinePath}");
-            return success;
+            var success2 = DiffAndReportAssets(current, baseline, "New", $"Info: new assets, baseline needs to be updated at {baselinePath}");
+            return success && success2;
         }
 
         static bool DiffAndReportAssets(SortedDictionary<String, SortedSet<String>> baseline, SortedDictionary<String, SortedSet<String>> current, string missingOrNew, string introMessage)

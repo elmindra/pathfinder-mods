@@ -3842,6 +3842,14 @@ MysteryDragonAcidSpellLevel9|86b7d047b409eaf0907dcbc31e79b597
 MysteryDragonBreathWeaponResource|ee32406e5fda47caa78ade554efad4d5
 MysteryDragonBreathWeaponSelection|881dd19e19eb498db0ce341368f29d86
   $PrerequisiteNoFeature
+MysteryDragonBronzeClawsFeatureAddLevel1|b71bfb697e67c6ab84401ad6b38d0edf
+  $AddAbilityResources$26ba462e-5ab7-4b5c-b610-0cd125c42785
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonBronzeClawsFeatureAddLevel2|c3701b4abccf877bb73e354d46f85647
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonBronzeClawsFeatureAddLevel3|59ec10f4530dcb7b9497af382ee4de69
+  $AddFeatureOnClassLevel$8ea42b35-4390-49bc-878f-e3c7ac2e188d(Clone)
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
 MysteryDragonColdConeBreathAbility|4b279bbde65dcb4d21d86a64e152ee21
   $AbilityDeliverProjectile$3f449f28-f442-42d9-afcd-87b8f49918c6
   $AbilityEffectRunAction$529488f4-532e-4726-a3a6-773b2f464128
@@ -3882,6 +3890,14 @@ MysteryDragonColdSpellLevel8|98a1c229357fe79010a39776d5e0961b
   $AddKnownSpell
 MysteryDragonColdSpellLevel9|c5b21bb8cc75b86081731c987a163504
   $AddKnownSpell
+MysteryDragonCopperClawsFeatureAddLevel1|97a22f26b9197e4b458ab8713a264f1e
+  $AddAbilityResources$26ba462e-5ab7-4b5c-b610-0cd125c42785
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonCopperClawsFeatureAddLevel2|523e8366a489e84b07ae496d1f624476
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonCopperClawsFeatureAddLevel3|51314e3ec264205b87cf4ca13f25c713
+  $AddFeatureOnClassLevel$8ea42b35-4390-49bc-878f-e3c7ac2e188d(Clone)
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
 MysteryDragonElectricityLineBreathAbility|7a1015442e4001534ce13e95d105d463
   $AbilityDeliverProjectile$3f449f28-f442-42d9-afcd-87b8f49918c6
   $AbilityEffectRunAction$529488f4-532e-4726-a3a6-773b2f464128
@@ -4154,6 +4170,14 @@ MysteryDragonFormOfTheDragonISilverHours|3d16449473ebe6e1dc5951e325dff514
   $AbilityResourceLogic
   $SpellDescriptorComponent$b601631e-91f3-4490-890f-ba96832c1e71
 MysteryDragonFormResource|599dd4ff4ed346769928da46da35dbb4
+MysteryDragonGoldClawsFeatureAddLevel1|71a9cf3d7540850b65601b60527f257c
+  $AddAbilityResources$26ba462e-5ab7-4b5c-b610-0cd125c42785
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonGoldClawsFeatureAddLevel2|7645e35103843f8bd46198d71ac79c9f
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonGoldClawsFeatureAddLevel3|47fa73026b887d2b16326f91ec1a6056
+  $AddFeatureOnClassLevel$8ea42b35-4390-49bc-878f-e3c7ac2e188d(Clone)
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
 MysteryDragonMagicOneSpellSelection|6215b0ab90574ed1b228b70d83959694
   $LearnSpellParametrized
 MysteryDragonMagicSelection|e8c546fcff0b4734a787281cb5d37d32
@@ -4263,16 +4287,36 @@ MysteryDragonSensesBlindsense30|1177237c49284b40ae48886a1439cd38
   $Blindsense
 MysteryDragonSensesBlindsense60|df59fa05a2744c889b808ed63f45eca4
   $Blindsense
+MysteryDragonSilverClawsFeatureAddLevel1|fb94143256fdc6db6463f1de8580ef98
+  $AddAbilityResources$26ba462e-5ab7-4b5c-b610-0cd125c42785
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonSilverClawsFeatureAddLevel2|0204522b496448db57db0f06a3995d18
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
+MysteryDragonSilverClawsFeatureAddLevel3|578dcad12840d08b35863813ed084752
+  $AddFeatureOnClassLevel$8ea42b35-4390-49bc-878f-e3c7ac2e188d(Clone)
+  $AddFeatureOnClassLevel$db66af54-2de7-4182-888e-a4a6a3730173(Clone)
 MysteryDragonTailSwipe|895b438d49f748c684db8db865735cea
   $AddStatBonus
 MysteryDragonTalonsAcid|472c03d58a6cd3b8be64415811326a40
   $PrerequisiteFeature
+  AddFactOnLevelRange$MysteryDragonCopperClawsFeatureAddLevel1;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonCopperClawsFeatureAddLevel2;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonCopperClawsFeatureAddLevel3;appliedFact|Kingmaker.Blueprints.Facts.Fact
 MysteryDragonTalonsCold|0429c82af2108128af6a9603755dead3
   $PrerequisiteFeature
+  AddFactOnLevelRange$MysteryDragonSilverClawsFeatureAddLevel1;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonSilverClawsFeatureAddLevel2;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonSilverClawsFeatureAddLevel3;appliedFact|Kingmaker.Blueprints.Facts.Fact
 MysteryDragonTalonsElectricity|3061ad3d9ca449c8fcff83894a5d58ba
   $PrerequisiteFeature
+  AddFactOnLevelRange$MysteryDragonBronzeClawsFeatureAddLevel1;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonBronzeClawsFeatureAddLevel2;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonBronzeClawsFeatureAddLevel3;appliedFact|Kingmaker.Blueprints.Facts.Fact
 MysteryDragonTalonsFire|e36e85b7375a1398ad1f4f366cbd8ef6
   $PrerequisiteFeature
+  AddFactOnLevelRange$MysteryDragonGoldClawsFeatureAddLevel1;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonGoldClawsFeatureAddLevel2;appliedFact|Kingmaker.Blueprints.Facts.Fact
+  AddFactOnLevelRange$MysteryDragonGoldClawsFeatureAddLevel3;appliedFact|Kingmaker.Blueprints.Facts.Fact
 MysteryDragonWingsBlack|2b29a08a50cc35e103eb4c89220b056f
   $AddAbilityResources
   AddFactOnLevelRange$AbilityWingsDraconicBlack;appliedFact|Kingmaker.Blueprints.Facts.Fact
@@ -4955,6 +4999,7 @@ OracleCurseLame|08f1f729406a43f5ab9fece5e92579b6
   $OracleCurseLameSpeedPenalty;m_Modifier|Kingmaker.EntitySystem.Stats.ModifiableValue+Modifier
 OracleCurseLameEffortlessArmor|fbe8560cf3f14cd58f380a8dc630b1c7
   $AddMechanicsFeature
+  $AddMechanicsFeature$0
 OracleCurseLameExhaustionImmunity|be45e9251c134ac9baee97e1e3ffc30a
   $AddConditionImmunity
   $BuffDescriptorImmunity
