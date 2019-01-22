@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Carefully Hidden now gives +1 will save instead of reflex.
-
+- Life Link no longer plays visual/sound effects for fully healed target.
 
 ## [0.9.1] - 2019-01-22
 ### Added
