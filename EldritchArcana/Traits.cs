@@ -409,7 +409,7 @@ namespace EldritchArcana
             // - World Traveler (choose: persuasion, perception, or world)
 
             var components = new List<BlueprintComponent> { humanReq };
-            components.Add(Helpers.CreateAddStatBonus(StatType.SaveReflex, 1, ModifierDescriptor.Trait));
+            components.Add(Helpers.CreateAddStatBonus(StatType.SaveWill, 1, ModifierDescriptor.Trait));
             components.Add(Helpers.Create<SavingThrowBonusAgainstSchool>(a =>
             {
                 a.School = SpellSchool.Divination;
