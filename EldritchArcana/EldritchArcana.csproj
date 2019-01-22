@@ -89,12 +89,13 @@
     <Content Include="Spells\DismissSpell.cs" />
     <Content Include="Spells\ReplaceSpell.cs" />
     <Content Include="Prestige\ArcaneSavant.cs" />
+    <Content Include="CHANGELOG.md" />
   </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-    xcopy /y "$(SolutionDir)\EldritchArcana\bin\$(Configuration)\$(TargetFramework)\EldritchArcana.dll" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
-    xcopy /y "$(SolutionDir)\EldritchArcana\Info.json" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
-    xcopy /y "$(SolutionDir)\EldritchArcana\Testing\baseline_assets.txt" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+    <PostBuildEvent>
+    xcopy /y "$(SolutionDir)\EldritchArcana\bin\$(Configuration)\$(TargetFramework)\EldritchArcana.dll" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+    xcopy /y "$(SolutionDir)\EldritchArcana\Info.json" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+    xcopy /y "$(SolutionDir)\EldritchArcana\Testing\baseline_assets.txt" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
     </PostBuildEvent>
   </PropertyGroup>
 </Project>

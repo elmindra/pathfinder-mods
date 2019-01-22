@@ -108,7 +108,8 @@ namespace EldritchArcana
                 a.name = "AncientLorekeeperArchetype";
                 a.LocalizedName = Helpers.CreateString($"{a.name}.Name", "Ancient Lorekeeper");
                 a.LocalizedDescription = Helpers.CreateString($"{a.name}.Description",
-                    "The ancient lorekeeper is a repository for all the beliefs and vast knowledge of an elven people. They show a strong interest in and understanding of histories and creation legends at a young age, and as they mature their calling to serve as the memory of their long-lived people becomes clear to all who know them.");
+                    "The ancient lorekeeper is a repository for all the beliefs and vast knowledge of an elven people. They show a strong interest in and understanding of histories and creation legends at a young age, and as they mature their calling to serve as the memory of their long-lived people becomes clear to all who know them.\n" +
+                    "An ancient lorekeeper adds Knowledge (arcana) to their list of class skills. This replaces the bonus skills the ancient lorekeeper gains from their mystery.");
             });
             Helpers.SetField(lorekeeper, "m_ParentClass", oracle);
             library.AddAsset(lorekeeper, "df571bf056a941babe0903e94430dc9d");

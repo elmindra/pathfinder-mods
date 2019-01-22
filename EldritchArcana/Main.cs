@@ -6,7 +6,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Kingmaker;
@@ -164,13 +167,19 @@ namespace EldritchArcana
 
             var charGen = BlueprintRoot.Instance.CharGen;
             var customPortraits = new List<BlueprintPortrait>();
-            foreach (var id in CustomPortraitsManager.Instance.GetExistingCustomPortraitIds())
+            using (var md5 = MD5.Create())
             {
-                var portrait = UnityEngine.Object.Instantiate(charGen.CustomPortrait);
-                portrait.name = $"CustomPortrait${id}";
-                library.AddAsset(portrait, Helpers.MergeIds("c3d4e15de2444b528c734fac8eb75ba2", id));
-                portrait.Data = new PortraitData(id);
-                customPortraits.Add(portrait);
+                foreach (var id in CustomPortraitsManager.Instance.GetExistingCustomPortraitIds())
+                {
+                    var portrait = UnityEngine.Object.Instantiate(charGen.CustomPortrait);
+                    portrait.name = $"CustomPortrait${id}";
+
+                    BigInteger bigInt;
+                    var guid = BigInteger.TryParse(id, out bigInt) ? id : GetMd5Hash(md5, id);
+                    library.AddAsset(portrait, Helpers.MergeIds("c3d4e15de2444b528c734fac8eb75ba2", guid));
+                    portrait.Data = new PortraitData(id);
+                    customPortraits.Add(portrait);
+                }
             }
 
             if (customPortraits.Count > 0)
@@ -181,6 +190,18 @@ namespace EldritchArcana
 
                 charGen.Portraits = charGen.Portraits.AddToArray(customPortraits);
             }
+        }
+
+        static string GetMd5Hash(MD5 md5, string input)
+        {
+            // Note: this uses MD5 to hash a string to 128-bits, it's not for any security purpose.
+            var str = new StringBuilder();
+            foreach (var b in md5.ComputeHash(Encoding.UTF8.GetBytes(input)))
+            {
+                str.Append(b.ToString("x2"));
+            }
+            Log.Write($"md5 hash of '${input}' is: {str}");
+            return str.ToString();
         }
 
 

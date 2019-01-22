@@ -1072,8 +1072,10 @@ namespace EldritchArcana
             if (weaponType == WeaponType)
             {
                 var bonus = AttackBonus * Fact.GetRank();
-                Log.Write($"Add +{bonus} to attack");
-                evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalAttackBonus.AddModifier(bonus, this, ModifierDescriptor.Trait));
+
+                // TODO: this bonus should be a "trait" bonus. But doing it this way shows up in the UI.
+                evt.AddBonus(bonus, Fact);
+                //evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalAttackBonus.AddModifier(bonus, this, ModifierDescriptor.Trait));
             }
         }
         public override void OnEventDidTrigger(RuleCalculateAttackBonusWithoutTarget evt) { }
@@ -1084,8 +1086,9 @@ namespace EldritchArcana
             if (weaponType == WeaponType)
             {
                 var bonus = AttackBonus * Fact.GetRank();
-                Log.Write($"Add +{bonus} to CMB");
-                evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalCMB.AddModifier(bonus, this, ModifierDescriptor.Trait));
+                // TODO: this bonus should be a "trait" bonus. But doing it this way shows up in the UI.
+                evt.AddBonus(bonus, Fact);
+                //evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalCMB.AddModifier(bonus, this, ModifierDescriptor.Trait));
             }
         }
         public void OnEventDidTrigger(RuleCalculateCMB evt) { }
@@ -1112,19 +1115,34 @@ namespace EldritchArcana
     {
         void IncreaseLuckBonus(RulebookEvent evt, StatType stat)
         {
-            var value = Owner.Stats.GetStat(stat);
-            if (value.ContainsModifier(ModifierDescriptor.Luck))
+            int luck = GetLuckBonus(evt, stat);
+            if (luck > 0)
             {
-                int luck = value.GetDescriptorBonus(ModifierDescriptor.Luck);
-                if (luck > 0)
-                {
-                    evt.AddTemporaryModifier(value.AddModifier(luck + 1, this, ModifierDescriptor.Luck));
-                }
+                var mod = Owner.Stats.GetStat(stat).AddModifier(luck + 1, this, ModifierDescriptor.Luck);
+                evt.AddTemporaryModifier(mod);
             }
         }
 
-        public override void OnEventAboutToTrigger(RuleCalculateWeaponStats evt) => IncreaseLuckBonus(evt, StatType.AdditionalDamage);
-        public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt) => IncreaseLuckBonus(evt, StatType.AdditionalAttackBonus);
+        int GetLuckBonus(RulebookEvent evt, StatType stat)
+        {
+            var value = Owner.Stats.GetStat(stat);
+            if (value.ContainsModifier(ModifierDescriptor.Luck))
+            {
+                return value.GetDescriptorBonus(ModifierDescriptor.Luck);
+            }
+            return 0;
+        }
+
+        public override void OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
+        {
+            int luck = GetLuckBonus(evt, StatType.AdditionalDamage);
+            if (luck > 0) evt.AddBonusDamage(1);
+        }
+        public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
+        {
+            int luck = GetLuckBonus(evt, StatType.AdditionalAttackBonus);
+            if (luck > 0) evt.AddBonus(1, Fact);
+        }
         public void OnEventAboutToTrigger(RuleSavingThrow evt) => IncreaseLuckBonus(evt, evt.StatType);
         public void OnEventAboutToTrigger(RuleSkillCheck evt) => IncreaseLuckBonus(evt, evt.StatType);
 
@@ -1153,8 +1171,9 @@ namespace EldritchArcana
             if (hpPercent < HitPointPercent &&
                 evt.Target.Descriptor.Alignment.Value.HasComponent(TargetAlignment))
             {
-                //Log.Write($"  add bonus!");
-                evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalAttackBonus.AddModifier(Value, this, Descriptor));
+                // TODO: this bonus should be a "trait" bonus. But doing it this way shows up in the UI.
+                evt.AddBonus(Value, Fact);
+                //evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalAttackBonus.AddModifier(Value, this, Descriptor));
             }
         }
 
@@ -1298,5 +1317,4 @@ namespace EldritchArcana
 
         public override void OnEventDidTrigger(RuleCalculateDamage evt) { }
     }
-
 }
