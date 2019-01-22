@@ -178,6 +178,7 @@ that have not been taken yet.
 - Dirty Fighter (+1 damage against target you're flanking)
 - Honored First of the Society (+1 ki pool)
 - Reactionary (+2 initiative)
+- Reckless (+1 mobility and it becomes a class skill)
 - Resilient (+1 fortitude save)
 - Witty Repartee (+1 persuasion and it becomes a class skill)
 

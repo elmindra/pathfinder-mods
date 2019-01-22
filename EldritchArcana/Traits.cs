@@ -174,6 +174,11 @@ namespace EldritchArcana
                 FeatureGroup.None,
                 Helpers.CreateAddStatBonus(StatType.Initiative, 2, ModifierDescriptor.Trait)));
 
+            choices.Add(CreateSkillFeat("RecklessTrait", "Reckless",
+                "You have a tendency for rash behavior, often disregarding your own safety as you move across the battlefield.",
+                "edb2f4d0c2c34c7baccad11f2b5bfbd4",
+                StatType.SkillMobility));
+
             choices.Add(Helpers.CreateFeature("ResilientTrait", "Resilient",
                 "Growing up in a poor neighborhood or in the unforgiving wilds often forced you to subsist on food and water from doubtful sources. You’ve built up your constitution as a result.\nBenefit: You gain a +1 trait bonus on Fortitude saves.",
                 "789d02217b6542ce8b0302249c86d49d",
