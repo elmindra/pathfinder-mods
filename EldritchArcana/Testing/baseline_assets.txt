@@ -5338,6 +5338,9 @@ Rapscallion|4f95abdcc70e4bda818be5b8860585c5
   $PrerequisiteFeature
 ReactionaryTrait|fa2c636580ee431297de8806a046044a
   $AddStatBonus
+RecklessTrait|edb2f4d0c2c34c7baccad11f2b5bfbd4
+  $AddClassSkill
+  $AddStatBonus
 RegionalTrait|6158dd4ad2544c27bc3a9b48c2e8a2ca
   $PrerequisiteNoFeature
 ResilientTrait|789d02217b6542ce8b0302249c86d49d

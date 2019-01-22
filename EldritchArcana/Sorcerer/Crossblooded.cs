@@ -271,7 +271,9 @@ namespace EldritchArcana
                 BlueprintProgression crossbloodline;
                 if (crossbloodForBloodline.TryGetValue(p.Feature as BlueprintProgression, out crossbloodline))
                 {
-                    components.Add(Helpers.PrerequisiteFeaturesFromList(p.Feature, crossbloodline));
+                    var prereq = Helpers.PrerequisiteFeaturesFromList(p.Feature, crossbloodline);
+                    prereq.Group = p.Group;
+                    components.Add(prereq);
                 }
                 else
                 {
@@ -289,7 +291,9 @@ namespace EldritchArcana
                         features.Add(crossbloodline);
                     }
                 }
-                components.Add(Helpers.PrerequisiteFeaturesFromList(features));
+                var newPrereq = Helpers.PrerequisiteFeaturesFromList(features);
+                newPrereq.Group = prereq.Group;
+                components.Add(newPrereq);
             }
             feat.SetComponents(components);
         }
