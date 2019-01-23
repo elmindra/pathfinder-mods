@@ -184,10 +184,17 @@ namespace EldritchArcana
         {
             var self = __instance;
             if (___m_Highlighter == null || self.GetComponent<DetectedSecretComponent>() == null) return;
-            // Don't highlight if the secret door is open.
-            if (self.Interactions.OfType<StandardDoor>().Any(d => d.GetState())) return;
-            // Secret door, not opened: highlight it.
-            ___m_Highlighter.ConstantOn(BlueprintRoot.Instance.UIRoot.PerceptedLootColor, 0);
+            try
+            {
+                // Don't highlight if the secret door is open.
+                if (self.Interactions.OfType<StandardDoor>().Any(d => d.GetState())) return;
+                // Secret door, not opened: highlight it.
+                ___m_Highlighter.ConstantOn(BlueprintRoot.Instance.UIRoot.PerceptedLootColor, 0);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
         }
     }
 

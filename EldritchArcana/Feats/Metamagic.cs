@@ -696,7 +696,15 @@ namespace EldritchArcana
     {
         internal static bool Prefix(AbilityExecutionContext context, TargetWrapper target)
         {
-            return !target.IsUnit || context.TriggerRule(new RuleSpellTargetCheck(context, target.Unit)).CanTargetUnit;
+            try
+            {
+                return !target.IsUnit || context.TriggerRule(new RuleSpellTargetCheck(context, target.Unit)).CanTargetUnit;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
+            return true;
         }
     }
 
@@ -711,10 +719,17 @@ namespace EldritchArcana
     {
         static void Postfix(AreaEffectEntityData __instance, UnitEntityData unit, ref bool __result)
         {
-            if (!__result) return;
-            var self = __instance;
-            var context = self.Context;
-            __result = context.TriggerRule(new RuleSpellTargetCheck(context, unit, self)).CanTargetUnit;
+            try
+            {
+                if (!__result) return;
+                var self = __instance;
+                var context = self.Context;
+                __result = context.TriggerRule(new RuleSpellTargetCheck(context, unit, self)).CanTargetUnit;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
         }
     }
 

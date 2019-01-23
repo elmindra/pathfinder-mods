@@ -350,8 +350,15 @@ namespace EldritchArcana
     {
         static void Postfix(DescriptionTemplatesLevelup __instance, DescriptionBricksBox box, TooltipData data, bool b)
         {
-            if (data?.Archetype == null || Main.settings?.RelaxAncientLorekeeper == true) return;
-            Prerequisites(__instance, box, data.Archetype.GetComponents<Prerequisite>());
+            try
+            {
+                if (data?.Archetype == null || Main.settings?.RelaxAncientLorekeeper == true) return;
+                Prerequisites(__instance, box, data.Archetype.GetComponents<Prerequisite>());
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
         }
 
         static readonly FastInvoke Prerequisites = Helpers.CreateInvoker<DescriptionTemplatesLevelup>("Prerequisites", new Type[] { typeof(DescriptionBricksBox), typeof(IEnumerable<Prerequisite>) });
@@ -397,15 +404,22 @@ namespace EldritchArcana
     {
         static bool Prefix(CharacterBuildController __instance, BlueprintRace race)
         {
-            if (race == null || Main.settings?.RelaxAncientLorekeeper == true) return true;
-            var self = __instance;
-            var levelUp = self.LevelUpController;
-            var @class = levelUp.State.SelectedClass;
-            if (@class == null) return true;
-
-            if (@class.Archetypes.Any(a => a.GetComponents<Prerequisite>() != null))
+            try
             {
-                self.SetArchetype(null);
+                if (race == null || Main.settings?.RelaxAncientLorekeeper == true) return true;
+                var self = __instance;
+                var levelUp = self.LevelUpController;
+                var @class = levelUp.State.SelectedClass;
+                if (@class == null) return true;
+
+                if (@class.Archetypes.Any(a => a.GetComponents<Prerequisite>() != null))
+                {
+                    self.SetArchetype(null);
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
             }
             return true;
         }

@@ -478,11 +478,18 @@ namespace EldritchArcana
     {
         static bool Prefix(Prerequisite prerequisite, ref string __result)
         {
-            var custom = prerequisite as CustomPrerequisite;
-            if (custom != null)
+            try
             {
-                __result = custom.GetCaption();
-                return false;
+                var custom = prerequisite as CustomPrerequisite;
+                if (custom != null)
+                {
+                    __result = custom.GetCaption();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
             }
             return true;
         }

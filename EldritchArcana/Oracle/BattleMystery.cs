@@ -636,10 +636,17 @@ namespace EldritchArcana
         {
             if (!__result) return;
 
-            var unit = __instance.Unit.Descriptor;
-            if (unit.Progression.CharacterLevel == 20 && unit.HasFact(BattleMystery.finalRevelation))
+            try
             {
-                __result = false;
+                var unit = __instance.Unit.Descriptor;
+                if (unit.Progression.CharacterLevel == 20 && unit.HasFact(BattleMystery.finalRevelation))
+                {
+                    __result = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
             }
         }
     }

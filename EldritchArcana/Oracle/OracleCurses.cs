@@ -712,30 +712,37 @@ namespace EldritchArcana
     {
         static void Postfix(UnitEntityData __instance, ref bool __result)
         {
-            if (!__result) return;
-
-            // Tongues only has effect in combat.
-            var self = __instance;
-            if (!self.IsInCombat) return;
-
-            // PC and PC's pet are always controllable.
-            var mainChar = Game.Instance.Player.MainCharacter;
-            var npc = self.Descriptor;
-            if (self == mainChar || npc.Master == mainChar) return;
-
-            // Don't apply the penalty until we've had an opportunity to level up.
-            var pc = mainChar.Value.Descriptor;
-            if (pc.Progression.CharacterLevel < 2) return;
-
-            // If either PC or NPC has the Tongues curse, and the other party
-            // doesn't have 1 rank in linguistics (Knowledge: World), then they
-            // can't be communicated with in combat (i.e. ordered around).
-            if (pc.Stats.SkillKnowledgeWorld.BaseValue == 0 && npc.Get<UnitPartOracleCurse>()?.HasTongues == true ||
-                npc.Stats.SkillKnowledgeWorld.BaseValue == 0 && pc.Get<UnitPartOracleCurse>()?.HasTongues == true)
+            try
             {
-                // Tongues curse: can't talk to this party member in combat.
-                __result = false;
-                return;
+                if (!__result) return;
+
+                // Tongues only has effect in combat.
+                var self = __instance;
+                if (!self.IsInCombat) return;
+
+                // PC and PC's pet are always controllable.
+                var mainChar = Game.Instance.Player.MainCharacter;
+                var npc = self.Descriptor;
+                if (self == mainChar || npc.Master == mainChar) return;
+
+                // Don't apply the penalty until we've had an opportunity to level up.
+                var pc = mainChar.Value.Descriptor;
+                if (pc.Progression.CharacterLevel < 2) return;
+
+                // If either PC or NPC has the Tongues curse, and the other party
+                // doesn't have 1 rank in linguistics (Knowledge: World), then they
+                // can't be communicated with in combat (i.e. ordered around).
+                if (pc.Stats.SkillKnowledgeWorld.BaseValue == 0 && npc.Get<UnitPartOracleCurse>()?.HasTongues == true ||
+                    npc.Stats.SkillKnowledgeWorld.BaseValue == 0 && pc.Get<UnitPartOracleCurse>()?.HasTongues == true)
+                {
+                    // Tongues curse: can't talk to this party member in combat.
+                    __result = false;
+                    return;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
             }
         }
     }
@@ -886,14 +893,21 @@ namespace EldritchArcana
     {
         internal static void Postfix(AbilityData __instance, UnitEntityData target, ref float __result)
         {
-            var caster = __instance.Caster;
-            var part = caster.Get<UnitPartOracleCurse>();
-            if (part?.HasCloudedVision == true)
+            try
             {
-                var maxRange = part.CloudedVisionDistance + (caster.Unit.View?.Corpulence ?? 0.5f) + (target?.View.Corpulence ?? 0.5f);
-                var original = __result;
-                __result = Math.Min(maxRange, original);
-                Log.Write($"Clouded Vision: adjust range from {original} to {__result} (max range: {maxRange})");
+                var caster = __instance.Caster;
+                var part = caster.Get<UnitPartOracleCurse>();
+                if (part?.HasCloudedVision == true)
+                {
+                    var maxRange = part.CloudedVisionDistance + (caster.Unit.View?.Corpulence ?? 0.5f) + (target?.View.Corpulence ?? 0.5f);
+                    var original = __result;
+                    __result = Math.Min(maxRange, original);
+                    Log.Write($"Clouded Vision: adjust range from {original} to {__result} (max range: {maxRange})");
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
             }
         }
     }
