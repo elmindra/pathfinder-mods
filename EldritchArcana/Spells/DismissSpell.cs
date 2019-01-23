@@ -32,12 +32,10 @@ namespace EldritchArcana
     {
         readonly BlueprintAbility dismiss;
 
+        static Localization lc = new Localization();
         public AreaEffectDismissal()
         {
-            dismiss = Helpers.CreateAbility("DismissAreaEffectSpell", "Dismiss Area Effect Spell",
-                "Some spells can be dismissed at will, others when you are out of combat. You must be within range of the spell’s effect. Dismissing a spell is a standard action that does not provoke attacks of opportunity.\n" +
-                "A spell that depends on concentration is dismissible by its very nature, and dismissing it does not take an action, since all you have to do to end the spell is to stop concentrating on your turn.\n" +
-                "(If this ability is enabled, it means you have a currently active effect spell that can be dismissed.)",
+            dismiss = Helpers.CreateAbility("DismissAreaEffectSpell", lc.GetTranslate("DismissSpell.abDismissName"), lc.GetTranslate("DismissSpell.abDismissDesc"),
                 "da09c33c33d44be485c5757262923bfb",
                 Helpers.GetIcon("95f7cdcec94e293489a85afdf5af1fd7"), // dismissal
                 AbilityType.Extraordinary, // (Ex) so it doesn't provoke an attack of opportunity, and works w/ antimagic field.
@@ -74,6 +72,7 @@ namespace EldritchArcana
 
     public class DismissAreaEffectLogic : GameLogicComponent, IAbilityTargetChecker, IAbilityAvailabilityProvider
     {
+        static Localization lc = new Localization();
         public bool CanTarget(UnitEntityData caster, TargetWrapper target) => GetTargetAreaEffect(caster, target) != null;
 
         public bool IsAvailableFor(AbilityData ability)
@@ -86,7 +85,7 @@ namespace EldritchArcana
             return false;
         }
 
-        public string GetReason() => $"No area effects to dismiss (only certain spells can be dismissed in combat).";
+        public string GetReason() => lc.GetTranslate("DismissSpell.strGetReason");
 
         internal static void EndTargetAreaEffect(UnitEntityData caster, TargetWrapper target)
         {
@@ -151,7 +150,8 @@ namespace EldritchArcana
 
     public class DismissAreaEffectAction : ContextAction
     {
-        public override string GetCaption() => "Dismiss caster's area effect spell near target";
+        static Localization lc = new Localization();
+        public override string GetCaption() => lc.GetTranslate("DismissSpell.strGetCaption");
 
         public override void RunAction()
         {
