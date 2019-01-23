@@ -379,8 +379,8 @@ namespace EldritchArcana
                 resource.CreateAddAbilityResource(),
                 hasteAbility.CreateAddFact(),
                 slowAbility.CreateAddFact(),
-                hasteAbility.CreateBindToClass(oracle),
-                slowAbility.CreateBindToClass(oracle));
+                hasteAbility.CreateBindToClass(oracle, StatType.Charisma),
+                slowAbility.CreateBindToClass(oracle, StatType.Charisma));
             return feat;
         }
 
@@ -454,7 +454,8 @@ namespace EldritchArcana
             feat.SetComponents(oracle.PrerequisiteClassLevel(7),
                 resource.CreateAddAbilityResource(),
                 hopCaster.CreateAddFact(), hopMass.CreateAddFact(),
-                hopCaster.CreateBindToClass(oracle), hopMass.CreateBindToClass(oracle));
+                hopCaster.CreateBindToClass(oracle, StatType.Charisma),
+                hopMass.CreateBindToClass(oracle, StatType.Charisma));
             return feat;
         }
 

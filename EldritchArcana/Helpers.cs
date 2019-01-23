@@ -1236,9 +1236,10 @@ namespace EldritchArcana
             return castSpell;
         }
 
-        public static BindAbilitiesToClass CreateBindToClass(this BlueprintAbility ability, BlueprintProgression bloodline)
+        public static BindAbilitiesToClass CreateBindToClass(this BlueprintAbility ability, BlueprintProgression bloodline, StatType stat)
         {
             var b = Helpers.Create<BindAbilitiesToClass>();
+            b.Stat = stat;
             b.Abilites = new BlueprintAbility[] { ability };
             b.CharacterClass = bloodline.Classes[0];
             b.Archetypes = bloodline.Archetypes;
@@ -1246,10 +1247,22 @@ namespace EldritchArcana
             return b;
         }
 
-        public static BindAbilitiesToClass CreateBindToClass(this BlueprintAbility ability, BlueprintCharacterClass @class)
+        public static BindAbilitiesToClass CreateBindToClass(this BlueprintAbility ability, BlueprintCharacterClass @class, StatType stat)
         {
             var b = Helpers.Create<BindAbilitiesToClass>();
             b.Abilites = new BlueprintAbility[] { ability };
+            b.Stat = stat;
+            b.CharacterClass = @class;
+            b.Archetypes = Array.Empty<BlueprintArchetype>();
+            b.AdditionalClasses = Array.Empty<BlueprintCharacterClass>();
+            return b;
+        }
+
+        public static BindAbilitiesToClass CreateBindToClass(BlueprintCharacterClass @class, StatType stat, params BlueprintAbility[] abilities)
+        {
+            var b = Helpers.Create<BindAbilitiesToClass>();
+            b.Abilites = abilities;
+            b.Stat = stat;
             b.CharacterClass = @class;
             b.Archetypes = Array.Empty<BlueprintArchetype>();
             b.AdditionalClasses = Array.Empty<BlueprintCharacterClass>();
