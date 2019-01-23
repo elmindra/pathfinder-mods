@@ -373,7 +373,10 @@ namespace EldritchArcana
             {
                 var self = __instance;
                 var items = self.SelectorItems;
-                if (items == null || items.Count == 0 || Main.settings?.RelaxAncientLorekeeper == true) return;
+                if (items == null || archetypesList == null || items.Count == 0 || Main.settings?.RelaxAncientLorekeeper == true)
+                {
+                    return;
+                }
 
                 // Note: conceptually this is the same as `CharBSelectorLayer.FillDataLightClass()`,
                 // but for archetypes.
@@ -382,7 +385,7 @@ namespace EldritchArcana
                 var state = Game.Instance.UI.CharacterBuildController.LevelUpController.State;
                 foreach (var item in items)
                 {
-                    var archetype = item.Archetype;
+                    var archetype = item?.Archetype;
                     if (archetype == null || !archetypesList.Contains(archetype)) continue;
 
                     item.Show(state: true);
@@ -390,7 +393,6 @@ namespace EldritchArcana
                     var classData = state.Unit.Progression.GetClassData(state.SelectedClass);
                     self.SilentSwitch(classData.Archetypes.Contains(archetype), item);
                 }
-                Log.Flush();
             }
             catch (Exception e)
             {
