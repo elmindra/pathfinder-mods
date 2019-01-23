@@ -25,7 +25,7 @@ namespace EldritchArcana
 {
     public class Main
     {
-        static Localization lc = new Localization();
+        public static Localization lc = new Localization();
         [Harmony12.HarmonyPatch(typeof(LibraryScriptableObject), "LoadDictionary", new Type[0])]
         static class LibraryScriptableObject_LoadDictionary_Patch
         {

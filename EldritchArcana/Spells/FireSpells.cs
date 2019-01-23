@@ -58,10 +58,8 @@ namespace EldritchArcana
                     Helpers.CreateActionDealDamage(DamageEnergyType.Fire,
                         DiceType.D6.CreateContextDiceValue(6), halfIfSaved: true))));
 
-            var spell = Helpers.CreateAbility("IncendiaryCloud", "Incendiary Cloud",
-                "An incendiary cloud spell creates a cloud of roiling smoke shot through with white-hot embers. The smoke obscures all sight as a fog cloud does. In addition, the white-hot embers within the cloud deal 6d6 points of fire damage to everything within the cloud on your turn each round. All targets can make Reflex saves each round to take half damage.\n" +
-                "As with a cloudkill spell, the smoke moves away from you at 10 feet per round. Figure out the smoke’s new spread each round based on its new point of origin, which is 10 feet farther away from where you were when you cast the spell. By concentrating, you can make the cloud move as much as 60 feet each round.Any portion of the cloud that would extend beyond your maximum range dissipates harmlessly, reducing the remainder’s spread thereafter.\n" +
-                "As with fog cloud, wind disperses the smoke, and the spell can’t be cast underwater.",
+            var spell = Helpers.CreateAbility("IncendiaryCloud", Main.lc.GetTranslate("FireSpells.spIncendiaryCloudName"),
+                Main.lc.GetTranslate("FireSpells.spIncendiaryCloudDesc"),
                 "85923af68485439dac5c3e9ddd2dd66c",
                 Helpers.GetIcon("e3d0dfe1c8527934294f241e0ae96a8d"), // fire storm
                 AbilityType.Spell, CommandType.Standard, AbilityRange.Medium,
@@ -97,11 +95,8 @@ namespace EldritchArcana
             // buff tick down, and the projectile is fired later from the caster's position, which looks neat.
             // And it doesn't spawn the loot bag. I'm more confident it'll work correctly with saves and such.
             var fireball = library.Get<BlueprintAbility>("2d81362af43aeac4387a3d4fced489c3");
-            var spell = Helpers.CreateAbility("DelayedBlastFireball", "Delayed Blast Fireball",
-                "This spell functions like fireball, except that it is more powerful and can detonate up to 5 rounds after the spell is cast. The burst of flame deals 1d6 points of fire damage per caster level (maximum 20d6). " +
-                "The glowing bead created by delayed blast fireball can detonate immediately if you desire, or you can choose to delay the burst for as many as 5 rounds. " +
-                "You select the amount of delay upon completing the spell.",//", and that time cannot change once it has been set unless someone touches the bead. If you choose a delay, the glowing bead sits at its destination until it detonates. " +
-                                                                            //"A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25% chance that the bead detonates while being handled.",
+            var spell = Helpers.CreateAbility("DelayedBlastFireball", Main.lc.GetTranslate("FireSpells.spDelayedFireballName"),
+               Main.lc.GetTranslate("FireSpells.spDelayedFireballDesc"),
                 "dfe891561c4d48ed8235268b0e7692e7",
                 fireball.Icon, AbilityType.Spell, CommandType.Standard, fireball.Range,
                 "5 rounds or less; see text", fireball.LocalizedSavingThrow);
@@ -163,10 +158,8 @@ namespace EldritchArcana
             var fireball = library.Get<BlueprintAbility>("2d81362af43aeac4387a3d4fced489c3");
 
             var spell = library.CopyAndAdd(fireball, "MeteorSwarm", "2d18f8a4de6742e2ba954da0f19a4957");
-            spell.SetNameDescriptionIcon("Meteor Swarm",
-                "Meteor swarm is a very powerful and spectacular spell that is similar to fireball in many aspects. When you cast it, four 2-foot-diameter spheres spring from your outstretched hand and streak in straight lines to the spots you select. The meteor spheres leave a fiery trail of sparks.\n" +
-                "If you aim a sphere at a specific creature, you may make a ranged touch attack to strike the target with the meteor.Any creature struck by a sphere takes 2d6 points of bludgeoning damage(no save) and takes a -4 penalty on the saving throw against the sphere’s fire damage(see below).If a targeted sphere misses its target, it simply explodes at the nearest corner of the target’s space.You may aim more than one sphere at the same target.\n" +
-                "Once a sphere reaches its destination, it explodes in a 40-foot-radius spread, dealing 6d6 points of fire damage to each creature in the area.If a creature is within the area of more than one sphere, it must save separately against each.Despite stemming from separate spheres, all of the fire damage is added together after the saves have been made, and fire resistance is applied only once.",
+            spell.SetNameDescriptionIcon(Main.lc.GetTranslate("FireSpells.spMeteorSwarmName"),
+                Main.lc.GetTranslate("FireSpells.spMeteorSwarmDesc"),
                 Helpers.GetIcon("f72f8f03bf0136c4180cd1d70eb773a5")); // controlled fireball
             spell.LocalizedSavingThrow = Helpers.CreateString($"{spell.name}.SavingThrow", "None or Reflex half, see text");
 
@@ -235,9 +228,8 @@ namespace EldritchArcana
             areaEffect.SetComponents(areaComponents);
 
             spell.name = "WallOfFire";
-            spell.SetNameDescriptionIcon("Wall of Fire",
-                "An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing 2d4 points of fire damage to creatures within 10 feet and 1d4 points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when it appears, and to all creatures in the area on your turn each round. In addition, the wall deals 2d6 points of fire damage + 1 point of fire damage per caster level (maximum +20) to any creature passing through it. The wall deals double damage to undead creatures.\n" +
-                "If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points or more of cold damage in 1 round, that length goes away. (Do not divide cold damage by 2, as normal for objects.)",
+            spell.SetNameDescriptionIcon(Main.lc.GetTranslate("FireSpells.spWallOfFireName"),
+                Main.lc.GetTranslate("FireSpells.spWallOfFireDesc"),
                 Helpers.GetIcon("9256a86aec14ad14e9497f6b60e26f3f")); // BlessingOfTheSalamander
             spell.Type = AbilityType.Spell;
             spell.SpellResistance = true;
