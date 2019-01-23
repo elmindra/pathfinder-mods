@@ -269,14 +269,13 @@ namespace EldritchArcana
             var result = casterLevel + 10 + roll;
             Log.Append(string.Format(Main.lc.GetTranslate("Knock.spKnockRollGameLogFormat"), dc, lockInfo.name, result));
             var success = data.Unlocked = result > dc;
-
             Helpers.GameLog.AddLogEntry(
                 success ? Main.lc.GetTranslate("Knock.spKnockSuccessGameLog") : Main.lc.GetTranslate("Knock.spKnockFailGameLog"),
                 GameLogStrings.Instance.SkillCheckSuccess.Color, LogChannel.Combat,
                 string.Format(Main.lc.GetTranslate("Knock.spKnockResultGameLog1.Format"), result, roll, casterLevel) +
                 string.Format(Main.lc.GetTranslate("Knock.spKnockResultGameLog2.Format"), dc) +
                 string.Format(Main.lc.GetTranslate("Knock.spKnockResultGameLog3.Format"), (success ? Main.lc.GetTranslate("Knock.success") : Main.lc.GetTranslate("Knock.failure"))));
-
+           
             EventBus.RaiseEvent((IPickLockHandler h) =>
             {
                 if (success)

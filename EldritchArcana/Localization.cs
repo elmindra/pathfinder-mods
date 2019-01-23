@@ -33,7 +33,8 @@ namespace EldritchArcana {
             if (dict.ContainsKey(s)) {
                 return dict[s];
             }
-            else throw new Exception("String not translated");
+            //else throw new Exception("String not translated");
+            else return "FUCK " + s;
         }
         public Localization() {
             dict = new Dictionary<string, string>();
