@@ -283,7 +283,7 @@ namespace EldritchArcana
                 Helpers.Create<AddDamageResistancePhysical>(t => t.Value = 5),
                 Helpers.Create<AddEnergyDamageImmunity>(a => a.EnergyType = DamageEnergyType.Fire),
                 resource.CreateAddAbilityResource(),
-                ability.CreateBindToClass(bloodline));
+                ability.CreateBindToClass(bloodline, StatType.Charisma));
         }
 
         static BlueprintFeature CreateStrengthOfTheBeast(BlueprintProgression bloodline, int rank)
