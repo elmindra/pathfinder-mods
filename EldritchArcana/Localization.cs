@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 
 namespace EldritchArcana {
-    class Localization{
+    public class Localization{
         static Dictionary<string, string> dict;
         void Init() {
             string codeBase = Assembly.GetExecutingAssembly().CodeBase;
@@ -18,6 +18,9 @@ namespace EldritchArcana {
             string line;
             while((line = fin.ReadLine()) != null) {
                 var phrs = line.Split('\t');
+                if(phrs.GetLength(0) < 2) {
+                    continue;
+                }
                 phrs[1] = phrs[1].Replace('杪', '\n');
                 phrs[1] = phrs[1].Replace('厸', '\t');
                 dict.Add(phrs[0], phrs[1]);

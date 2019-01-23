@@ -36,18 +36,17 @@ namespace EldritchArcana
 
         internal static void Load()
         {
-            Main.SafeLoad(LoadDetectSecretDoors, "Detect Secret Doors");
-            Main.SafeLoad(LoadKnock, "Knock");
+            Main.SafeLoad(LoadDetectSecretDoors, Main.lc.GetTranslate("Knock.spDetectSecretDoorName"));
+            Main.SafeLoad(LoadKnock, Main.lc.GetTranslate("Knock.spKnockName"));
         }
 
         static void LoadDetectSecretDoors()
         {
-            var spell = Helpers.CreateAbility("DetectSecretDoors", "Detect Secret Doors",
-                "You can detect secret doors, compartments, caches, and so forth. Only passages, doors, or openings that have been specifically constructed to escape detection are detected by this spell.\n" +
-                "Each round, you can turn to detect secret doors in a new area. This spell requires concentration, and will end prematurely if you cast another spell, take a standard action, or fail a concentration check.",
+            var spell = Helpers.CreateAbility("DetectSecretDoors", Main.lc.GetTranslate("Knock.spDetectSecretDoorName"),
+                Main.lc.GetTranslate("Knock.spDetectSecretDoorDesc"),
                 "5462b5e9578349ffa59bb469b94ffbb0",
                 Helpers.GetIcon("4709274b2080b6444a3c11c6ebbe2404"), // find traps
-                AbilityType.Spell, CommandType.Standard, AbilityRange.Personal, "concentration, up to 1 min/level", "");
+                AbilityType.Spell, CommandType.Standard, AbilityRange.Personal, Main.lc.GetTranslate("Knock.spDetectSecretDoorLen"), "");
 
             var foresightBuff = library.Get<BlueprintBuff>("8c385a7610aa409468f3a6c0f904ac92");
 
@@ -68,13 +67,13 @@ namespace EldritchArcana
             spell.AddToSpellList(Helpers.wizardSpellList, 1);
             Helpers.AddSpellAndScroll(spell, "5e9bd8e141c622a4a8f4e4654d022f40"); // find traps scroll
 
-            Main.ApplyPatch(typeof(MapObjectView_UpdateHighlight_Patch), "Detect Secret Doors: reveal hidden passages");
+            Main.ApplyPatch(typeof(MapObjectView_UpdateHighlight_Patch), Main.lc.GetTranslate("Knock.spDetectSecretDoorNotice"));
         }
 
         static void LoadKnock()
         {
-            var spell = Helpers.CreateAbility("KnockSpell", "Knock",
-                "Knock opens stuck, barred, or locked doors, as well as those subject to hold portal or arcane lock. When you complete the casting of this spell, make a caster level check against the DC of the lock with a +10 bonus. If successful, knock opens up to two means of closure. This spell opens secret doors, as well as locked or trick-opening boxes or chests. It also loosens welds, shackles, or chains (provided they serve to hold something shut). If used to open an arcane locked door, the spell does not remove the arcane lock but simply suspends its functioning for 10 minutes. In all other cases, the door does not relock itself or become stuck again on its own. Knock does not raise barred gates or similar impediments (such as a portcullis), nor does it affect ropes, vines, and the like. The effect is limited by the area. Each casting can undo as many as two means of preventing access.",
+            var spell = Helpers.CreateAbility("KnockSpell", Main.lc.GetTranslate("Knock.spKnockName"),
+                Main.lc.GetTranslate("Knock.spKnockDesc"),
                 "1dc0c67a10a54387b2679712969cab27",
                 Helpers.GetIcon("26a668c5a8c22354bac67bcd42e09a3f"), // adaptability
                 AbilityType.Spell, CommandType.Standard, AbilityRange.Medium, "", "",
@@ -88,8 +87,8 @@ namespace EldritchArcana
             spell.AddToSpellList(Helpers.wizardSpellList, 2);
             Helpers.AddSpellAndScroll(spell, "5e9bd8e141c622a4a8f4e4654d022f40"); // find traps scroll
 
-            var massSpell = Helpers.CreateAbility("KnockMass", "Knock, Mass",
-                $"This spell functions as knock, but works on multiple means of closure at once (up to 1/caster level).\n{spell.Description}",
+            var massSpell = Helpers.CreateAbility("KnockMass", Main.lc.GetTranslate("Knock.spKnockMassName"),
+                Main.lc.GetTranslate("Knock.spKnockMassDescHalf")+$"{ spell.Description}",
                 "551f0b78de034fe88b4391293ff20e1b",
                 spell.Icon, // adaptability
                 AbilityType.Spell, CommandType.Standard, AbilityRange.Close, "", "",
@@ -137,7 +136,7 @@ namespace EldritchArcana
                     if (!item.IsPerceptionCheckPassed)
                     {
                         Helpers.GameLog.AddLogEntry(
-                            "Detect Secret Doors: found hidden item.",
+                            Main.lc.GetTranslate("Knock.spDetectSecretDoorFoundItem"),
                             GameLogStrings.Instance.SkillCheckSuccess.Color, LogChannel.Combat);
                         item.IsPerceptionCheckPassed = true;
                     }
@@ -154,7 +153,7 @@ namespace EldritchArcana
                             if (c == null)
                             {
                                 Helpers.GameLog.AddLogEntry(
-                                    "Detect Secret Doors: found hidden door.",
+                                    Main.lc.GetTranslate("Knock.spDetectSecretDoorFoundDoor"),
                                     GameLogStrings.Instance.SkillCheckSuccess.Color, LogChannel.Combat);
 
                                 // Add a component to reveal this door (used by MapObjectView_UpdateHighlight_Patch, below).
@@ -268,15 +267,15 @@ namespace EldritchArcana
             var casterLevel = Context.Params.CasterLevel;
             var roll = RulebookEvent.Dice.D20;
             var result = casterLevel + 10 + roll;
-            Log.Append($"Knock rolled {result} against DC {dc}, lock {lockInfo.name}");
+            Log.Append(string.Format(Main.lc.GetTranslate("Knock.spKnockRollGameLogFormat"), dc, lockInfo.name, result));
             var success = data.Unlocked = result > dc;
 
             Helpers.GameLog.AddLogEntry(
-                success ? "Knock successfully opened lock." : "Knock failed to open lock.",
+                success ? Main.lc.GetTranslate("Knock.spKnockSuccessGameLog") : Main.lc.GetTranslate("Knock.spKnockFailGameLog"),
                 GameLogStrings.Instance.SkillCheckSuccess.Color, LogChannel.Combat,
-                $"Knock result: {result} (roll {roll} + caster level {casterLevel} + bonus 10).\n" +
-                $"Difficulty Class (DC): {dc}.\n" +
-                $"Result: {(success ? "success" : "failure")}");
+                string.Format(Main.lc.GetTranslate("Knock.spKnockResultGameLog1.Format"), result, roll, casterLevel) +
+                string.Format(Main.lc.GetTranslate("Knock.spKnockResultGameLog2.Format"), dc) +
+                string.Format(Main.lc.GetTranslate("Knock.spKnockResultGameLog3.Format"), (success ? Main.lc.GetTranslate("Knock.success") : Main.lc.GetTranslate("Knock.failure"))));
 
             EventBus.RaiseEvent((IPickLockHandler h) =>
             {
