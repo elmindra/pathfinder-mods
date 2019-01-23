@@ -29,6 +29,7 @@ using Kingmaker.UI.Common;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
 using Kingmaker.UnitLogic.FactLogic;
@@ -1011,6 +1012,7 @@ namespace EldritchArcana
             // For traits: it's valid to take any spell, even one not from your current
             // class that you may be able to cast later.
             var spells = new List<BlueprintAbility>();
+            var touchSpells = new HashSet<BlueprintAbility>();
             foreach (var spell in Helpers.allSpells)
             {
                 if (spell.Parent != null) continue;
@@ -1018,10 +1020,13 @@ namespace EldritchArcana
                 var spellLists = spell.GetComponents<SpellListComponent>();
                 if (spellLists.FirstOrDefault() == null) continue;
 
+                var stickyTouch = spell.StickyTouch;
+                if (stickyTouch != null) touchSpells.Add(stickyTouch.TouchDeliveryAbility);
+
                 var level = spellLists.Min(l => l.SpellLevel);
                 if (level == SpellLevel) spells.Add(spell);
             }
-            return spells;
+            return spells.Where(s => !touchSpells.Contains(s));
         }
 
         protected override IEnumerable<BlueprintScriptableObject> GetAllItems() => Helpers.allSpells;

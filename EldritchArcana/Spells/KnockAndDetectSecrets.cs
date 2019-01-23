@@ -82,7 +82,7 @@ namespace EldritchArcana
                 FakeTargetsAround.Create(10.Feet()),
                 Helpers.CreateRunActions(KnockAction.Create(1, 10.Feet())));
             spell.CanTargetPoint = true;
-            spell.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten;
+            spell.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten | Metamagic.Reach;
 
             spell.AddToSpellList(Helpers.inquisitorSpellList, 2);
             spell.AddToSpellList(Helpers.wizardSpellList, 2);
@@ -98,7 +98,7 @@ namespace EldritchArcana
                 FakeTargetsAround.Create(30.Feet()),
                 Helpers.CreateRunActions(KnockAction.Create(Helpers.CreateContextValueRank(), 30.Feet())));
             massSpell.CanTargetPoint = true;
-            spell.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten;
+            massSpell.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten | Metamagic.Reach;
 
             massSpell.AddToSpellList(Helpers.clericSpellList, 6);
             massSpell.AddToSpellList(Helpers.inquisitorSpellList, 6);

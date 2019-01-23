@@ -30,6 +30,7 @@ using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Utility;
 using Newtonsoft.Json;
@@ -828,11 +829,24 @@ namespace EldritchArcana
                 // For some reason, dice are not passed in to the RuleHealDamage,
                 // so we need to capure them in places like ContextActionHealTarget,
                 // and then compute the number of rolls here.
-                rolls = currentHealDice.DiceCountValue.Calculate(context);
+                var healDice = currentHealDice;
+                var sharedValueCount = Enum.GetValues(typeof(AbilitySharedValue)).Length;
+                for (int i = 0; i <= sharedValueCount; i++) // guard against a loop.
+                {
+                    rolls += healDice.DiceCountValue.Calculate(context);
+                    Log.Write($"{GetType().Name}: rolls {rolls} ({healDice.DiceCountValue})");
+                    // See if the shared value came from a dice roll
+                    if (!healDice.BonusValue.IsValueShared) break;
+                    var calcShared = context.AssociatedBlueprint.GetComponents<ContextCalculateSharedValue>()
+                        .FirstOrDefault(c => c.ValueType == healDice.BonusValue.ValueShared);
+                    if (calcShared == null) break;
+                    healDice = calcShared.Value;
+                }
             }
 
             var bonus = rolls * 2; // +2 per dice
-            Log.Write($"{GetType().Name}: heal bonus {bonus}, dice {evt.HealFormula}, total bonus {evt.Bonus + bonus}");
+            Log.Append($"{GetType().Name}: heal bonus {bonus}, dice {evt.HealFormula}, total bonus {evt.Bonus + bonus}");
+            Log.Write($"  context: {context}, currentHealDice: {currentHealDice}");
             Rulebook.CurrentContext.Trigger(new RuleHealDamage(evt.Initiator, evt.Target, evt.HealFormula, evt.Bonus + bonus));
 
             // Disable the original heal roll, so we don't get double healing

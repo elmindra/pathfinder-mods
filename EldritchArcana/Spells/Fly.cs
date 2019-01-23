@@ -16,6 +16,7 @@ using Kingmaker.Enums.Damage;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
@@ -143,6 +144,7 @@ namespace EldritchArcana
                 SpellSchool.Transmutation.CreateSpellComponent(),
                 Helpers.CreateSpellDescriptor(),
                 fly.CreateAbilityVariants(variants.Select(v => v.Item1)));
+            fly.AvailableMetamagic = Metamagic.Quicken | Metamagic.Extend | Metamagic.Heighten;
             fly.AddToSpellList(Helpers.wizardSpellList, 3);
             fly.AddToSpellList(Helpers.magusSpellList, 3);
             fly.AddToSpellList(Helpers.alchemistSpellList, 3);
@@ -160,6 +162,7 @@ namespace EldritchArcana
                 SpellSchool.Transmutation.CreateSpellComponent(),
                 Helpers.CreateSpellDescriptor(),
                 overlandFlight.CreateAbilityVariants(variants.Select(v => v.Item2)));
+            overlandFlight.AvailableMetamagic = Metamagic.Extend | Metamagic.Quicken | Metamagic.Heighten;
             overlandFlight.AddToSpellList(Helpers.wizardSpellList, 5);
             overlandFlight.AddToSpellList(Helpers.magusSpellList, 5);
             overlandFlight.AddToSpellList(Helpers.alchemistSpellList, 5);
@@ -284,6 +287,7 @@ namespace EldritchArcana
             airWalk.CanTargetSelf = true;
             airWalk.CanTargetFriends = true;
             airWalk.EffectOnAlly = AbilityEffectOnUnit.Helpful;
+            airWalk.AvailableMetamagic = Metamagic.Extend | Metamagic.Quicken | Metamagic.Heighten;
 
             airWalkBuff.SetNameDescriptionIcon(airWalk);
             airWalkBuff.AddComponents(

@@ -89,9 +89,10 @@ namespace EldritchArcana
                     newMetamagic |= (Metamagic)ModMetamagic.Persistent;
 
                     var dealsDamage = (spell.AvailableMetamagic & Metamagic.Empower) == Metamagic.Empower;
-                    if (dealsDamage)
+                    var descriptor = spell.SpellDescriptor;
+                    var hasElement = (descriptor & (SpellDescriptor.Fire | SpellDescriptor.Cold | SpellDescriptor.Electricity | SpellDescriptor.Acid)) != 0;
+                    if (dealsDamage || hasElement)
                     {
-
                         // TODO: many spells did not have the cold descriptor set.
                         // We'll need to scan for elemental damage (any element can be cold if used with
                         // Elemental Spell or the elemental arcana).
@@ -99,17 +100,20 @@ namespace EldritchArcana
 
                         newMetamagic |= (Metamagic)ModMetamagic.Elemental;
 
-                        // Magic Missile does not correctly have the force descriptor set.
-                        // We should scan for damage actions.
-                        newMetamagic |= (Metamagic)ModMetamagic.Toppling;
-
                         // TODO: this won't work for spells that don't have variable damage components.
                         // We'll need to traverse the components to look for ContextActionDealDamage.
                         newMetamagic |= (Metamagic)ModMetamagic.Dazing;
 
                         // TODO: this has false positives (spells that can't actually benefit, because they
-                        // already scale to 20th level).
+                        // already scale to 20th level). Presumably we could look for ContextRankConfig?
                         newMetamagic |= (Metamagic)ModMetamagic.Intensified;
+                    }
+                    var hasForce = (descriptor & SpellDescriptor.Force) != 0;
+                    if (hasForce || spell.AssetGuid == "4ac47ddb9fa1eaf43a1b6809980cfbd2")
+                    {
+                        // Magic Missile does not correctly have the force descriptor set.
+                        // Scan for damage actions?
+                        newMetamagic |= (Metamagic)ModMetamagic.Toppling;
                     }
                 }
 

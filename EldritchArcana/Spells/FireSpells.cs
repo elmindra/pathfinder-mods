@@ -82,6 +82,7 @@ namespace EldritchArcana
             spell.CanTargetPoint = true;
             spell.EffectOnAlly = AbilityEffectOnUnit.Harmful;
             spell.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
+            spell.AvailableMetamagic = Metamagic.Empower | Metamagic.Extend | Metamagic.Maximize | Metamagic.Quicken | Metamagic.Heighten | Metamagic.Reach;
             incendiaryCloud = spell;
             spell.AddToSpellList(Helpers.wizardSpellList, 8);
             Helpers.AddSpellAndScroll(spell, "1cbb88fbf2a6bb74aa437fadf6946d22"); // scroll fire storm
@@ -106,6 +107,7 @@ namespace EldritchArcana
                 fireball.Icon, AbilityType.Spell, CommandType.Standard, fireball.Range,
                 "5 rounds or less; see text", fireball.LocalizedSavingThrow);
             spell.SpellResistance = true;
+            spell.AvailableMetamagic = Metamagic.Empower | Metamagic.Heighten | Metamagic.Maximize | Metamagic.Quicken | Metamagic.Reach;
 
             var delayIds = new String[] {
                 "1e403a3188214a5c94ad63ede5928f81",
@@ -165,7 +167,7 @@ namespace EldritchArcana
             var spell = library.CopyAndAdd(fireball, "MeteorSwarm", "2d18f8a4de6742e2ba954da0f19a4957");
             spell.SetNameDescriptionIcon("Meteor Swarm",
                 "Meteor swarm is a very powerful and spectacular spell that is similar to fireball in many aspects. When you cast it, four 2-foot-diameter spheres spring from your outstretched hand and streak in straight lines to the spots you select. The meteor spheres leave a fiery trail of sparks.\n" +
-                "If you aim a sphere at a specific creature, you may make a ranged touch attack to strike the target with the meteor.Any creature struck by a sphere takes 2d6 points of bludgeoning damage(no save) and takes a -4 penalty on the saving throw against the sphere’s fire damage(see below).If a targeted sphere misses its target, it simply explodes at the nearest corner of the target’s space.You may aim more than one sphere at the same target.\n" +
+                "If you aim a sphere at a specific creature, you may make a ranged touch attack to strike the target with the meteor.Any creature struck by a sphere takes 2d6 points of bludgeoning damage(no save) and has to make a saving throw against +4 DC for the sphere’s fire damage(see below).If a targeted sphere misses its target, it simply explodes at the nearest corner of the target’s space. You may aim more than one sphere at the same target.\n" +
                 "Once a sphere reaches its destination, it explodes in a 40-foot-radius spread, dealing 6d6 points of fire damage to each creature in the area.If a creature is within the area of more than one sphere, it must save separately against each.Despite stemming from separate spheres, all of the fire damage is added together after the saves have been made, and fire resistance is applied only once.",
                 Helpers.GetIcon("f72f8f03bf0136c4180cd1d70eb773a5")); // controlled fireball
             spell.LocalizedSavingThrow = Helpers.CreateString($"{spell.name}.SavingThrow", "None or Reflex half, see text");
@@ -242,6 +244,7 @@ namespace EldritchArcana
             spell.Type = AbilityType.Spell;
             spell.SpellResistance = true;
             spell.Parent = null;
+            spell.AvailableMetamagic = Metamagic.Empower | Metamagic.Extend | Metamagic.Maximize | Metamagic.Quicken | Metamagic.Heighten | Metamagic.Reach;
             var components = spell.ComponentsArray.Where(
                 c => !(c is AbilityResourceLogic) && !(c is ContextRankConfig) && !(c is AbilityEffectRunAction)).ToList();
             components.Add(Helpers.CreateRunActions(Helpers.Create<ContextActionSpawnAreaEffect>(c =>

@@ -1897,6 +1897,10 @@ namespace EldritchArcana
         {
             allSpells.Add(spell);
             modSpells.Add(spell);
+            if (spell.Type == AbilityType.Spell && spell.AvailableMetamagic == default(Metamagic))
+            {
+                Log.Write($"Error: spell {spell.name} is missing metamagic (should have heighten, quicken at least)");
+            }
         }
 
         public static void AddSpellAndScroll(this BlueprintAbility spell, String scrollIconId, int variant = 0)

@@ -715,6 +715,7 @@ namespace EldritchArcana
             try
             {
                 if (!__result) return;
+                if (Main.settings?.RelaxTonguesCurse == true) return;
 
                 // Tongues only has effect in combat.
                 var self = __instance;

@@ -69,6 +69,7 @@ namespace EldritchArcana
                 Helpers.CreateSpellComponent(SpellSchool.Universalist),
                 Helpers.CreateSpellDescriptor());
             spell.CanTargetSelf = true;
+            spell.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten | Metamagic.Empower | Metamagic.Extend | Metamagic.Maximize | Metamagic.Reach;
 
             var variants = new List<BlueprintAbility>();
             for (int level = 1; level <= 6; level++)
@@ -108,6 +109,7 @@ namespace EldritchArcana
                 Helpers.CreateSpellComponent(SpellSchool.Universalist),
                 Helpers.CreateSpellDescriptor());
             spell.CanTargetSelf = true;
+            spell.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten | Metamagic.Empower | Metamagic.Extend | Metamagic.Maximize | Metamagic.Reach;
 
             var variants = new List<BlueprintAbility>();
             // TODO: add an option to remove injuries and afflictions.
@@ -185,6 +187,7 @@ namespace EldritchArcana
                         fromSpell: true, dispellable: false)));
                 ability.CanTargetSelf = true;
                 ability.CanTargetFriends = true;
+                ability.AvailableMetamagic = Metamagic.Quicken;
                 ability.EffectOnAlly = AbilityEffectOnUnit.Helpful;
                 ability.MaterialComponent.Item = diamond.Value;
                 ability.MaterialComponent.Count = 5;
@@ -217,6 +220,7 @@ namespace EldritchArcana
                 Helpers.CreateSpellComponent(SpellSchool.Evocation),
                 Helpers.CreateSpellDescriptor());
             spell.CanTargetSelf = true;
+            spell.AvailableMetamagic = Metamagic.Quicken | Metamagic.Heighten | Metamagic.Empower | Metamagic.Extend | Metamagic.Maximize | Metamagic.Reach;
 
             var variants = new List<BlueprintAbility>();
             for (int level = 1; level <= 8; level++)
@@ -246,6 +250,7 @@ namespace EldritchArcana
                 Helpers.MergeIds(wishSpell.AssetGuid, "7db719c91bcc4f31b997904ef1f873c8", FavoredClassBonus.spellLevelGuids[level - 1]),
                 wishSpell.Icon, wishSpell.Type, wishSpell.ActionType, wishSpell.Range,
                 wishSpell.LocalizedDuration, wishSpell.LocalizedSavingThrow);
+            spell.AvailableMetamagic = wishSpell.AvailableMetamagic;
             spell.CanTargetSelf = true;
             if (!isMiracle)
             {

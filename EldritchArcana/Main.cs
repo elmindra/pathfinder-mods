@@ -256,7 +256,7 @@ namespace EldritchArcana
                 var patchInfo = Harmony12.HarmonyMethodExtensions.GetHarmonyMethods(type);
                 if (patchInfo == null || patchInfo.Count() == 0)
                 {
-                    Log.Write($"Failed to apply patch {type}: could not find Harmony attributes");
+                    Log.Error($"Failed to apply patch {type}: could not find Harmony attributes");
                     failedPatches.Add(featureName);
                     typesPatched.Add(type, false);
                     return false;
@@ -265,7 +265,7 @@ namespace EldritchArcana
                 var patch = processor.Patch().FirstOrDefault();
                 if (patch == null)
                 {
-                    Log.Write($"Failed to apply patch {type}: no dynamic method generated");
+                    Log.Error($"Failed to apply patch {type}: no dynamic method generated");
                     failedPatches.Add(featureName);
                     typesPatched.Add(type, false);
                     return false;
@@ -367,6 +367,9 @@ namespace EldritchArcana
 
             settings.RelaxAncientLorekeeper = GUILayout.Toggle(settings.RelaxAncientLorekeeper,
                 "Any race can choose the Oracle Ancient Lorekeeper archetype", fixedWidth);
+
+            settings.RelaxTonguesCurse = GUILayout.Toggle(settings.RelaxTonguesCurse,
+                "Disable Tongues curse penalty (that party members need 1 rank Knowledge: World to be controlled by PC in combat)", fixedWidth);
         }
 
         static void OnSaveGUI(UnityModManager.ModEntry modEntry)
@@ -416,6 +419,8 @@ namespace EldritchArcana
         public bool ShowCustomPortraits = false;
 
         public bool RelaxAncientLorekeeper = false;
+
+        public bool RelaxTonguesCurse = false;
 
         public override void Save(UnityModManager.ModEntry modEntry)
         {
