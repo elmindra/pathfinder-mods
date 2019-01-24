@@ -396,9 +396,41 @@ namespace EldritchArcana
             spells.Add(spell);
         }
 
-        public static int DefaultCost(this ModMetamagic metamagic)
+        // Similar to `metamagic.DefaultCost()`, but returns the result before Bag of Tricks
+        // modifies it to 0.
+        public static int OriginalCost(this Metamagic metamagic)
         {
-            return ((Metamagic)metamagic).DefaultCost();
+            // Inline this so Bag of Tricks can't mutate it.
+            switch (metamagic)
+            {
+                case Metamagic.Empower:
+                    return 2;
+                case Metamagic.Maximize:
+                    return 3;
+                case Metamagic.Quicken:
+                    return 4;
+                case Metamagic.Extend:
+                    return 1;
+                case Metamagic.Heighten:
+                    return 0;
+                case Metamagic.Reach:
+                    return 1;
+            }
+            return OriginalCost((ModMetamagic)metamagic);
+        }
+
+        // Similar to `metamagic.DefaultCost()`, but returns the result before Bag of Tricks
+        // modifies it to 0.
+        public static int OriginalCost(this ModMetamagic metamagic)
+        {
+            // Note: don't use metamagic.DefaultCost, as bag of tricks can set this to 0.
+            int result = 0;
+            MetamagicHelper_DefaultCost_Patch.Prefix((Metamagic)metamagic, ref result);
+            if (result == 0)
+            {
+                UberDebug.LogError($"Unknown metamagic: {metamagic}");
+            }
+            return result;
         }
 
         public static void SetIcon(this BlueprintAbilityResource resource, Sprite icon) => setIcon(resource, icon);

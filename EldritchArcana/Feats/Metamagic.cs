@@ -229,7 +229,7 @@ namespace EldritchArcana
         {
             // Create a metamagic rod by cloning an existing one.
             var rodIds = existingRodIds[Metamagic.Empower];
-            var rodCosts = metamagicRodCosts[modMetamagic.DefaultCost() - 1];
+            var rodCosts = metamagicRodCosts[modMetamagic.OriginalCost() - 1];
 
             var library = Main.library;
             var names = new string[] { "Lesser", "Normal", "Greater" };
@@ -275,7 +275,7 @@ namespace EldritchArcana
                     return newMechanics;
                 }));
 
-                newRods.PutIfAbsent(GetMetamagicRodKey(i, modMetamagic.DefaultCost()),
+                newRods.PutIfAbsent(GetMetamagicRodKey(i, modMetamagic.OriginalCost()),
                     () => new List<BlueprintItemEquipmentUsable>()).Add(newRod);
             }
         }
@@ -305,7 +305,7 @@ namespace EldritchArcana
                 var metamagic = rodMetmagic[id];
                 int key = GetMetamagicRodKey(
                     Array.IndexOf(existingRodIds[metamagic], id),
-                    Math.Min(metamagic.DefaultCost(), 3));
+                    Math.Min(metamagic.OriginalCost(), 3));
 
                 if (!matchingKeys.Add(key)) return null;
 
@@ -670,7 +670,7 @@ namespace EldritchArcana
     [Harmony12.HarmonyPatch(typeof(MetamagicHelper), "DefaultCost", new Type[] { typeof(Metamagic) })]
     static class MetamagicHelper_DefaultCost_Patch
     {
-        static bool Prefix(Metamagic metamagic, ref int __result)
+        internal static bool Prefix(Metamagic metamagic, ref int __result)
         {
             switch ((ModMetamagic)metamagic)
             {
