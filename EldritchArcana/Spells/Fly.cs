@@ -123,27 +123,37 @@ namespace EldritchArcana
                 }
             }
 
-            var variants = new List<(BlueprintAbility, BlueprintAbility, BlueprintBuff)>();
+            var variants = new List<FlySpellInfo>();
             foreach (var wing in wings)
             {
                 var name = wing.name.Replace("BuffWings", "");
                 if (name.StartsWith("Draconic")) name = $"{name.Replace("Draconic", "")} Dragon";
-                variants.Add(CreateFly(wing, name, wingToIcon[wing], airWalkBuff));
+                variants.Add(CreateFly(wing, name, wingToIcon[wing]));
             }
 
-            var flyBuffs = variants.Select(v => v.Item3).ToArray();
+            // Each Fly variant needs to suppress wing buffs, air walk, and previous fly buffs
+            var suppressBuffs = wingBuffs.Value.ToList();
+            suppressBuffs.Add(airWalkBuff);
             foreach (var variant in variants)
             {
-                // Overland flight needs to suppress all Fly buffs.
-                variant.Item2.AddComponent(Helpers.CreateSuppressBuffs(flyBuffs));
+                variant.Fly.AddComponent(Helpers.CreateSuppressBuffs(suppressBuffs));
+                suppressBuffs.Add(variant.FlyBuff);
+            }
+            // Each Overland flight variant needs to suppress all the buffs Fly suppresses,
+            // all fly buffs, and previous overland flight buffs.
+            foreach (var variant in variants)
+            {
+                variant.OverlandFlight.AddComponent(Helpers.CreateSuppressBuffs(suppressBuffs));
+                suppressBuffs.Add(variant.OverlandFlightBuff);
             }
 
-            var fly = library.CopyAndAdd(variants[0].Item1, "FlySpell", "20ab2cd848c04d46882625e696c921bf");
+            var fly = library.CopyAndAdd(variants[0].Fly, "FlySpell", "20ab2cd848c04d46882625e696c921bf");
             fly.SetName("Fly");
             fly.SetComponents(
                 SpellSchool.Transmutation.CreateSpellComponent(),
                 Helpers.CreateSpellDescriptor(),
-                fly.CreateAbilityVariants(variants.Select(v => v.Item1)));
+                fly.CreateAbilityVariants(variants.Select(v => v.Fly)));
+            fly.EffectOnAlly = AbilityEffectOnUnit.Helpful;
             fly.AvailableMetamagic = Metamagic.Quicken | Metamagic.Extend | Metamagic.Heighten;
             fly.AddToSpellList(Helpers.wizardSpellList, 3);
             fly.AddToSpellList(Helpers.magusSpellList, 3);
@@ -156,12 +166,13 @@ namespace EldritchArcana
             // Fix Travel domain to use Fly for the 3rd level spell.
             fly.FixDomainSpell(3, "ab90308db82342f47bf0d636fe941434");
 
-            var overlandFlight = library.CopyAndAdd(variants[0].Item2, "OverlandFlight", "8b5ea075097e4c7e999266b7569ee39d");
+            var overlandFlight = library.CopyAndAdd(variants[0].OverlandFlight, "OverlandFlight", "8b5ea075097e4c7e999266b7569ee39d");
             overlandFlight.SetName("Overland Flight");
             overlandFlight.SetComponents(
                 SpellSchool.Transmutation.CreateSpellComponent(),
                 Helpers.CreateSpellDescriptor(),
-                overlandFlight.CreateAbilityVariants(variants.Select(v => v.Item2)));
+                overlandFlight.CreateAbilityVariants(variants.Select(v => v.OverlandFlight)));
+            overlandFlight.EffectOnAlly = AbilityEffectOnUnit.Helpful;
             overlandFlight.AvailableMetamagic = Metamagic.Extend | Metamagic.Quicken | Metamagic.Heighten;
             overlandFlight.AddToSpellList(Helpers.wizardSpellList, 5);
             overlandFlight.AddToSpellList(Helpers.magusSpellList, 5);
@@ -170,7 +181,7 @@ namespace EldritchArcana
             FlySpells.overlandFlight = overlandFlight;
         }
 
-        static (BlueprintAbility, BlueprintAbility, BlueprintBuff) CreateFly(BlueprintBuff baseWingsBuff, String wingsName, Sprite spellIcon, BlueprintBuff airWalkBuff)
+        static FlySpellInfo CreateFly(BlueprintBuff baseWingsBuff, String wingsName, Sprite spellIcon)
         {
             var flyBuff = library.CopyAndAdd(baseWingsBuff, $"Fly{baseWingsBuff.name}", "79d9e52c48a0422b9b4ac39c956d088a", baseWingsBuff.AssetGuid);
 
@@ -208,7 +219,6 @@ namespace EldritchArcana
             flySpell.EffectOnAlly = AbilityEffectOnUnit.Helpful;
 
             flyBuff.AddComponents(
-                Helpers.CreateSuppressBuffs(wingBuffs.Value.AddToArray(airWalkBuff)),
                 Helpers.CreateAddStatBonusScaled(StatType.SkillMobility,
                     ModifierDescriptor.Other, Helpers.CreateBuffScaling(divModifier: 2)),
                 Helpers.Create<BuffMovementSpeed>(b =>
@@ -254,7 +264,7 @@ namespace EldritchArcana
             buffComponents.Add(UnitCondition.Fatigued.CreateImmunity());
             buffComponents.Add(SpellDescriptor.Fatigue.CreateBuffImmunity());
             overlandBuff.SetComponents(buffComponents);
-            return (flyCast, overlandFlight, flyBuff);
+            return new FlySpellInfo(flyCast, overlandFlight, flyBuff, overlandBuff);
         }
 
         static BlueprintBuff LoadAirWalk()
@@ -331,5 +341,19 @@ namespace EldritchArcana
             "5a791c1b0bacee3459d7f5137fa0bd5f", // silver
             "381a168acd79cd54baf87a17ca861d9b", // white
         }.Select(library.Get<BlueprintBuff>).ToArray());
+    }
+
+    class FlySpellInfo
+    {
+        public readonly BlueprintAbility Fly, OverlandFlight;
+        public readonly BlueprintBuff FlyBuff, OverlandFlightBuff;
+
+        internal FlySpellInfo(BlueprintAbility fly, BlueprintAbility overlandFlight, BlueprintBuff flyBuff, BlueprintBuff overlandBuff)
+        {
+            this.Fly = fly;
+            this.OverlandFlight = overlandFlight;
+            this.FlyBuff = flyBuff;
+            this.OverlandFlightBuff = overlandBuff;
+        }
     }
 }

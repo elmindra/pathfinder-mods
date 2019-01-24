@@ -340,7 +340,7 @@ namespace EldritchArcana
     }
 
     // This is similar to ChangeSpellElementalDamage, but it checks for metamagic first.
-    public class ElementalMetamagic : RuleInitiatorLogicComponent<RuleCalculateDamage>, IInitiatorRulebookHandler<RuleCastSpell>
+    public class ElementalMetamagic : RuleInitiatorLogicComponent<RulePrepareDamage>, IInitiatorRulebookHandler<RuleCastSpell>
     {
         public DamageEnergyType EnergyType;
 
@@ -367,7 +367,7 @@ namespace EldritchArcana
                 Log.Error(e);
             }
         }
-        public override void OnEventAboutToTrigger(RuleCalculateDamage evt)
+        public override void OnEventAboutToTrigger(RulePrepareDamage evt)
         {
             try
             {
@@ -389,7 +389,7 @@ namespace EldritchArcana
             }
         }
 
-        public override void OnEventDidTrigger(RuleCalculateDamage evt) { }
+        public override void OnEventDidTrigger(RulePrepareDamage evt) { }
 
         private static SpellDescriptor ElementToSpellDescriptor(DamageEnergyType element)
         {

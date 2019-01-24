@@ -129,7 +129,7 @@ namespace EldritchArcana
 
         internal static Settings settings;
 
-        static string testedGameVersion = "1.2.0l";
+        static string testedGameVersion = "1.2.0n";
 
         static PortraitLoader portraitLoader;
 

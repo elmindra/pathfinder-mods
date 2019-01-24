@@ -46,6 +46,7 @@ using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
@@ -1621,6 +1622,9 @@ namespace EldritchArcana
             s.Buffs = buffs;
             return s;
         }
+
+        public static SuppressBuffs CreateSuppressBuffs(IEnumerable<BlueprintBuff> buffs) => CreateSuppressBuffs(buffs.ToArray());
+
 
         public static AbilityAreaEffectRunAction CreateAreaEffectRunAction(GameAction unitEnter = null, GameAction unitExit = null, GameAction unitMove = null, GameAction round = null)
         {

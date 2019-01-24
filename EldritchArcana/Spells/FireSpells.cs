@@ -107,6 +107,8 @@ namespace EldritchArcana
                 fireball.Icon, AbilityType.Spell, CommandType.Standard, fireball.Range,
                 "5 rounds or less; see text", fireball.LocalizedSavingThrow);
             spell.SpellResistance = true;
+            spell.EffectOnAlly = AbilityEffectOnUnit.Harmful;
+            spell.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
             spell.AvailableMetamagic = Metamagic.Empower | Metamagic.Heighten | Metamagic.Maximize | Metamagic.Quicken | Metamagic.Reach;
 
             var delayIds = new String[] {
@@ -244,6 +246,8 @@ namespace EldritchArcana
             spell.Type = AbilityType.Spell;
             spell.SpellResistance = true;
             spell.Parent = null;
+            spell.EffectOnAlly = AbilityEffectOnUnit.Harmful;
+            spell.EffectOnEnemy = AbilityEffectOnUnit.Harmful;
             spell.AvailableMetamagic = Metamagic.Empower | Metamagic.Extend | Metamagic.Maximize | Metamagic.Quicken | Metamagic.Heighten | Metamagic.Reach;
             var components = spell.ComponentsArray.Where(
                 c => !(c is AbilityResourceLogic) && !(c is ContextRankConfig) && !(c is AbilityEffectRunAction)).ToList();

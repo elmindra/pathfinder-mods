@@ -1026,6 +1026,7 @@ namespace EldritchArcana
                 var level = spellLists.Min(l => l.SpellLevel);
                 if (level == SpellLevel) spells.Add(spell);
             }
+            Log.Write($"Touch spells: {touchSpells.Count}, spells: {spells.Count}, matching: {spells.Where(touchSpells.Contains).Count()}");
             return spells.Where(s => !touchSpells.Contains(s));
         }
 

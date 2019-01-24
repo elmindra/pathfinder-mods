@@ -436,13 +436,15 @@ namespace EldritchArcana
 
         public void OnEventAboutToTrigger(RuleApplyMetamagic evt)
         {
-            var spell = Param.GetValueOrDefault().Blueprint;
+            var spell = (BlueprintAbility)Param.GetValueOrDefault().Blueprint;
             if (evt.Spell != spell && evt.Spell?.Parent != spell) return;
             var spellbook = evt.Spellbook;
-            if (spellbook == null || spellbook.GetSpellLevel((BlueprintAbility)spell) > MaxSpellLevel)
+            if (spellbook == null || spellbook.GetSpellLevel(spell) > MaxSpellLevel)
             {
                 return;
             }
+            Log.Write($"Try to apply metamagic: {evt.AppliedMetamagics.StringJoin(m => m.ToString())}, spell {spell.name} allows {spell.AvailableMetamagic}");
+            if (evt.AppliedMetamagics.Count == 0) return;
 
             int reduction = Reduction;
             if (OneMetamagicIsFree)
