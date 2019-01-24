@@ -354,10 +354,10 @@ namespace EldritchArcana
         {
             var entries = state.SelectedClass.Progression.LevelEntries;
             var isOracle = state.SelectedClass == OracleClass.oracle;
-            var hasChannelEnergy = entries.Any(l => l.Level == state.NextClassLevel &&
+            var hasChannelEnergy = entries.Any(l => l.Level == state.NextLevel &&
                 l.Features.Any(f => f.AssetGuid == ChannelEnergyId));
 
-            if (isOracle && state.NextClassLevel == 1)
+            if (isOracle && state.NextLevel == 1)
             {
                 SetText(MysteryText, ChooseMysteryText);
             }
@@ -365,7 +365,7 @@ namespace EldritchArcana
             {
                 SetText(SavedText, SavedChoiceText);
             }
-            else if (state.NextClassLevel == 1)
+            else if (state.NextLevel == 1)
             {
                 SetText(FavoredClass, ChooseFavoredClass);
             }
@@ -542,7 +542,7 @@ namespace EldritchArcana
             // Note: this is different from the other favored class bonus components,
             // because the feature remains on the character, and kicks in at each level up.
             var levelUp = Game.Instance.UI.CharacterBuildController.LevelUpController;
-            if (levelUp.State.NextClassLevel == 1 && (Owner == levelUp.Preview || Owner == levelUp.Unit))
+            if (levelUp.State.NextLevel == 1 && (Owner == levelUp.Preview || Owner == levelUp.Unit))
             {
                 // Handle the level 1 hit point adjustment in the character generator.
                 Apply(levelUp.State);
@@ -640,7 +640,7 @@ namespace EldritchArcana
         {
             try
             {
-                if (state.NextClassLevel == 1)
+                if (state.NextLevel == 1)
                 {
                     foreach (var action in onChargenApply) action(state, unit);
                 }
