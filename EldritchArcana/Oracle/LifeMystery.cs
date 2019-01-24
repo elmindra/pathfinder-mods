@@ -276,7 +276,6 @@ namespace EldritchArcana
                 "66ec04bf0853419fa5dd742dba10ea30", feat.Icon, null,
                 (SpellDescriptor.RestoreHP | SpellDescriptor.Cure).CreateSpellDescriptor(),
                 Helpers.CreateAddFactContextActions(
-                    activated: Helpers.Create<ContextSpendResource>(c => c.Resource = resource),
                     deactivated: Helpers.Create<ContextRestoreResource>(c => c.Resource = resource),
                     newRound: Helpers.CreateConditional(
                         Helpers.Create<ContextConditionDistanceToTarget>(c => c.DistanceGreater = 40.Feet()),
@@ -288,18 +287,19 @@ namespace EldritchArcana
                                     c.PrefabLink = cureLightWounds.GetComponent<AbilitySpawnFx>().PrefabLink),
                                 Helpers.Create<ContextActionTransferDamageToCaster>(c => c.Value = 5)
                             }))));
+            buff.SetBuffFlags(BuffFlags.RemoveOnRest);
             removeBuff.Buff = buff;
 
-            var bondAbility = Helpers.CreateAbility($"{feat.name}Ability", feat.Name, feat.Description,
+            var linkAbility = Helpers.CreateAbility($"{feat.name}Ability", feat.Name, feat.Description,
                 "3d1e78466db341b285fb3d97ce408a0d", feat.Icon,
                 AbilityType.Supernatural, CommandType.Standard, AbilityRange.Medium, "", "",
                 resource.CreateResourceLogic(),
                 Helpers.CreateRunActions(buff.CreateApplyBuff(Helpers.CreateContextDuration(),
                     fromSpell: false, dispellable: false, permanent: true)));
-            bondAbility.CanTargetFriends = true;
-            bondAbility.EffectOnAlly = AbilityEffectOnUnit.Helpful;
+            linkAbility.CanTargetFriends = true;
+            linkAbility.EffectOnAlly = AbilityEffectOnUnit.Helpful;
 
-            var dismissAbility = library.CopyAndAdd(bondAbility, $"{feat.name}Dismiss", "9cadee2d79bd436596296704a5637578");
+            var dismissAbility = library.CopyAndAdd(linkAbility, $"{feat.name}Dismiss", "9cadee2d79bd436596296704a5637578");
             dismissAbility.SetName($"End {feat.Name}");
             dismissAbility.ActionType = CommandType.Free;
             dismissAbility.SetComponents(
@@ -308,7 +308,7 @@ namespace EldritchArcana
                 Helpers.CreateRunActions(removeBuff));
 
             feat.SetComponents(resource.CreateAddAbilityResource(),
-                bondAbility.CreateAddFact(), dismissAbility.CreateAddFact());
+                linkAbility.CreateAddFact(), dismissAbility.CreateAddFact());
             return lifeLink = feat;
         }
 

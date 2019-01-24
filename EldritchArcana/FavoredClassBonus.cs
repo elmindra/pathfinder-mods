@@ -354,10 +354,10 @@ namespace EldritchArcana
         {
             var entries = state.SelectedClass.Progression.LevelEntries;
             var isOracle = state.SelectedClass == OracleClass.oracle;
-            var hasChannelEnergy = entries.Any(l => l.Level == state.NextLevel &&
+            var hasChannelEnergy = entries.Any(l => l.Level == state.NextClassLevel &&
                 l.Features.Any(f => f.AssetGuid == ChannelEnergyId));
 
-            if (isOracle && state.NextLevel == 1)
+            if (isOracle && state.NextClassLevel == 1)
             {
                 SetText(MysteryText, ChooseMysteryText);
             }

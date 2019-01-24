@@ -1167,10 +1167,10 @@ namespace EldritchArcana
             return resource;
         }
 
-        public static AbilityResourceLogic CreateResourceLogic(this BlueprintAbilityResource resource)
+        public static AbilityResourceLogic CreateResourceLogic(this BlueprintAbilityResource resource, bool spend = true)
         {
             var a = Create<AbilityResourceLogic>();
-            a.IsSpendResource = true;
+            a.IsSpendResource = spend;
             a.RequiredResource = resource;
             return a;
         }
