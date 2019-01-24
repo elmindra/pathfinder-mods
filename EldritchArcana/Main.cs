@@ -83,41 +83,6 @@ namespace EldritchArcana
                 SafeLoad(SaveCompatibility.CheckCompat, "Check save game compatibility");
                 Log.Write("Loaded finished.");
 #endif
-
-                /*            
-                Ideas for future work:
-                - More Oracle mysteries/archetypes
-                - Arcane Savant prestige class (started)
-                - Warpriest class (started)
-                - Bloodline mutations
-                - Shapechange bloodline
-                - Variant multiclassing
-                - Spells! So many fun ones (see ArcaneSpells file for a few ideas)
-                - Ninja Tricks
-                  - Vanishing trick
-                  - Shadow Clone
-                  - Pressure Points
-                - Rogue talents: ninja trick/ki pool/improved
-                - Magus Close Range (can use Spellstrike with range touch spells)
-                - Multiattack
-
-                Things to help Wizards:
-                - Admixture subschool
-                - More scrolls in loot/vendors: every spell in game should be purchasable
-                  at appropriate level. (note: IIRC there's another mod that fixes this.)
-                - Fast study: if you leave a spell slot empty at rest, you can choose a spell
-                  and after 1 minute it'll be memorized.
-                - Scribe scrolls at rest: tickable option to scribe all unused spells, so
-                  they'll be available for later use? (note: craft items mod seems a better
-                  place for this).
-                - More spells, especially utility spells.
-
-                Things to help Druids:
-                - more spells (e.g. fire seeds)
-                - Planar Wild Shape Feat
-                - Powerful Shape
-                - Draconic Druid Archetype
-                */
             }
         }
 

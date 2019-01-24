@@ -1012,7 +1012,6 @@ namespace EldritchArcana
             // For traits: it's valid to take any spell, even one not from your current
             // class that you may be able to cast later.
             var spells = new List<BlueprintAbility>();
-            var touchSpells = new HashSet<BlueprintAbility>();
             foreach (var spell in Helpers.allSpells)
             {
                 if (spell.Parent != null) continue;
@@ -1020,14 +1019,10 @@ namespace EldritchArcana
                 var spellLists = spell.GetComponents<SpellListComponent>();
                 if (spellLists.FirstOrDefault() == null) continue;
 
-                var stickyTouch = spell.StickyTouch;
-                if (stickyTouch != null) touchSpells.Add(stickyTouch.TouchDeliveryAbility);
-
                 var level = spellLists.Min(l => l.SpellLevel);
                 if (level == SpellLevel) spells.Add(spell);
             }
-            Log.Write($"Touch spells: {touchSpells.Count}, spells: {spells.Count}, matching: {spells.Where(touchSpells.Contains).Count()}");
-            return spells.Where(s => !touchSpells.Contains(s));
+            return spells;
         }
 
         protected override IEnumerable<BlueprintScriptableObject> GetAllItems() => Helpers.allSpells;

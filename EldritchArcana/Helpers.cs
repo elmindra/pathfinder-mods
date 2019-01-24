@@ -612,6 +612,7 @@ namespace EldritchArcana
 
         public static readonly List<BlueprintAbility> allSpells = new List<BlueprintAbility>();
         public static readonly List<BlueprintAbility> modSpells = new List<BlueprintAbility>();
+        public static readonly List<BlueprintAbility> spellsWithResources = new List<BlueprintAbility>();
         public static readonly List<BlueprintItemEquipmentUsable> modScrolls = new List<BlueprintItemEquipmentUsable>();
 
         public static readonly List<BlueprintLoot> allLoots = new List<BlueprintLoot>();
@@ -676,7 +677,20 @@ namespace EldritchArcana
                 var spell = blueprint as BlueprintAbility;
                 if (spell != null)
                 {
-                    if (spell.Type == AbilityType.Spell) allSpells.Add(spell);
+                    if (spell.Type == AbilityType.Spell)
+                    {
+                        // Tiefling racial SLAs are marked as spells rather than SLAs.
+                        // (We can find them by the presence of the resource logic.)
+                        if (spell.GetComponent<AbilityResourceLogic>() != null)
+                        {
+                            spellsWithResources.Add(spell);
+                        }
+                        else
+                        {
+                            allSpells.Add(spell);
+                        }
+
+                    }
                     continue;
                 }
 

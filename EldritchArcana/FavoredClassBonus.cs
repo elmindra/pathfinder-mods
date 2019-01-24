@@ -365,7 +365,7 @@ namespace EldritchArcana
             {
                 SetText(SavedText, SavedChoiceText);
             }
-            else if (state.IsCharGen)
+            else if (state.NextClassLevel == 1)
             {
                 SetText(FavoredClass, ChooseFavoredClass);
             }
@@ -542,7 +542,7 @@ namespace EldritchArcana
             // Note: this is different from the other favored class bonus components,
             // because the feature remains on the character, and kicks in at each level up.
             var levelUp = Game.Instance.UI.CharacterBuildController.LevelUpController;
-            if (levelUp.State.IsCharGen && (Owner == levelUp.Preview || Owner == levelUp.Unit))
+            if (levelUp.State.NextClassLevel == 1 && (Owner == levelUp.Preview || Owner == levelUp.Unit))
             {
                 // Handle the level 1 hit point adjustment in the character generator.
                 Apply(levelUp.State);
@@ -640,7 +640,7 @@ namespace EldritchArcana
         {
             try
             {
-                if (state.IsCharGen)
+                if (state.NextClassLevel == 1)
                 {
                     foreach (var action in onChargenApply) action(state, unit);
                 }

@@ -136,14 +136,14 @@ namespace EldritchArcana
             suppressBuffs.Add(airWalkBuff);
             foreach (var variant in variants)
             {
-                variant.Fly.AddComponent(Helpers.CreateSuppressBuffs(suppressBuffs));
+                variant.FlyBuff.AddComponent(Helpers.CreateSuppressBuffs(suppressBuffs));
                 suppressBuffs.Add(variant.FlyBuff);
             }
             // Each Overland flight variant needs to suppress all the buffs Fly suppresses,
             // all fly buffs, and previous overland flight buffs.
             foreach (var variant in variants)
             {
-                variant.OverlandFlight.AddComponent(Helpers.CreateSuppressBuffs(suppressBuffs));
+                variant.OverlandFlightBuff.AddComponent(Helpers.CreateSuppressBuffs(suppressBuffs));
                 suppressBuffs.Add(variant.OverlandFlightBuff);
             }
 
@@ -248,6 +248,7 @@ namespace EldritchArcana
                 overlandBuff.CreateApplyBuff(
                     Helpers.CreateContextDuration(rate: DurationRate.Hours),
                     fromSpell: true, toCaster: true)));
+            spellComponents.Add(Helpers.CreateSuppressBuffs()); // for backwards compatibility
             overlandFlight.SetComponents(spellComponents);
 
             overlandBuff.SetNameDescription(overlandFlight);

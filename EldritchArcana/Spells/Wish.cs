@@ -422,6 +422,16 @@ namespace EldritchArcana
                     }
                 }
             }
+            // For backwards compatibility, create these spells but don't add them to the selections.
+            foreach (var spell in Helpers.spellsWithResources)
+            {
+                if (spell.Parent != null) continue;
+
+                var spellLists = spell.GetComponents<SpellListComponent>();
+                if (spellLists.FirstOrDefault() == null) continue;
+
+                SpellToWishAbility(spell, "361fc62d90dc4e75b4c7858fcc0072b0");
+            }
             return wishSpells;
         }
 

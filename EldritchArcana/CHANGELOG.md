@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   your language. They can learn your language with 1 rank in Knowledge: World.)
 
 ### Fixed
+- Possible fix for Respec mod issue with Traits/Favored class Bonus
+  (note: Respec mod does not currently work on 1.2.0n, so unable to verify fix).
 - Enable metamagic for many of the new spells that were missing it
   (Wall of Fire, Delayed Blast Fireball, Fly/Overland Flight, etc).
 - Elemental Spell now works correctly with elemental damage immunities.
@@ -25,8 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Life Link no longer plays visual/sound effects for fully healed targets.
 - Clarify description of Meteor Swarm (implemented as +4 DC against the primary
   target if hit, rather than -4 to save).
-- Touch spells are no longer duplicated in spell selections (such as Magical
-  Lineage).
+- Tiefling racial spell-like abilities no longer show up in spell selections
+  (such as Magical Lineage).
 - Add try+catch guards to patches that were missing them; this should increase
   stability. Improve logging for patches that fail to apply (patch errors will
   now log in UnityModManager.log in release builds).
