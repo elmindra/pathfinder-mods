@@ -66,7 +66,7 @@ namespace EldritchArcana
             SafeAddToList(() => CreateSpellPerfection(metamagicFeats), feats, "Spell Perfection");
 
             // Magus Arcanas, Extra Magus Arcana
-            SafeAddToList(LoadMagusArcanas, feats, "Magus Arcanas");
+            SafeAddRangeToList(LoadMagusArcanas, feats, "Magus Arcanas");
 
             Main.SafeLoad(LoadDervishDance, "Dervish Dance");
 
@@ -89,6 +89,13 @@ namespace EldritchArcana
             if (result != null) list.Add(result);
         }
 
+        internal static void SafeAddRangeToList<T>(Func<IEnumerable<T>> load, List<T> list, String name)
+        {
+            var result = SafeLoad(load, name);
+            if (result != null) list.AddRange(result);
+        }
+
+
         static BlueprintFeature CreateFeyFoundling()
         {
             var feat = Helpers.CreateFeature("FeyFoundling", "Fey Foundling",
@@ -102,7 +109,7 @@ namespace EldritchArcana
             return feat;
         }
 
-        static BlueprintFeature LoadMagusArcanas()
+        static IEnumerable<BlueprintFeature> LoadMagusArcanas()
         {
             var arcanas = new List<BlueprintFeature> {
                 CreateSpellBlending(),
@@ -118,8 +125,13 @@ namespace EldritchArcana
             arcanas.AddRange(metamagic.Zip(requiredLevels, CreateMagusArcanaMetamagic));
 
             var magusArcanas = library.Get<BlueprintFeatureSelection>("e9dc4dfc73eaaf94aae27e0ed6cc9ada");
+            var scionArcanas = library.Get<BlueprintFeatureSelection>("d4b54d9db4932454ab2899f931c2042c");
             magusArcanas.SetFeatures(magusArcanas.AllFeatures.AddToArray(arcanas));
-            return CreateExtraArcana(magusArcanas);
+            scionArcanas.SetFeatures(scionArcanas.AllFeatures.AddToArray(arcanas));
+            return new BlueprintFeature[] {
+                CreateExtraArcana(magusArcanas, "ExtraArcanaSelection", "Extra Arcana", "bace31a97ed141d9b11cc5dabacb5b88"),
+                CreateExtraArcana(scionArcanas, "ScionExtraArcanaSelection", $"Extra Arcana ({Helpers.eldritchScionArchetype.Name})", "4ea3182a6f544612af7b4aa42cb2b677")
+            };
         }
 
         static BlueprintFeature CreateMagusArcanaMetamagic(BlueprintFeature metamagicFeat, int requiredLevel)
@@ -157,12 +169,12 @@ namespace EldritchArcana
             return feat;
         }
 
-        static BlueprintFeatureSelection CreateExtraArcana(BlueprintFeatureSelection magusArcanas)
+        static BlueprintFeatureSelection CreateExtraArcana(BlueprintFeatureSelection magusArcanas, String name, String displayName, String assetId)
         {
-            var feat = Helpers.CreateFeatureSelection("ExtraArcanaSelection", "Extra Arcana",
+            var feat = Helpers.CreateFeatureSelection(name, displayName,
                 "You have unlocked the secret of a new magus arcana. You gain one additional magus arcana. You must meet all the prerequisites for this magus arcana.\n" +
                 "Special: You can gain this feat multiple times. Its effects stack, granting a new arcana each time you gain this feat.",
-                "bace31a97ed141d9b11cc5dabacb5b88",
+                assetId,
                 Helpers.GetIcon("cd9f19775bd9d3343a31a065e93f0c47"), // extra channel
                 FeatureGroup.Feat,
                 magusArcanas.PrerequisiteFeature());
@@ -215,10 +227,8 @@ namespace EldritchArcana
             var pickSpellChoice2 = CreateSpellBlendingSelection(magus, feat, 2, "cc40113b6e884c99b4141a25b7825aa8");
             SelectFeature_Apply_Patch.onApplyFeature.Add(pickTwoSpells, (state, unit) =>
             {
-                var choice = pickSpellChoice1;
-                state.AddSelection(null, choice, choice, 1);
-                choice = pickSpellChoice2;
-                state.AddSelection(null, choice, choice, 1);
+                pickSpellChoice1.AddSelection(state, unit, 1);
+                pickSpellChoice2.AddSelection(state, unit, 1);
             });
 
             feat.SetFeatures(pickOneSpell, pickTwoSpells, UndoSelection.Feature.Value);

@@ -159,10 +159,8 @@ namespace EldritchArcana
             var pickSpellChoice2 = CreateDragonMagicSpellSelection(feat, 2, "1cffc8df18884a74bf18b40c7284515a");
             SelectFeature_Apply_Patch.onApplyFeature.Add(pickTwoSpells, (state, unit) =>
             {
-                var choice = pickSpellChoice1;
-                state.AddSelection(null, choice, choice, 1);
-                choice = pickSpellChoice2;
-                state.AddSelection(null, choice, choice, 1);
+                pickSpellChoice1.AddSelection(state, unit, 1);
+                pickSpellChoice2.AddSelection(state, unit, 1);
             });
 
             feat.SetFeatures(pickOneSpell, pickTwoSpells);

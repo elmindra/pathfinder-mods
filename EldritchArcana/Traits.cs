@@ -67,8 +67,8 @@ namespace EldritchArcana
             traitSelection2.SetFeatures(traitSelection.Features);
             ApplyClassMechanics_Apply_Patch.onChargenApply.Add((state, unit) =>
             {
-                state.AddSelection(null, traitSelection, traitSelection, 1);
-                state.AddSelection(null, traitSelection2, traitSelection2, 1);
+                traitSelection.AddSelection(state, unit, 1);
+                traitSelection2.AddSelection(state, unit, 1);
             });
 
             // Create the "Additional Traits" feat.
@@ -90,8 +90,8 @@ namespace EldritchArcana
 
             SelectFeature_Apply_Patch.onApplyFeature.Add(additionalTraits, (state, unit) =>
             {
-                state.AddSelection(null, additionalTrait1, additionalTrait1, 1);
-                state.AddSelection(null, additionalTrait2, additionalTrait2, 1);
+                additionalTrait1.AddSelection(state, unit, 1);
+                additionalTrait2.AddSelection(state, unit, 1);
             });
 
             library.AddFeats(additionalTraits);

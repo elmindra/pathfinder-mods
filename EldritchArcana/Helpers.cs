@@ -433,6 +433,14 @@ namespace EldritchArcana
             return result;
         }
 
+        public static void AddSelection(this BlueprintFeatureSelection feat, LevelUpState state, UnitDescriptor unit, int level)
+        {
+            // TODO: we may want to add the selection feat to the unit.
+            // (But I don't think Respec mod will be able to clear it out if we do that.)
+            // unit.AddFact(feat);
+            state.AddSelection(null, feat, feat, level);
+        }
+
         public static void SetIcon(this BlueprintAbilityResource resource, Sprite icon) => setIcon(resource, icon);
 
         static readonly FastSetter setIcon = Helpers.CreateFieldSetter<BlueprintAbilityResource>("m_Icon");

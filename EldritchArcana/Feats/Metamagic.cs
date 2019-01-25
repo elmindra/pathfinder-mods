@@ -221,7 +221,8 @@ namespace EldritchArcana
             friendlyName = friendlyName ?? (metamagic.ToString() + " Spell");
             feat.SetNameDescriptionIcon($"Metamagic ({friendlyName})", description, Helpers.GetIcon(iconAssetId));
             Main.library.AddAsset(feat, assetId);
-            CreateMetamagicRods(feat, metamagic, friendlyName, logic);
+
+            Main.SafeLoad(() => CreateMetamagicRods(feat, metamagic, friendlyName, logic), "Metamagic rods");
             return feat;
         }
 

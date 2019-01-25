@@ -6,9 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.9.4]
 
+### Added
+- The new Magus arcanas and Extra Arcana feat are now available for Eldritch
+  Scions.
+
 ### Fixed
-- Setting metamagic cost to 0 in Bag of Tricks no longer breaks the code
-  that creates rods for the new metamagics.
+- Setting metamagic cost to 0 in Bag of Tricks no longer breaks the code that
+  creates rods for the new metamagics.
+- Tongues curse now allows animal companions to be controlled if you can talk
+  to the corresponding NPC.
 
 ## [0.9.3]
 

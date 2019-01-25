@@ -726,6 +726,8 @@ namespace EldritchArcana
                 var npc = self.Descriptor;
                 if (self == mainChar || npc.Master == mainChar) return;
 
+                if (npc.IsPet) npc = npc.Master.Value?.Descriptor ?? npc;
+
                 // Don't apply the penalty until we've had an opportunity to level up.
                 var pc = mainChar.Value.Descriptor;
                 if (pc.Progression.CharacterLevel < 2) return;

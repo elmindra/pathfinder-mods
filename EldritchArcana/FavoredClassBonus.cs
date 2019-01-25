@@ -204,7 +204,7 @@ namespace EldritchArcana
             favoredClass.SetFeatures(choices);
             ApplyClassMechanics_Apply_Patch.onChargenApply.Add((state, unit) =>
             {
-                state.AddSelection(null, favoredClass, favoredClass, 1);
+                favoredClass.AddSelection(state, unit, 1);
             });
         }
 
@@ -298,7 +298,7 @@ namespace EldritchArcana
                 if (!state.Selections.Any(s => s.Selection.GetGroup() == FeatureGroup.Deities ||
                     (object)s.Selection == paladinDeitySelection))
                 {
-                    state.AddSelection(null, deitySelection, deitySelection, 1);
+                    deitySelection.AddSelection(state, unit, 1);
                 }
             });
         }
