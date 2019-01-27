@@ -40,8 +40,6 @@ namespace EldritchArcana
     // To reduce the chance of conflict with any metamagic added by the devs, we use higher bits.
     //
     // For now, focus on the popular metamagics because it's a big list (https://www.d20pfsrd.com/feats/metamagic-feats/).
-    //
-    // TODO: we also need rods for these.
     [Flags]
     public enum ModMetamagic
     {
@@ -60,7 +58,6 @@ namespace EldritchArcana
 
     static class MetamagicFeats
     {
-
         internal static BlueprintFeature persistentSpellFeat;
 
         static List<BlueprintFeature> metamagicFeats;

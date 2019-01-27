@@ -26,6 +26,7 @@ using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UI.Common;
+using Kingmaker.UI.ServiceWindow;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -985,13 +986,22 @@ namespace EldritchArcana
             var spellbook = evt.Spellbook;
             if (spellbook == null) return;
 
-            int bonus = Math.Min(evt.Initiator.Descriptor.Progression.CharacterLevel - spellbook.CasterLevel, MaxBonus);
-
+            int bonus = GetBonus(spellbook);
             Log.Write($"Increase caster level of {evt.Spell?.name} by {bonus}");
             evt.AddBonusCasterLevel(bonus);
         }
 
         public void OnEventDidTrigger(RuleCalculateAbilityParams evt) { }
+
+        internal int GetBonus(Spellbook spellbook)
+        {
+            return Math.Min(spellbook.Owner.Progression.CharacterLevel - spellbook.CasterLevel, MaxBonus);
+        }
+
+        static IncreaseCasterLevelUpToCharacterLevel()
+        {
+            Main.ApplyPatch(typeof(SpellBookCharacteristics_Setup_Patch), "Magical Knack showing caster level in spellbook UI");
+        }
     }
 
     // Selects any spell at `SpellLevel`, either from the provided `SpellList` or from all spells.
@@ -1317,5 +1327,39 @@ namespace EldritchArcana
         }
 
         public override void OnEventDidTrigger(RuleCalculateDamage evt) { }
+    }
+
+    [Harmony12.HarmonyPatch(typeof(SpellBookCharacteristics), "Setup", new Type[0])]
+    static class SpellBookCharacteristics_Setup_Patch
+    {
+        static void Postfix(SpellBookCharacteristics __instance)
+        {
+            var self = __instance;
+            try
+            {
+                var controller = Game.Instance.UI.SpellBookController;
+                var spellbook = controller.CurrentSpellbook;
+                if (spellbook != null && spellbook.CasterLevel > 0)
+                {
+                    int bonus = 0;
+                    foreach (var feat in spellbook.Owner.Progression.Features.Enumerable)
+                    {
+                        foreach (var c in feat.SelectComponents<IncreaseCasterLevelUpToCharacterLevel>())
+                        {
+                            bonus = Math.Max(bonus, c.GetBonus(spellbook));
+                        }
+                    }
+                    if (bonus > 0)
+                    {
+                        self.CasterLevel.text = (spellbook.CasterLevel + bonus).ToString();
+                        self.Concentration.text = (spellbook.GetConcentration() + bonus).ToString();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
+        }
     }
 }

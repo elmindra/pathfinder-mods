@@ -53,9 +53,44 @@ namespace EldritchArcana
         {
             // TODO: the Djinni bloodlines might be interesting. Limited Wish without material component is a neat capstone.
             Main.SafeLoad(LoadOrcBloodline, "Orc Bloodline");
+
+            Main.SafeLoad(LoadMetamagicAdept, "Metamagic Adept (Arcane Bloodline)");
         }
 
-        internal static void LoadOrcBloodline()
+        static void LoadMetamagicAdept()
+        {
+            // Adds the Metamagic Adept power to the Arcane Bloodline.
+            var bloodline = library.Get<BlueprintProgression>("4d491cf9631f7e9429444f4aed629791");
+
+            var arcaneApotheosis = library.Get<BlueprintFeature>("2086d8c0d40e35b40b86d47e47fb17e4");
+            arcaneApotheosis.AddComponent(Helpers.Create<FastMetamagicLogic>());
+            arcaneApotheosis.SetDescription(arcaneApotheosis.Description + "\nYou can also add any metamagic feats that you know to your spells without increasing their casting time, although you must still expend higher-level spell slots.");
+
+            var combatCastingAdept1 = library.Get<BlueprintFeature>("7aa83ee3526a946419561d8d1aa09e75");
+            var combatCastingAdept2 = library.Get<BlueprintFeature>("3d7b19c8a1d03464aafeb306342be000");
+
+            var feat = Helpers.CreateFeature("BloodlineArcaneMetamagicAdept", "Metamagic Adept",
+                "At 3rd level, you can apply any one metamagic feat you know to a spell you are about to cast without increasing the casting time. You must still expend a higher-level spell slot to cast this spell. You can use this ability once per day at 3rd level and one additional time per day for every four sorcerer levels you possess beyond 3rd, up to five times per day at 19th level. At 20th level, this ability is replaced by arcane apotheosis.",
+                "2edfee19cc574b17944308c3cee1da8b",
+                combatCastingAdept1.Icon, FeatureGroup.None);
+
+            var resource = Helpers.CreateAbilityResource($"{feat.name}Resource", "", "", "f49ed72de2ef4cc09319fbc008dd7a51", null);
+            resource.SetIncreasedByLevelStartPlusDivStep(0, 3, 1, 4, 1, 0, 0, bloodline.Classes, bloodline.Archetypes);
+
+            var buff = Helpers.CreateBuff($"{feat.name}Buff", feat.Name, feat.Description, "e2d7839c3d08437d8b233c08d79f3611",
+                feat.Icon, null, Helpers.Create<FastMetamagicLogic>(f => { f.Once = true; f.Resource = resource; }));
+            var ability = Helpers.CreateActivatableAbility($"{feat.name}ToggleAbility", feat.Name, feat.Description,
+                "e2d7839c3d08437d8b233c08d79f3611", feat.Icon, buff, AbilityActivationType.Immediately, CommandType.Free, null,
+                resource.CreateActivatableResourceLogic(ResourceSpendType.Never));
+
+            feat.SetComponents(resource.CreateAddAbilityResource(), ability.CreateAddFact());
+
+            combatCastingAdept1.AddComponent(feat.CreateAddFactOnLevelRange(bloodline.Classes, bloodline.Archetypes, maxLevel: 19));
+            combatCastingAdept1.SetDescription(combatCastingAdept1.Description + $"\n{feat.Name}: {feat.Description}");
+            combatCastingAdept2.SetDescription(combatCastingAdept2.Description + $"\n{feat.Name}: {feat.Description}");
+        }
+
+        static void LoadOrcBloodline()
         {
             var orcBloodline = Helpers.CreateProgression("BloodlineOrcProgression",
                 "Orc Bloodline",

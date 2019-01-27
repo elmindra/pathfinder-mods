@@ -61,6 +61,8 @@ Archetypes:
 Bloodlines:
 
 - [Orc Bloodline](https://www.d20pfsrd.com/classes/core-classes/sorcerer/bloodlines/bloodlines-from-paizo/orc-bloodline/)
+- [Arcane Bloodline](https://www.d20pfsrd.com/classes/core-classes/sorcerer/bloodlines/bloodlines-from-paizo/arcane-bloodline/)
+  now also gets Metamagic Adept, and the metamgic bonus of Arcane Apotheosis.
 
 Spells:
 

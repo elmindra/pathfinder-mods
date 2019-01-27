@@ -439,6 +439,33 @@ namespace EldritchArcana
         }
     }
 
+    public class FastMetamagicLogic : RuleInitiatorLogicComponent<RuleCastSpell>
+    {
+        public bool Once;
+        public BlueprintAbilityResource Resource;
+
+        public override void OnTurnOn()
+        {
+            var part = Owner.Ensure<UnitPartFastMetamagic>();
+            (Once ? part.OneFast : part.AllFast).Retain();
+        }
+
+        public override void OnTurnOff()
+        {
+            var part = Owner.Ensure<UnitPartFastMetamagic>();
+            (Once ? part.OneFast : part.AllFast).Release();
+        }
+
+        public override void OnEventAboutToTrigger(RuleCastSpell evt) { }
+
+        public override void OnEventDidTrigger(RuleCastSpell evt)
+        {
+
+            if (Resource != null) Owner.Resources.Spend(Resource, 1);
+            if (Once) Owner.RemoveFact(Fact);
+        }
+    }
+
     public class ReduceMetamagicCostForSpell : ParametrizedFeatureComponent, IInitiatorRulebookHandler<RuleApplyMetamagic>
     {
         public int Reduction;
@@ -954,19 +981,34 @@ namespace EldritchArcana
     // Used when we need to prevent metamagic from increasing cast time.
     public class UnitPartFastMetamagic : UnitPart
     {
+        [JsonProperty]
         public List<BlueprintAbility> PerfectSpells = new List<BlueprintAbility>();
+
+        [JsonProperty]
+        public readonly CountableFlag AllFast = new CountableFlag();
+
+        [JsonProperty]
+        public readonly CountableFlag OneFast = new CountableFlag();
 
         internal void GetRequiresFullRoundAction(AbilityData data, ref bool __result)
         {
-            if (__result && PerfectSpells.Contains(data.Blueprint))
+            if (!__result) return;
+
+            if (AllFast)
             {
-                Log.Append($"{GetType().Name}: {data.Blueprint.name} has spell perfection, checking for one metamagic.");
-                int metamagicCount = Helpers.PopulationCount((int)data.MetamagicData.MetamagicMask);
-                Log.Append($"  metamagic count: ${metamagicCount}");
-                if (metamagicCount <= 0) __result = false;
+                __result = false;
+                return;
             }
 
-            // TODO: add Arcane bloodline 3rd level power Metamagic Adept?
+            int metamagicCount = Helpers.PopulationCount((int)data.MetamagicData.MetamagicMask);
+            Log.Append($"{GetType().Name}: {data.Blueprint.name} checking for metamagic cast time reduction.");
+            Log.Append($"  metamagic count: ${metamagicCount}");
+            if (metamagicCount > 1) return; // More than 1 metamagic
+
+            if (OneFast || PerfectSpells.Contains(data.Blueprint))
+            {
+                __result = false;
+            }
         }
     }
 

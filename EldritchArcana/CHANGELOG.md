@@ -6,19 +6,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.9.4]
 
+### Added
+- Arcane Bloodline now gets Metamagic Adept as part of the 3rd level power, and
+  with Arcane Apotheosis metamagic will not increase casting time.
+
 ### Changed
 - Oracles now get 3+int skill points, similar to Druids (4+int is correct in
-  PnP, but the game has condensed skills). This fix can be disabled in
-  settings, and does not affect an existing Oracle's skill ranks.
+  PnP, but the game has condensed skills, so it should be 3). This fix can be
+  disabled in settings, and does not affect an existing Oracle's skill ranks.
 
 ### Fixed
-- Spells added by this mod can now be used in specialist wizard slots.
+- Spells added by this mod can now be used in specialist Wizard slots.
 - Eldritch Scions can now pick Extra Arcana or the new Magus arcanas.
-- Setting metamagic cost to 0 in Bag of Tricks no longer prevents metamagic rods
-  from being created.
+- Magical Knack caster level bonus now shows up in the Spellbook UI text.
 - Tongues curse now allows animal companions to be controlled if you can talk
   to the corresponding NPC.
-- Spell Perfection no longer requires a full round action to apply one metamagic.
+- Setting metamagic cost to 0 in Bag of Tricks no longer prevents metamagic rods
+  from being initialized.
+- Spell Perfection no longer requires a full round action to apply one metamagic
+  (for spontaneous casters).
 
 ## [0.9.3]
 
