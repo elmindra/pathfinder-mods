@@ -8,12 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Eldritch Scions can now pick Extra Arcana or the new Magus arcanas.
+- Option to reduce Oracle skill points to 3+int bonus, similar to Druids
+  (4+int is correct in PnP, but the game has condensed skills). Off by default.
 
 ### Fixed
+- Spells added by this mod can now be used in specialist wizard slots.
 - Setting metamagic cost to 0 in Bag of Tricks no longer prevents metamagic rods
   from being created.
 - Tongues curse now allows animal companions to be controlled if you can talk
   to the corresponding NPC.
+- Spell Perfection no longer requires a full round action to apply one metamagic.
 
 ## [0.9.3]
 

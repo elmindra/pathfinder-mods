@@ -51,7 +51,7 @@ namespace EldritchArcana
             oracle.LocalizedDescription = Helpers.CreateString("Oracle.Description", "Although the gods work through many agents, perhaps none is more mysterious than the oracle. These divine vessels are granted power without their choice, selected by providence to wield powers that even they do not fully understand. Unlike a cleric, who draws her magic through devotion to a deity, oracles garner strength and power from many sources, namely those patron deities who support their ideals. Instead of worshiping a single source, oracles tend to venerate all of the gods that share their beliefs. While some see the powers of the oracle as a gift, others view them as a curse, changing the life of the chosen in unforeseen ways.\n" +
                 "Role: Oracles do not usually associate with any one church or temple, instead preferring to strike out on their own, or with a small group of like-minded individuals. Oracles typically use their spells and revelations to further their understanding of their mystery, be it through fighting mighty battles or tending to the poor and sick.");
             oracle.m_Icon = cleric.Icon;
-            oracle.SkillPoints = 4;
+            oracle.SkillPoints = Main.settings?.OracleHas3SkillPoints == true ? 3 : 4;
             oracle.HitDie = DiceType.D8;
             oracle.BaseAttackBonus = cleric.BaseAttackBonus;
             oracle.FortitudeSave = sorcerer.FortitudeSave;
@@ -294,6 +294,12 @@ namespace EldritchArcana
             revelationChoice.SetFeatures(mysteriesAndRevelations.Select(m => m.Item2));
 
             return (mysteryChoice, revelationChoice, classSkill);
+        }
+
+        internal static void MaybeUpdateSkillPoints()
+        {
+            if (oracle == null) return;
+            oracle.SkillPoints = Main.settings?.OracleHas3SkillPoints == true ? 3 : 4;
         }
 
         static BlueprintFeatureSelection CreateCureOrInflictSpellSelection()

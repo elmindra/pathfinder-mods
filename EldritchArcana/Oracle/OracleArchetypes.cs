@@ -337,6 +337,7 @@ namespace EldritchArcana
             {
                 int withoutThisReduction = totalReduction - Reduction;
                 set_CostReduction(evt, Math.Max(withoutThisReduction, Reduction));
+                evt.Result.Clear();
                 evt.OnTrigger(Rulebook.CurrentContext);
             }
         }

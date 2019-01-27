@@ -386,7 +386,45 @@ namespace EldritchArcana
             comp.SpellList = spellList;
             spell.AddComponent(comp);
             spellList.SpellsByLevel[level].Spells.Add(spell);
+            if (spellList == Helpers.wizardSpellList)
+            {
+                var school = spell.School;
+                var specialistList = specialistSchoolList.Value[(int)school];
+                specialistList?.SpellsByLevel[level].Spells.Add(spell);
+                var thassilonianList = thassilonianSchoolList.Value[(int)school];
+                thassilonianList?.SpellsByLevel[level].Spells.Add(spell);
+            }
         }
+
+        static readonly Lazy<BlueprintSpellList[]> specialistSchoolList = new Lazy<BlueprintSpellList[]>(() =>
+        {
+            var result = new BlueprintSpellList[(int)SpellSchool.Universalist + 1];
+            var library = Main.library;
+            result[(int)SpellSchool.Abjuration] = library.Get<BlueprintSpellList>("c7a55e475659a944f9229d89c4dc3a8e");
+            result[(int)SpellSchool.Conjuration] = library.Get<BlueprintSpellList>("69a6eba12bc77ea4191f573d63c9df12");
+            result[(int)SpellSchool.Divination] = library.Get<BlueprintSpellList>("d234e68b3d34d124a9a2550fdc3de9eb");
+            result[(int)SpellSchool.Enchantment] = library.Get<BlueprintSpellList>("c72836bb669f0c04680c01d88d49bb0c");
+            result[(int)SpellSchool.Evocation] = library.Get<BlueprintSpellList>("79e731172a2dc1f4d92ba229c6216502");
+            result[(int)SpellSchool.Illusion] = library.Get<BlueprintSpellList>("d74e55204daa9b14993b2e51ae861501");
+            result[(int)SpellSchool.Necromancy] = library.Get<BlueprintSpellList>("5fe3acb6f439db9438db7d396f02c75c");
+            result[(int)SpellSchool.Transmutation] = library.Get<BlueprintSpellList>("becbcfeca9624b6469319209c2a6b7f1");
+            return result;
+        });
+
+
+        static readonly Lazy<BlueprintSpellList[]> thassilonianSchoolList = new Lazy<BlueprintSpellList[]>(() =>
+        {
+            var result = new BlueprintSpellList[(int)SpellSchool.Universalist + 1];
+            var library = Main.library;
+            result[(int)SpellSchool.Abjuration] = library.Get<BlueprintSpellList>("280dd5167ccafe449a33fbe93c7a875e");
+            result[(int)SpellSchool.Conjuration] = library.Get<BlueprintSpellList>("5b154578f228c174bac546b6c29886ce");
+            result[(int)SpellSchool.Enchantment] = library.Get<BlueprintSpellList>("ac551db78c1baa34eb8edca088be13cb");
+            result[(int)SpellSchool.Evocation] = library.Get<BlueprintSpellList>("17c0bfe5b7c8ac3449da655cdcaed4e7");
+            result[(int)SpellSchool.Illusion] = library.Get<BlueprintSpellList>("c311aed33deb7a346ab715baef4a0572");
+            result[(int)SpellSchool.Necromancy] = library.Get<BlueprintSpellList>("5c08349132cb6b04181797f58ccf38ae");
+            result[(int)SpellSchool.Transmutation] = library.Get<BlueprintSpellList>("f3a8f76b1d030a64084355ba3eea369a");
+            return result;
+        });
 
         public static void FixDomainSpell(this BlueprintAbility spell, int level, string spellListId)
         {
@@ -2034,6 +2072,14 @@ namespace EldritchArcana
             }
             return learn;
         }
+
+        public static int PopulationCount(int i)
+        {
+            i = i - ((i >> 1) & 0x55555555);
+            i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
+            return (((i + (i >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
+        }
+
 
         public static void RegisterClass(this BlueprintCharacterClass oracle)
         {

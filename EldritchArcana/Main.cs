@@ -326,9 +326,12 @@ namespace EldritchArcana
             settings.EldritchKnightFix = GUILayout.Toggle(settings.EldritchKnightFix,
                 "Eldritch Knight requires martial class (doesn't affect existing EKs)", fixedWidth);
 
-            var oldValue = settings.ShowCustomPortraits;
-            settings.ShowCustomPortraits = GUILayout.Toggle(oldValue,
+            settings.ShowCustomPortraits = GUILayout.Toggle(settings.ShowCustomPortraits,
                 "Show custom portraits in the portrait list at character creation (if changed, requires restart)", fixedWidth);
+
+            settings.OracleHas3SkillPoints = GUILayout.Toggle(settings.OracleHas3SkillPoints,
+                "Give Oracle class 3+int skill points on level up (instead of 4, due to condensed skills)");
+            OracleClass.MaybeUpdateSkillPoints();
 
             settings.RelaxAncientLorekeeper = GUILayout.Toggle(settings.RelaxAncientLorekeeper,
                 "Any race can choose the Oracle Ancient Lorekeeper archetype", fixedWidth);
@@ -386,6 +389,8 @@ namespace EldritchArcana
         public bool RelaxAncientLorekeeper = false;
 
         public bool RelaxTonguesCurse = false;
+
+        public bool OracleHas3SkillPoints = false;
 
         public override void Save(UnityModManager.ModEntry modEntry)
         {

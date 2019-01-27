@@ -44,6 +44,8 @@ namespace EldritchArcana
 
         static BlueprintCharacterClass magus;
 
+        internal static BlueprintParametrizedFeature spellPerfection;
+
         internal static void Load()
         {
             magus = library.Get<BlueprintCharacterClass>("45a4607686d96a1498891b3286121780");
@@ -320,7 +322,7 @@ namespace EldritchArcana
 
             var spellSpecialization1 = library.Get<BlueprintParametrizedFeature>("f327a765a4353d04f872482ef3e48c35");
             var noFeature = Helpers.PrerequisiteNoFeature(null);
-            var spellPerfection = Helpers.CreateParamSelection<KnownSpellSelection>("SpellPerfection",
+            spellPerfection = Helpers.CreateParamSelection<KnownSpellSelection>("SpellPerfection",
                 "Spell Perfection",
                 "Pick one spell which you have the ability to cast. Whenever you cast that spell you may apply any one metamagic feat you have to that spell without affecting its level or casting time, as long as the total modified level of the spell does not use a spell slot above 9th level. In addition, if you have other feats which allow you to apply a set numerical bonus to any aspect of this spell (such as Spell Focus, Spell Penetration, Weapon Focus [ray], and so on), double the bonus granted by that feat when applied to this spell.",
                 "82165fb15af34cbb9c0c2e6fb232b2fc",
@@ -332,6 +334,7 @@ namespace EldritchArcana
                 Helpers.Create<SpellPerfectionDoubleFeatBonuses>(),
                 noFeature);
             noFeature.Feature = spellPerfection;
+            Main.ApplyPatch(typeof(AbilityData_RequireFullRoundAction_Patch), "Metamagic does not require full round action (under some conditions).");
             return spellPerfection;
         }
 
@@ -444,9 +447,21 @@ namespace EldritchArcana
 
         public bool OneMetamagicIsFree;
 
+        public BlueprintAbility Spell => (BlueprintAbility)Param.GetValueOrDefault().Blueprint;
+
+        public override void OnTurnOn()
+        {
+            if (OneMetamagicIsFree) Owner.Ensure<UnitPartFastMetamagic>().SpellPerfectionSpell = Spell;
+        }
+
+        public override void OnTurnOff()
+        {
+            if (OneMetamagicIsFree) Owner.Ensure<UnitPartFastMetamagic>().SpellPerfectionSpell = null;
+        }
+
         public void OnEventAboutToTrigger(RuleApplyMetamagic evt)
         {
-            var spell = (BlueprintAbility)Param.GetValueOrDefault().Blueprint;
+            var spell = Spell;
             if (evt.Spell != spell && evt.Spell?.Parent != spell) return;
             var spellbook = evt.Spellbook;
             if (spellbook == null || spellbook.GetSpellLevel(spell) > MaxSpellLevel)
@@ -934,5 +949,48 @@ namespace EldritchArcana
         }
 
         public override string GetCaption() => $"{UIStrings.Instance.Tooltips.CharacterLevel} equals: {Level}";
+    }
+
+    // Used when we need to prevent metamagic from increasing cast time.
+    public class UnitPartFastMetamagic : UnitPart
+    {
+        [JsonProperty]
+        internal BlueprintAbility SpellPerfectionSpell;
+
+        internal void GetRequiresFullRoundAction(AbilityData data, ref bool __result)
+        {
+            if (__result && SpellPerfectionSpell == data.Blueprint)
+            {
+                Log.Append($"{GetType().Name}: {SpellPerfectionSpell.Name} has spell perfection, checking for one metamagic.");
+                int metamagicCount = Helpers.PopulationCount((int)data.MetamagicData.MetamagicMask);
+                Log.Append($"  metamagic count: ${metamagicCount}");
+                if (metamagicCount <= 0) __result = false;
+            }
+
+            // TODO: add Arcane bloodline 3rd level power Metamagic Adept?
+        }
+    }
+
+
+    [Harmony12.HarmonyPatch(typeof(AbilityData), "get_RequireFullRoundAction")]
+    static class AbilityData_RequireFullRoundAction_Patch
+    {
+        static void Postfix(AbilityData __instance, ref bool __result)
+        {
+            if (!__result) return;
+            try
+            {
+                var self = __instance;
+                var metamagic = self.MetamagicData;
+                if (metamagic == null || metamagic.MetamagicMask == 0) return;
+
+                var part = self.Caster.Get<UnitPartFastMetamagic>();
+                part?.GetRequiresFullRoundAction(self, ref __result);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
+        }
     }
 }
