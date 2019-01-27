@@ -390,7 +390,7 @@ namespace EldritchArcana
 
         public bool RelaxTonguesCurse = false;
 
-        public bool OracleHas3SkillPoints = false;
+        public bool OracleHas3SkillPoints = true;
 
         public override void Save(UnityModManager.ModEntry modEntry)
         {
