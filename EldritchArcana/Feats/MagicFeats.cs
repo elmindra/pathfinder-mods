@@ -451,12 +451,12 @@ namespace EldritchArcana
 
         public override void OnTurnOn()
         {
-            if (OneMetamagicIsFree) Owner.Ensure<UnitPartFastMetamagic>().SpellPerfectionSpell = Spell;
+            if (OneMetamagicIsFree) Owner.Ensure<UnitPartFastMetamagic>().PerfectSpells.Add(Spell);
         }
 
         public override void OnTurnOff()
         {
-            if (OneMetamagicIsFree) Owner.Ensure<UnitPartFastMetamagic>().SpellPerfectionSpell = null;
+            if (OneMetamagicIsFree) Owner.Ensure<UnitPartFastMetamagic>().PerfectSpells.Remove(Spell);
         }
 
         public void OnEventAboutToTrigger(RuleApplyMetamagic evt)
@@ -954,14 +954,13 @@ namespace EldritchArcana
     // Used when we need to prevent metamagic from increasing cast time.
     public class UnitPartFastMetamagic : UnitPart
     {
-        [JsonProperty]
-        internal BlueprintAbility SpellPerfectionSpell;
+        public List<BlueprintAbility> PerfectSpells = new List<BlueprintAbility>();
 
         internal void GetRequiresFullRoundAction(AbilityData data, ref bool __result)
         {
-            if (__result && SpellPerfectionSpell == data.Blueprint)
+            if (__result && PerfectSpells.Contains(data.Blueprint))
             {
-                Log.Append($"{GetType().Name}: {SpellPerfectionSpell.Name} has spell perfection, checking for one metamagic.");
+                Log.Append($"{GetType().Name}: {data.Blueprint.name} has spell perfection, checking for one metamagic.");
                 int metamagicCount = Helpers.PopulationCount((int)data.MetamagicData.MetamagicMask);
                 Log.Append($"  metamagic count: ${metamagicCount}");
                 if (metamagicCount <= 0) __result = false;
