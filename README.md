@@ -6,7 +6,7 @@ Eldritch Arcana (work in progress)
 
 This mod adds the Oracle class, new spells, magic-themed feats, character traits, and other fun things from PnP Pathfinder.
 
-*Note: this was tested against the PF:K 1.2 beta. While I tried to test everything, some features may not work properly yet.
+*Note: this was tested against the PF:K 1.2.0. While I tried to test everything, some features may not work properly yet.
 If you have a build in mind, I recommend using [Bag of Tricks](https://www.nexusmods.com/pathfinderkingmaker/mods/26)
 to level up your character to high level, quick save & load, then test out the abilities you want to use.
 You can file bugs on [github](https://github.com/jennyem/pathfinder-mods/issues) or report them using the
