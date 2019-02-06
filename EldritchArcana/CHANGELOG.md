@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Oracles now get 3+int skill points, similar to Druids (4+int is correct in
   PnP, but the game has condensed skills, so it should be 3). This fix can be
-  disabled in settings, and does not affect an existing Oracle's skill ranks.
+  disabled in settings, and is not retroactive for existing Oracles.
 
 ### Fixed
 - Spells added by this mod can now be used in specialist Wizard slots.
