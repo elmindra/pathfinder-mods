@@ -977,6 +977,14 @@ namespace EldritchArcana
         public void OnEventDidTrigger(RuleCalculateAbilityParams evt) { }
     }
 
+    // Implements Magical Knack's +2 CL (up to character level) bonus.
+    //
+    // Note: this is implemented as a rulebook event bonus, rather than increasing the
+    // Spellbook's m_CasterLevelInternal, because that variable is used to determine
+    // spells per day/spells known. Magical Knack should not affect those variables.
+    //
+    // This unfortunately means that some things do not properly account for the bonus/
+    // The spellbook UI is fixed with a patch.
     [AllowedOn(typeof(BlueprintParametrizedFeature))]
     public class IncreaseCasterLevelUpToCharacterLevel : OwnedGameLogicComponent<UnitDescriptor>, IInitiatorRulebookHandler<RuleCalculateAbilityParams>
     {
@@ -1346,7 +1354,8 @@ namespace EldritchArcana
                     {
                         foreach (var c in feat.SelectComponents<IncreaseCasterLevelUpToCharacterLevel>())
                         {
-                            bonus = Math.Max(bonus, c.GetBonus(spellbook));
+                            //bonus = Math.Max(bonus, c.GetBonus(spellbook));
+                            bonus += c.GetBonus(spellbook);
                         }
                     }
                     if (bonus > 0)

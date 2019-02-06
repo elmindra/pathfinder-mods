@@ -288,16 +288,22 @@ Known issues:
     spells, so they're able to use those higher level slots, even with 0 spells known.
 
 Game balance notes:
-- Eldritch Scion is very powerful in PF:K compared to PnP, because it gets sorcerer
-  bloodlines instead of bloodrager bloodlines and does not need to spend Eldritch Pool
-  points to use those abilities. Some things added by this mod (such as Eldritch Heritage)
-  make Scion even stronger.
+- This mod makes spellcasters more powerful (especially at high levels), but that's how
+  PnP Pathfinder works. :)
 - Aasimar and Tiefling appear to be treated as having [Scion of Humanity](https://www.d20pfsrd.com/races/other-races/featured-races/arg-aasimar/)/[Pass for Human](https://www.d20pfsrd.com/races/other-races/featured-races/arg-tiefling/)
   respectively, because they are affected by humanoid affecting spells
   (e.g. Hold Person, Enlarge Person). For this reason they are allowed to qualify as Human
   for traits and favored class bonuses added by this mod.
-- This mod makes spellcasters more powerful (especially at high levels), but that's how
-  PnP Pathfinder works. :)
+- Eldritch Scion is very powerful in PF:K compared to PnP, because it gets sorcerer
+  bloodlines instead of bloodrager bloodlines and does not need to spend Eldritch Pool
+  points to use those abilities. Some things added by this mod (such as Eldritch Heritage)
+  make Scion even stronger.
+- Arcane Bloodline still gets the concentration bonus from the level 3 and 20 powers
+  (Metamagic Adept and Arcane Apotheosis). The game developers replaced the PnP powers
+  with concentration bonus ones; I didn't want to remove that in case anyone is relying
+  on it for their build. Concentration bonuses are not especially powerful (at higher
+  levels, the checks are easy to make), and the level 20 power is missing some of its
+  features from PnP, so overall it's still decently balanced.
 
 Existing game bugs to investigate:
 - Arcane Bond for sorcerers does not seem to work with a bonded item (familiars work).

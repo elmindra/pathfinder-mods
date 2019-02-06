@@ -80,7 +80,7 @@ namespace EldritchArcana
             var buff = Helpers.CreateBuff($"{feat.name}Buff", feat.Name, feat.Description, "e2d7839c3d08437d8b233c08d79f3611",
                 feat.Icon, null, Helpers.Create<FastMetamagicLogic>(f => { f.Once = true; f.Resource = resource; }));
             var ability = Helpers.CreateActivatableAbility($"{feat.name}ToggleAbility", feat.Name, feat.Description,
-                "e2d7839c3d08437d8b233c08d79f3611", feat.Icon, buff, AbilityActivationType.Immediately, CommandType.Free, null,
+                "8f979bd26f8c49ab8fd5a099e2694cd5", feat.Icon, buff, AbilityActivationType.Immediately, CommandType.Free, null,
                 resource.CreateActivatableResourceLogic(ResourceSpendType.Never));
 
             feat.SetComponents(resource.CreateAddAbilityResource(), ability.CreateAddFact());

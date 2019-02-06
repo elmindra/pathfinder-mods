@@ -7,14 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.9.5]
 
 ### Added
-- Arcane Bloodline now gets Metamagic Adept as part of the 3rd level power, and
-  with Arcane Apotheosis (at level 20), metamagic won't increase casting time.
+- Arcane Bloodline now gets Metamagic Adept as part of its 3rd level power, and
+  with Arcane Apotheosis (at level 20), metamagic won't increase casting time
+  (this matches PnP powers).
 
 ### Changed
 - Oracles now get 3+int skill points, similar to Druids (4+int is correct in
   PnP, but the game has condensed skills, so it should be 3). This fix can be
-  disabled in settings, and is not retroactive for existing Oracles (unless they
-  respec).
+  disabled in settings, and is not retroactive for existing Oracle's skill
+  ranks (unless they respec).
 
 ### Fixed
 - Spells added by this mod can now be used in specialist Wizard slots.
@@ -26,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   from being initialized.
 - Spell Perfection no longer requires a full round action to apply one metamagic
   (for spontaneous casters).
+- Delayed Blast Fireball can now be used with Selective Spell.
 
 
 ## [0.9.4]

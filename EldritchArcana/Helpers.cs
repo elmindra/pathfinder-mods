@@ -471,6 +471,11 @@ namespace EldritchArcana
             return result;
         }
 
+        public static bool HasAreaEffect(this BlueprintAbility spell)
+        {
+            return spell.AoERadius.Meters > 0f || spell.ProjectileType != AbilityProjectileType.Simple;
+        }
+
         public static void AddSelection(this BlueprintFeatureSelection feat, LevelUpState state, UnitDescriptor unit, int level)
         {
             // TODO: we may want to add the selection feat to the unit.

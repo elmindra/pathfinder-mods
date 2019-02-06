@@ -1002,7 +1002,7 @@ namespace EldritchArcana
 
             int metamagicCount = Helpers.PopulationCount((int)data.MetamagicData.MetamagicMask);
             Log.Append($"{GetType().Name}: {data.Blueprint.name} checking for metamagic cast time reduction.");
-            Log.Append($"  metamagic count: ${metamagicCount}");
+            Log.Write($"  metamagic count: {metamagicCount}");
             if (metamagicCount > 1) return; // More than 1 metamagic
 
             if (OneFast || PerfectSpells.Contains(data.Blueprint))

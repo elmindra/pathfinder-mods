@@ -382,6 +382,14 @@ BloodlineArcaneEldritchHeritage|3c5d68d3301237d29372c7c8aa20bd2f
   $PrerequisiteFeaturesFromList
   $PrerequisiteNoFeature
   $PrerequisiteNoFeature$0
+BloodlineArcaneMetamagicAdept|2edfee19cc574b17944308c3cee1da8b
+  $AddAbilityResources
+  AddFacts$BloodlineArcaneMetamagicAdeptToggleAbility
+BloodlineArcaneMetamagicAdeptBuff|e2d7839c3d08437d8b233c08d79f3611
+  $FastMetamagicLogic
+BloodlineArcaneMetamagicAdeptResource|f49ed72de2ef4cc09319fbc008dd7a51
+BloodlineArcaneMetamagicAdeptToggleAbility|8f979bd26f8c49ab8fd5a099e2694cd5
+  $ActivatableAbilityResourceLogic
 BloodlineArcaneNewArcanaSelectionCross|1b3a7c53272c91ec6d0581e7d2b4c0af
   $PrerequisiteFeature
   AddFactOnBloodlineLevel$$0;appliedFact|Kingmaker.Blueprints.Facts.Fact
@@ -5382,6 +5390,8 @@ SageSpellbookReplaceSpellSelection8|eb2b0f1f55acbce4c8214044fadd802a
 ScholarOfTheGreatBeyondTrait|0896fea4f7ca4635aa4e5338a673610d
   $AddClassSkill
   $AddStatBonus
+ScionExtraArcanaSelection|4ea3182a6f544612af7b4aa42cb2b677
+  $PrerequisiteFeature
 ScrollOfAirWalkCast|334fec2c49634d2b962b7730616e7fd0
   $CopyScroll$7b2ff6b1-290d-4b1c-8d52-7143c08227c7
 ScrollOfAirWalkCommunal|391d753607e30ed92036f4d6f8211939

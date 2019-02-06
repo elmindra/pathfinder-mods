@@ -73,7 +73,7 @@ namespace EldritchArcana
             foreach (var spell in Helpers.allSpells)
             {
                 var newMetamagic = (Metamagic)0;
-                if (spell.AoERadius.Meters > 0f || spell.ProjectileType != AbilityProjectileType.Simple)
+                if (spell.HasAreaEffect() || spell.Variants.Any(v => v.HasAreaEffect()))
                 {
                     newMetamagic |= (Metamagic)ModMetamagic.Selective;
                 }
