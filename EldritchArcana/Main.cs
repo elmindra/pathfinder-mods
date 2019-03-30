@@ -139,8 +139,7 @@ namespace EldritchArcana
                     var portrait = UnityEngine.Object.Instantiate(charGen.CustomPortrait);
                     portrait.name = $"CustomPortrait${id}";
 
-                    BigInteger bigInt;
-                    var guid = BigInteger.TryParse(id, out bigInt) ? id : GetMd5Hash(md5, id);
+                    var guid = GetMd5Hash(md5, id);
                     library.AddAsset(portrait, Helpers.MergeIds("c3d4e15de2444b528c734fac8eb75ba2", guid));
                     portrait.Data = new PortraitData(id);
                     customPortraits.Add(portrait);
