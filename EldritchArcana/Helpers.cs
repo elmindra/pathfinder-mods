@@ -982,13 +982,27 @@ namespace EldritchArcana
         //
         // Essentially, this prevents us from inadvertantly break existing saves that
         // use features from the mod.
-        internal static String MergeIds(String guidString1, String guidString2, String guidString3 = null)
+        internal static String MergeIds(String guid1, String guid2, String guid3 = null)
         {
-            if(guidString3 != null)
+            // It'd be nice if these GUIDs were already in integer form.
+            var id = new BigInteger(guid1, 16);
+            id ^= new BigInteger(guid2, 16);
+            if (guid3 != null)
             {
-                return getGuid(guidString1 + guidString2 + guidString3);
+                id ^= new BigInteger(guid3, 16);
             }
-            return getGuid(guidString1 + guidString2);
+            string idString = id.ToString(16);
+            if (idString.Length > 32)
+            {
+                return idString.Substring(0, 32);
+            }
+
+            while (idString.Length < 32)
+            {
+                idString = "0" + idString;
+            }
+
+            return idString;
         }
 
 
