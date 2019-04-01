@@ -587,6 +587,8 @@ namespace EldritchArcana
             return Not;
         }
 
+        public override string GetUIText() => GetCaption();
+
         public override String GetCaption() => Not ? $"Doesn't know spell: {Spell.Name}" : $"Knows spell: {Spell.Name}";
     }
 

@@ -975,6 +975,8 @@ namespace EldritchArcana
             return unit.Progression.CharacterLevel == Level;
         }
 
+        public override string GetUIText() => GetCaption();
+
         public override string GetCaption() => $"{UIStrings.Instance.Tooltips.CharacterLevel} equals: {Level}";
     }
 

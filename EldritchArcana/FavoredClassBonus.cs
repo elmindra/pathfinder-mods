@@ -522,6 +522,8 @@ namespace EldritchArcana
             return unit.GetSpellbook(CharacterClass)?.MaxSpellLevel >= RequiredSpellLevel;
         }
 
+        public override string GetUIText() => GetCaption();
+
         public override String GetCaption() => $"Can cast {CharacterClass.Name} spells of level: {RequiredSpellLevel}";
     }
 
