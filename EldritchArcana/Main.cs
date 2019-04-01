@@ -6,17 +6,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Numerics;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root;
-using Kingmaker.UI.Common.Animations;
-using Kingmaker.UI.LevelUp;
 using Kingmaker.Utility;
 using UnityEngine;
 using UnityModManagerNet;
@@ -139,8 +134,7 @@ namespace EldritchArcana
                     var portrait = UnityEngine.Object.Instantiate(charGen.CustomPortrait);
                     portrait.name = $"CustomPortrait${id}";
 
-                    BigInteger bigInt;
-                    var guid = BigInteger.TryParse(id, out bigInt) ? id : GetMd5Hash(md5, id);
+                    var guid = Helpers.TryStringToByteArray(id, out _) ? id : GetMd5Hash(md5, id);
                     library.AddAsset(portrait, Helpers.MergeIds("c3d4e15de2444b528c734fac8eb75ba2", guid));
                     portrait.Data = new PortraitData(id);
                     customPortraits.Add(portrait);

@@ -3,11 +3,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
-using System.Numerics;
-using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using Kingmaker;
 using Kingmaker.Blueprints;
@@ -32,7 +29,6 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
 using Kingmaker.Localization;
-using Kingmaker.PubSubSystem;
 using Kingmaker.ResourceLinks;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
@@ -47,7 +43,6 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Class.LevelUp;
-using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Actions;
@@ -55,7 +50,6 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Conditions;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Utility;
-using Newtonsoft.Json;
 using UnityEngine;
 using static Kingmaker.UnitLogic.ActivatableAbilities.ActivatableAbilityResourceLogic;
 using static Kingmaker.UnitLogic.Commands.Base.UnitCommand;
@@ -982,18 +976,59 @@ namespace EldritchArcana
         //
         // Essentially, this prevents us from inadvertantly break existing saves that
         // use features from the mod.
+        // CWagner 2019-03-31 System.Numeric seems to be missing in the 1.3 patch.
+        // Rewrote to create predictable hashes by calculating the hash of the appended bytearrays.
+        // Probably less performant, hopefully "good enough"
+        // This will break existing saves
         internal static String MergeIds(String guid1, String guid2, String guid3 = null)
         {
-            // It'd be nice if these GUIDs were already in integer form.
-            var id = BigInteger.Parse(guid1, NumberStyles.HexNumber);
-            id ^= BigInteger.Parse(guid2, NumberStyles.HexNumber);
+            var final = StringToByteArray(guid1).ToList();
+            final.AddRange(StringToByteArray(guid2));
             if (guid3 != null)
             {
-                id ^= BigInteger.Parse(guid3, NumberStyles.HexNumber);
+                final.AddRange(StringToByteArray(guid3));
             }
-            return id.ToString("x32");
+
+            using (var md5 = MD5.Create())
+            {
+                var newHash = md5.ComputeHash(final.ToArray());
+                return ByteArrayToString(newHash);
+            }
+            
+        }
+        // https://stackoverflow.com/questions/311165/how-do-you-convert-a-byte-array-to-a-hexadecimal-string-and-vice-versa#answer-311179
+        public static byte[] StringToByteArray(String hex)
+        {
+            var numberChars = hex.Length;
+            // It will always work for MD5, some manually assigned hex codes needs to get 0 prepended.
+            if (numberChars % 2 != 0)
+            {
+                hex = $"0{hex}";
+                numberChars++;
+            }
+            var bytes = new byte[numberChars / 2];
+            for (var i = 0; i < numberChars; i += 2)
+                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+            return bytes;
         }
 
+        public static bool TryStringToByteArray(string hex, out byte[] result)
+        {
+            try
+            {
+                result = StringToByteArray(hex);
+                return true;
+            }
+            catch (Exception)
+            {
+                result = null;
+                return false;
+            }
+        }
+        public static string ByteArrayToString(byte[] ba)
+        {
+            return BitConverter.ToString(ba).Replace("-","");
+        }
 
         public static MechanicsContext GetMechanicsContext()
         {
