@@ -20,6 +20,7 @@ using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
+using Kingmaker.EntitySystem.Entities;
 
 namespace EldritchArcana
 {
@@ -587,10 +588,10 @@ namespace EldritchArcana
             return Not;
         }
 
-        public override String GetCaption() => Not ? $"Doesn't know spell: {Spell.Name}" : $"Knows spell: {Spell.Name}";
+        public override String GetUIText() => Not ? $"Doesn't know spell: {Spell.Name}" : $"Knows spell: {Spell.Name}";
     }
 
-    [Harmony12.HarmonyPatch(typeof(UIUtilityUnit), "CollectClassDeterminator", typeof(BlueprintProgression), typeof(UnitProgressionData))]
+    [Harmony12.HarmonyPatch(typeof(UIUtilityUnit), "CollectClassDeterminator", typeof(UnitEntityData), typeof(Spellbook))]//typeof(BlueprintProgression), typeof(UnitProgressionData))]
     static class UIUtilityUnit_CollectClassDeterminators_Patch
     {
         // This method is only used by `SpellBookView.SetupHeader()` to find information such
@@ -598,11 +599,11 @@ namespace EldritchArcana
         //
         // Unfortunately, it doesn't understand how to find data from the archetype.
         // So this patch addresses it.
-        static void Postfix(BlueprintProgression progression, UnitProgressionData progressionData, ref List<BlueprintFeatureBase> __result)
-        {
+        static void Postfix(UnitEntityData unit, Spellbook spellbook, ref List<BlueprintFeatureBase> __result) {
             try
             {
-                var @class = Helpers.classes.FirstOrDefault(c => c.Progression == progression);
+                var progressionData = unit.Descriptor.Progression;
+                var @class = spellbook.Blueprint.CharacterClass;
                 if (@class == null) return;
 
                 var list = __result ?? new List<BlueprintFeatureBase>();
@@ -647,6 +648,7 @@ namespace EldritchArcana
                 case FeatureGroup.BloodLine:
                 case FeatureGroup.MagusArcana:
                 case FeatureGroup.EldritchScionArcana:
+                case FeatureGroup.ThassilonianSpellbook:
                 case FeatureGroup.DraconicBloodlineSelection:
                 case FeatureGroup.BlightDruidDomain:
                 case FeatureGroup.ClericSecondaryDomain:
