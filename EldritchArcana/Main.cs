@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using Harmony12;
 using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root;
@@ -18,6 +19,9 @@ using UnityModManagerNet;
 
 namespace EldritchArcana
 {
+#if DEBUG
+    [EnableReloading]
+#endif
     public class Main
     {
         [Harmony12.HarmonyPatch(typeof(LibraryScriptableObject), "LoadDictionary", new Type[0])]
@@ -260,6 +264,9 @@ namespace EldritchArcana
             modEntry.OnToggle = OnToggle;
             modEntry.OnGUI = OnGUI;
             modEntry.OnSaveGUI = OnSaveGUI;
+#if DEBUG
+            modEntry.OnUnload = Unload;
+#endif
             settings = UnityModManager.ModSettings.Load<Settings>(modEntry);
             harmonyInstance = Harmony12.HarmonyInstance.Create(modEntry.Info.Id);
             if (!ApplyPatch(typeof(LibraryScriptableObject_LoadDictionary_Patch), "All mod features"))
@@ -269,7 +276,14 @@ namespace EldritchArcana
             }
             return true;
         }
-
+#if DEBUG
+        static bool Unload(UnityModManager.ModEntry modEntry)
+        {
+            HarmonyInstance.Create(modEntry.Info.Id).UnpatchAll();
+            
+            return true;
+        }
+#endif
         static void WriteBlueprints()
         {
             Log.Append("\n--------------------------------------------------------------------------------");
