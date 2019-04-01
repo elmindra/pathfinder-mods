@@ -209,7 +209,7 @@ namespace EldritchArcana
             FixSpellbookSelection(crossblooded, "97f510c6483523c49bc779e93e4c4568", "e8013bf2853590f4fba12b4b57366bcc", FeatureGroup.MysticTheurgeArcaneSpellbook);
 
             // Fix the SpellBookView icon support for archetypes.
-            Main.ApplyPatch(typeof(UIUtilityUnit_CollectClassDeterminators_Patch), "Crossblooded bloodline icon in spellbook UI");
+//            Main.ApplyPatch(typeof(UIUtilityUnit_CollectClassDeterminators_Patch), "Crossblooded bloodline icon in spellbook UI");
         }
 
         static void FixBloodlinePrerequisites(BlueprintArchetype crossblooded)
@@ -592,72 +592,72 @@ namespace EldritchArcana
         public override String GetCaption() => Not ? $"Doesn't know spell: {Spell.Name}" : $"Knows spell: {Spell.Name}";
     }
 
-    [Harmony12.HarmonyPatch(typeof(UIUtilityUnit), "CollectClassDeterminator", typeof(BlueprintProgression), typeof(UnitProgressionData))]
-    static class UIUtilityUnit_CollectClassDeterminators_Patch
-    {
-        // This method is only used by `SpellBookView.SetupHeader()` to find information such
-        // as spellbook bloodlines, cleric deity, etc.
-        //
-        // Unfortunately, it doesn't understand how to find data from the archetype.
-        // So this patch addresses it.
-        static void Postfix(BlueprintProgression progression, UnitProgressionData progressionData, ref List<BlueprintFeatureBase> __result)
-        {
-            try
-            {
-                var @class = Helpers.classes.FirstOrDefault(c => c.Progression == progression);
-                if (@class == null) return;
-
-                var list = __result ?? new List<BlueprintFeatureBase>();
-                var archetype = @class.Archetypes.FirstOrDefault(progressionData.IsArchetype);
-                if (archetype == null) return;
-
-                foreach (var entry in archetype.RemoveFeatures)
-                {
-                    foreach (var feat in entry.Features.OfType<BlueprintFeatureSelection>().Where(f => !f.HideInUI))
-                    {
-                        var selections = progressionData.GetSelections(feat, entry.Level);
-                        list.RemoveAll(f => f == feat || selections.Contains(f));
-                    }
-                }
-                foreach (var entry in archetype.AddFeatures)
-                {
-                    foreach (var feat in entry.Features.OfType<BlueprintFeatureSelection>().Where(f => !f.HideInUI))
-                    {
-                        var selections = progressionData.GetSelections(feat, entry.Level);
-                        foreach (var s in selections)
-                        {
-                            if (IsDeterminator(s) && !list.Contains(s)) list.Add(s);
-                        }
-                        if (selections.Count == 0 && IsDeterminator(feat)) list.Add(feat);
-                    }
-                }
-                __result = list.Count == 0 ? null : list;
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-            }
-        }
-
-        static bool IsDeterminator(BlueprintFeature feat)
-        {
-            switch (UIUtilityUnit.GetFeatureGroup(feat))
-            {
-                case FeatureGroup.Domain:
-                case FeatureGroup.SpecialistSchool:
-                case FeatureGroup.OppositionSchool:
-                case FeatureGroup.BloodLine:
-                case FeatureGroup.MagusArcana:
-                case FeatureGroup.EldritchScionArcana:
-                case FeatureGroup.DraconicBloodlineSelection:
-                case FeatureGroup.BlightDruidDomain:
-                case FeatureGroup.ClericSecondaryDomain:
-                    return true;
-                default:
-                    return false;
-            }
-        }
-    }
+//[Harmony12.HarmonyPatch(typeof(UIUtilityUnit), "CollectClassDeterminator", typeof(BlueprintProgression), typeof(UnitProgressionData))]
+//    static class UIUtilityUnit_CollectClassDeterminators_Patch
+//    {
+//        // This method is only used by `SpellBookView.SetupHeader()` to find information such
+//        // as spellbook bloodlines, cleric deity, etc.
+//        //
+//        // Unfortunately, it doesn't understand how to find data from the archetype.
+//        // So this patch addresses it.
+//        static void Postfix(BlueprintProgression progression, UnitProgressionData progressionData, ref List<BlueprintFeatureBase> __result)
+//        {
+//            try
+//            {
+//                var @class = Helpers.classes.FirstOrDefault(c => c.Progression == progression);
+//                if (@class == null) return;
+//
+//                var list = __result ?? new List<BlueprintFeatureBase>();
+//                var archetype = @class.Archetypes.FirstOrDefault(progressionData.IsArchetype);
+//                if (archetype == null) return;
+//
+//                foreach (var entry in archetype.RemoveFeatures)
+//                {
+//                    foreach (var feat in entry.Features.OfType<BlueprintFeatureSelection>().Where(f => !f.HideInUI))
+//                    {
+//                        var selections = progressionData.GetSelections(feat, entry.Level);
+//                        list.RemoveAll(f => f == feat || selections.Contains(f));
+//                    }
+//                }
+//                foreach (var entry in archetype.AddFeatures)
+//                {
+//                    foreach (var feat in entry.Features.OfType<BlueprintFeatureSelection>().Where(f => !f.HideInUI))
+//                    {
+//                        var selections = progressionData.GetSelections(feat, entry.Level);
+//                        foreach (var s in selections)
+//                        {
+//                            if (IsDeterminator(s) && !list.Contains(s)) list.Add(s);
+//                        }
+//                        if (selections.Count == 0 && IsDeterminator(feat)) list.Add(feat);
+//                    }
+//                }
+//                __result = list.Count == 0 ? null : list;
+//            }
+//            catch (Exception e)
+//            {
+//                Log.Error(e);
+//            }
+//        }    
+//
+//        static bool IsDeterminator(BlueprintFeature feat)
+//        {
+//            switch (UIUtilityUnit.GetFeatureGroup(feat))
+//            {
+//                case FeatureGroup.Domain:
+//                case FeatureGroup.SpecialistSchool:
+//                case FeatureGroup.OppositionSchool:
+//                case FeatureGroup.BloodLine:
+//                case FeatureGroup.MagusArcana:
+//                case FeatureGroup.EldritchScionArcana:
+//                case FeatureGroup.DraconicBloodlineSelection:
+//                case FeatureGroup.BlightDruidDomain:
+//                case FeatureGroup.ClericSecondaryDomain:
+//                    return true;
+//                default:
+//                    return false;
+//            }
+//        }
+//    }
 
     public class CrossBloodlineLogic : BloodlineLevelLogic
     {
