@@ -473,33 +473,14 @@ namespace EldritchArcana
         }
     }
 
-    [Harmony12.HarmonyPatch(typeof(UIUtility), "GetPrerequisiteObject", new Type[] { typeof(Prerequisite) })]
-    static class UIUtility_GetPrerequisiteObject_Patch
-    {
-        static bool Prefix(Prerequisite prerequisite, ref string __result)
-        {
-            try
-            {
-                var custom = prerequisite as CustomPrerequisite;
-                if (custom != null)
-                {
-                    __result = custom.GetCaption();
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-            }
-            return true;
-        }
-    }
-
     public abstract class CustomPrerequisite : Prerequisite
     {
         public abstract String GetCaption();
 
-        static CustomPrerequisite() => Main.ApplyPatch(typeof(UIUtility_GetPrerequisiteObject_Patch), "Text for new kinds of prerequisites");
+        public override string GetUIText()
+        {
+            return GetCaption();
+        }
     }
 
     [AllowMultipleComponents]

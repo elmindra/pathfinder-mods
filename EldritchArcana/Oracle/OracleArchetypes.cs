@@ -353,7 +353,7 @@ namespace EldritchArcana
         {
             try
             {
-                if (data?.Archetype == null || Main.settings?.RelaxAncientLorekeeper == true) return;
+                if(data?.Archetype == null || Main.settings?.RelaxAncientLorekeeper == true) return;
                 Prerequisites(__instance, box, data.Archetype.GetComponents<Prerequisite>());
             }
             catch (Exception e)
