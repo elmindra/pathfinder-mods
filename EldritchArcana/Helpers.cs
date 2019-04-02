@@ -110,13 +110,11 @@ namespace EldritchArcana
             if (a.bytes == null) return b;
             if (b.bytes == null) return a;
             var c = new BigInteger();
-            c.neg = a.neg != b.neg;
             if (a.Length() < b.Length()) {
                 int l = b.Length();
                 int o = l - a.Length();
                 c.bytes = new byte[l];
                 Array.Copy(b.bytes, c.bytes, l);
-                for (int i = 0; i < o; ++i) { c.bytes[i] = 255; }
                 for (int i = 0; i < a.Length(); ++i) {
                     c.bytes[i + o] ^= a.bytes[i];
                 }
@@ -125,11 +123,11 @@ namespace EldritchArcana
                 int o = l - b.Length();
                 c.bytes = new byte[l];
                 Array.Copy(a.bytes, c.bytes, l);
-                for (int i = 0; i < o; ++i) { c.bytes[i] = 255; }
                 for (int i = 0; i < b.Length(); ++i) {
                     c.bytes[i + o] ^= b.bytes[i];
                 }
             }
+            c.neg = c.bytes[0] > 127;
             return c;
         }
 
