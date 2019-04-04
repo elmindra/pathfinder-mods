@@ -264,9 +264,9 @@ namespace EldritchArcana
 
         public override void OnEventAboutToTrigger(RuleSkillCheck evt)
         {
-            if (evt.StatType == StatType.SkillPerception && evt.Reason.TriggerEntity is TrapObjectView.TrapObjectData)
+            if (evt.StatType == StatType.SkillPerception && evt.Reason.SourceEntity is TrapObjectView.TrapObjectData)
             {
-                Log.Write($"{GetType().Name} use {Skill} for finding trap {evt.Reason.TriggerEntity}");
+                Log.Write($"{GetType().Name} use {Skill} for finding trap {evt.Reason.SourceEntity}");
                 Helpers.SetField(evt, "StatType", Skill);
             }
         }
