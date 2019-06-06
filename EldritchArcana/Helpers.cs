@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using System.Numerics;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using Kingmaker;
 using Kingmaker.Blueprints;
@@ -985,15 +985,33 @@ namespace EldritchArcana
         internal static String MergeIds(String guid1, String guid2, String guid3 = null)
         {
             // It'd be nice if these GUIDs were already in integer form.
-            var id = BigInteger.Parse(guid1, NumberStyles.HexNumber);
-            id ^= BigInteger.Parse(guid2, NumberStyles.HexNumber);
+            var id = new BigInteger(guid1, 16);
+            id ^= new BigInteger(guid2, 16);
             if (guid3 != null)
             {
-                id ^= BigInteger.Parse(guid3, NumberStyles.HexNumber);
+                id ^= new BigInteger(guid3, 16);
             }
-            return id.ToString("x32");
+            string idString = id.ToString(16);
+            if (idString.Length > 32)
+            {
+                return idString.Substring(0, 32);
+            }
+
+            while (idString.Length < 32)
+            {
+                idString = "0" + idString;
+            }
+
+            return idString;
         }
 
+
+        internal static String getGuid(String s)
+        {
+            var md5 = MD5.Create();
+            byte[] data = md5.ComputeHash(Encoding.Default.GetBytes(s));
+            return new Guid(data).ToString().Replace("-", "");
+        }
 
         public static MechanicsContext GetMechanicsContext()
         {

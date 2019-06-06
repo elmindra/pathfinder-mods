@@ -968,7 +968,7 @@ namespace EldritchArcana
         public int Bonus = 1;
         public void OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
-            var spell = Param.GetValueOrDefault().Blueprint;
+            var spell = Param.Blueprint;
             if (evt.Spell != spell && evt.Spell?.Parent != spell) return;
             Log.Write($"Increase caster level of {spell.name} by {Bonus}");
             evt.AddBonusCasterLevel(Bonus);

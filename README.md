@@ -10,7 +10,7 @@ This mod adds the Oracle class, new spells, magic-themed feats, character traits
 If you have a build in mind, I recommend using [Bag of Tricks](https://www.nexusmods.com/pathfinderkingmaker/mods/26)
 to level up your character to high level, quick save & load, then test out the abilities you want to use.
 You can file bugs on [github](https://github.com/jennyem/pathfinder-mods/issues) or report them using the
-Nexus mods page.*x
+Nexus mods page.*
 
 Installation:
 
