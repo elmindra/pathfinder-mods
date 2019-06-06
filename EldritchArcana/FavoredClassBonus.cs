@@ -588,7 +588,7 @@ namespace EldritchArcana
 
         public override void OnTurnOn()
         {
-            var statParam = Param.GetValueOrDefault().StatType.GetValueOrDefault();
+            var statParam = Param.StatType.GetValueOrDefault();
             if (statParam == StatType.Unknown) return;
             var stat = Owner.Stats.GetStat(statParam);
 
