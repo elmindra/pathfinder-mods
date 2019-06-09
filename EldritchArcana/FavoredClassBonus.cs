@@ -473,13 +473,9 @@ namespace EldritchArcana
         }
     }
 
-    public abstract class CustomPrerequisite : Prerequisite
-    {
-        // can probably be removed
-    }
 
     [AllowMultipleComponents]
-    public class PrerequisiteCasterSpellLevel : CustomPrerequisite
+    public class PrerequisiteCasterSpellLevel : Prerequisite
     {
         public BlueprintCharacterClass CharacterClass;
 
@@ -583,7 +579,7 @@ namespace EldritchArcana
 
         public override void OnTurnOn()
         {
-            var statParam = Param.GetValueOrDefault().StatType.GetValueOrDefault();
+            var statParam = Param.StatType.GetValueOrDefault();
             if (statParam == StatType.Unknown) return;
             var stat = Owner.Stats.GetStat(statParam);
 

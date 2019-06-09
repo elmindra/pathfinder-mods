@@ -93,8 +93,6 @@ namespace EldritchArcana
 
         internal static Settings settings;
 
-        static string testedGameVersion = "1.2.3";
-
         static PortraitLoader portraitLoader;
 
         static Harmony12.HarmonyInstance harmonyInstance;
@@ -138,8 +136,8 @@ namespace EldritchArcana
                     var portrait = UnityEngine.Object.Instantiate(charGen.CustomPortrait);
                     portrait.name = $"CustomPortrait${id}";
 
-                    BigInteger bigInt;
-                    var guid = BigInteger.TryParse(id, out bigInt) ? id : GetMd5Hash(md5, id);
+                    Guid unused;
+                    var guid = Guid.TryParse(id, out unused) ? id : GetMd5Hash(md5, id);
                     library.AddAsset(portrait, Helpers.MergeIds("c3d4e15de2444b528c734fac8eb75ba2", guid));
                     portrait.Data = new PortraitData(id);
                     customPortraits.Add(portrait);
@@ -297,10 +295,7 @@ namespace EldritchArcana
             if (!enabled) return;
 
             var fixedWidth = new GUILayoutOption[1] { GUILayout.ExpandWidth(false) };
-            if (testedGameVersion != GameVersion.GetVersion())
-            {
-                GUILayout.Label($"<b>This mod was tested against game version {testedGameVersion}, but you are running {GameVersion.GetVersion()}.</b>", fixedWidth);
-            }
+
             if (failedPatches.Count > 0)
             {
                 GUILayout.BeginVertical();

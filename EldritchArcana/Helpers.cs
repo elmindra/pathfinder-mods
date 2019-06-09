@@ -1073,16 +1073,27 @@ namespace EldritchArcana
         // use features from the mod.
         internal static String MergeIds(String guid1, String guid2, String guid3 = null)
         {
-            // It'd be nice if these GUIDs were already in integer form.
-            var id = BigInteger.Parse(guid1, NumberStyles.HexNumber);
-            id ^= BigInteger.Parse(guid2, NumberStyles.HexNumber);
+            // Parse into low/high 64-bit numbers, and then xor the two halves.
+            ulong low = ParseGuidLow(guid1);
+            ulong high = ParseGuidHigh(guid1);
+
+            low ^= ParseGuidLow(guid2);
+            high ^= ParseGuidHigh(guid2);
+
             if (guid3 != null)
             {
-                id ^= BigInteger.Parse(guid3, NumberStyles.HexNumber);
+                low ^= ParseGuidLow(guid3);
+                high ^= ParseGuidHigh(guid3);
             }
-            return id.ToString("x32");
+
+            return high.ToString("x16") + low.ToString("x16");
         }
 
+        // Parses the lowest 64 bits of the Guid (which corresponds to the last 16 characters).
+        static ulong ParseGuidLow(String id) => ulong.Parse(id.Substring(id.Length - 16), NumberStyles.HexNumber);
+
+        // Parses the high 64 bits of the Guid (which corresponds to the first 16 characters).
+        static ulong ParseGuidHigh(String id) => ulong.Parse(id.Substring(0, id.Length - 16), NumberStyles.HexNumber);
 
         public static MechanicsContext GetMechanicsContext()
         {
