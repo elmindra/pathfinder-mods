@@ -5,49 +5,50 @@
     <DebugType>Full</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="mscorelib">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\mscorlib.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="0Harmony12">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\0Harmony12.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.UI.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="0Harmony12">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\0Harmony12.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="mscorlib">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>D:\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Newtonsoft.Json.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityModManager">
+      <HintPath>D:\Games\Steam\steamapps\common\Pathfinder Kingmaker\UnityModManager\UnityModManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +94,9 @@
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>
-    xcopy /y "$(SolutionDir)\EldritchArcana\bin\$(Configuration)\$(TargetFramework)\EldritchArcana.dll" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
-    xcopy /y "$(SolutionDir)\EldritchArcana\Info.json" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
-    xcopy /y "$(SolutionDir)\EldritchArcana\Testing\baseline_assets.txt" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
-    </PostBuildEvent>
+rem    xcopy /y "$(SolutionDir)\EldritchArcana\bin\$(Configuration)\$(TargetFramework)\EldritchArcana.dll" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+rem    xcopy /y "$(SolutionDir)\EldritchArcana\Info.json" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+rem    xcopy /y "$(SolutionDir)\EldritchArcana\Testing\baseline_assets.txt" "D:\Steam\steamapps\common\Pathfinder Kingmaker\Mods\EldritchArcana\"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
