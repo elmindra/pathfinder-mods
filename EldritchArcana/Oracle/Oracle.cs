@@ -107,7 +107,7 @@ namespace EldritchArcana
             oracle.FemaleEquipmentEntities = cleric.FemaleEquipmentEntities;
 
             // Both of the restrictions here are relevant (no atheism feature, no animal class).
-            oracle.ComponentsArray = cleric.ComponentsArray;
+            oracle.ComponentsArray = sorcerer.ComponentsArray; // changed to sorcerer, to allow atheist oracles, since the description suggests this is possible.
             oracle.StartingItems = cleric.StartingItems;
 
             var progression = Helpers.CreateProgression("OracleProgression",

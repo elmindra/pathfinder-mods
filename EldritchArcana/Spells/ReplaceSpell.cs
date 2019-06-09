@@ -280,7 +280,7 @@ namespace EldritchArcana
             if (m_Applied) return;
             m_Applied = true;
 
-            var spell = Param.GetValueOrDefault().Blueprint as BlueprintAbility;
+            var spell = Param.Blueprint as BlueprintAbility;
             if (spell == null) return;
 
             var spellbook = Owner.GetSpellbook(Spellbook);
