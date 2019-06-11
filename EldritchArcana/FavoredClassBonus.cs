@@ -1,9 +1,6 @@
 // Copyright (c) 2019 Jennifer Messerly
 // This code is licensed under MIT license (see LICENSE for details)
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -18,25 +15,27 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.Localization;
 using Kingmaker.PubSubSystem;
-using Kingmaker.UI.Common;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
 using Kingmaker.Utility;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EldritchArcana
 {
-    static class FavoredClassBonus
+    internal static class FavoredClassBonus
     {
-        static LibraryScriptableObject library => Main.library;
+        private static LibraryScriptableObject library => Main.library;
 
         internal static BlueprintFeatureSelection favoredPrestigeClass;
+        private static BlueprintFeature alertnessFeat;
+        private static BlueprintRace[] extraSpellRaces;
 
-        static BlueprintFeature alertnessFeat;
-
-        static BlueprintRace[] extraSpellRaces;
+        private static Dictionary<StatType, BlueprintFeature> StatBonusTenRanksByStatType = new Dictionary<StatType, BlueprintFeature>();
 
         internal static void Load()
         {
@@ -56,16 +55,29 @@ namespace EldritchArcana
                 Helpers.Create<AddSkillRankOnce>());
             bonusSkillRankFeat.Ranks = 20;
 
+            StatBonusTenRanksByStatType.Add(StatType.SkillAthletics, CreateStatOnRankBonuses("1c7c4b10f6d84dafb144df0a15ce6934", StatType.SkillAthletics));
+            StatBonusTenRanksByStatType.Add(StatType.SkillMobility, CreateStatOnRankBonuses("c46f9346511b4093b2ea42f489138415", StatType.SkillMobility));
+            StatBonusTenRanksByStatType.Add(StatType.SkillThievery, CreateStatOnRankBonuses("28d63316183144a893ecc3150286c253", StatType.SkillThievery));
+            StatBonusTenRanksByStatType.Add(StatType.SkillStealth, CreateStatOnRankBonuses("46a57c5a615c4dde8f3becfde8d72e9d", StatType.SkillStealth));
+            StatBonusTenRanksByStatType.Add(StatType.SkillKnowledgeArcana, CreateStatOnRankBonuses("c8b84115288447d6865d4705ca71aaba", StatType.SkillKnowledgeArcana));
+            StatBonusTenRanksByStatType.Add(StatType.SkillKnowledgeWorld, CreateStatOnRankBonuses("7019078674b64f989e821de9d6acd58f", StatType.SkillKnowledgeWorld));
+            StatBonusTenRanksByStatType.Add(StatType.SkillLoreNature, CreateStatOnRankBonuses("b6e43a0c81c844ac8ff1cee5f7aec195", StatType.SkillLoreNature));
+            StatBonusTenRanksByStatType.Add(StatType.SkillLoreReligion, CreateStatOnRankBonuses("541f7713a3714631839f797a2caa320b", StatType.SkillLoreReligion));
+            StatBonusTenRanksByStatType.Add(StatType.SkillPerception, CreateStatOnRankBonuses("a3491805d3a641ea94e5b0b6bcb5462e", StatType.SkillPerception));
+            StatBonusTenRanksByStatType.Add(StatType.SkillPersuasion, CreateStatOnRankBonuses("3639dcca179f454b93e0c441d6d9e42b", StatType.SkillPersuasion));
+            StatBonusTenRanksByStatType.Add(StatType.SkillUseMagicDevice, CreateStatOnRankBonuses("57dd61d05d3a47d894187eb673f9dbc0", StatType.SkillUseMagicDevice));
+
+
             LoadFavoredClass();
             LoadFavoredPrestigeClass();
             LoadDeitySelection();
         }
 
-        static void LoadFavoredPrestigeClass()
+        private static void LoadFavoredPrestigeClass()
         {
             alertnessFeat = library.Get<BlueprintFeature>("1c04fe9a13a22bc499ffac03e6f79153");
 
-            var noFeature = Helpers.Create<PrerequisiteNoFeature>();
+            PrerequisiteNoFeature noFeature = Helpers.Create<PrerequisiteNoFeature>();
             favoredPrestigeClass = Helpers.CreateFeatureSelection(
                 "FavoredPresitgeClassSelection",
                 "Favored Prestige Class",
@@ -92,11 +104,11 @@ namespace EldritchArcana
             library.AddFeats(favoredPrestigeClass);
         }
 
-        static BlueprintProgression CreateFavoredPrestigeClass(BlueprintCharacterClass prestigeClass)
+        private static BlueprintProgression CreateFavoredPrestigeClass(BlueprintCharacterClass prestigeClass)
         {
 
             // Create the progression that will allow +1 HP or skill rank.
-            var progression = Helpers.CreateProgression(
+            BlueprintProgression progression = Helpers.CreateProgression(
                 $"FavoredPrestige{prestigeClass.name}",
                 $"Favored Prestige Class — {prestigeClass.Name}",
                 prestigeClass.LocalizedDescription,
@@ -111,37 +123,43 @@ namespace EldritchArcana
         }
 
         // Creates the progression that offers a choice of HP, Skill Rank, or other choices each level up.
-        static void FillFavoredClassProgression(BlueprintProgression favored, BlueprintCharacterClass favoredClass, List<BlueprintFeature> extraChoices = null)
+        private static void FillFavoredClassProgression(BlueprintProgression favored, BlueprintCharacterClass favoredClass, List<BlueprintFeature> extraChoices = null)
         {
-            var isPrestige = favoredClass.PrestigeClass;
+            bool isPrestige = favoredClass.PrestigeClass;
 
             favored.Classes = new BlueprintCharacterClass[] { favoredClass };
             favored.ExclusiveProgression = favoredClass;
 
-            var selection = Helpers.CreateFeatureSelection(
+            FeatureGroup group = UpdateLevelUpDeterminatorText.Group;
+            if (isPrestige)
+            {
+                group = FeatureGroup.Feat;
+            }
+
+            BlueprintFeatureSelection selection = Helpers.CreateFeatureSelection(
                 favored.name + "BonusSelection",
                 favored.Name,
                 favored.Description,
                 Helpers.MergeIds(favored.AssetGuid, "5b99b7d724e048c08b384dd890826"),
                 favoredClass.Icon,
-                UpdateLevelUpDeterminatorText.Group);
+                group);
 
-            var choices = new List<BlueprintFeature> { bonusHitPointFeat, bonusSkillRankFeat };
-            if (extraChoices != null) choices.AddRange(extraChoices);
+            List<BlueprintFeature> choices = new List<BlueprintFeature> { bonusHitPointFeat, bonusSkillRankFeat };
+            if(extraChoices != null) choices.AddRange(extraChoices);
             selection.SetFeatures(choices);
 
-            var entries = new List<LevelEntry>();
+            List<LevelEntry> entries = new List<LevelEntry>();
             int maxLevel = isPrestige ? 10 : 20;
-            for (int level = 1; level <= maxLevel; level++)
+            for(int level = 1; level <= maxLevel; level++)
             {
                 entries.Add(Helpers.LevelEntry(level, selection));
             }
 
-            if (isPrestige)
+            if(isPrestige)
             {
                 // Create the skill selection feature that offers +2 bonus to class skill
                 // (+4 bonus with 10 ranks invested).
-                var paramSkill = Helpers.CreateParamSelection<CustomSkillSelection>(
+                BlueprintFeatureSelection paramSkill = Helpers.CreateFeatureSelection(
                     favored.name + "SkillBonus",
                     favored.Name,
                     favored.Description + "\nYou gain a +2 bonus on checks using the skill you chose from that prestige class’s class skills. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill. This bonus stacks with the bonus granted by Skill Focus, but does not stack with a bonus granted by any other feat (such as Magical Aptitude or Persuasive).",
@@ -149,23 +167,43 @@ namespace EldritchArcana
                     Helpers.skillFocusFeat.Icon,
                     FeatureGroup.None,
                     Helpers.Create<AddParameterizedStatBonus>(a => a.Descriptor = ModifierDescriptor.Feat));
-                paramSkill.Skills = favoredClass.ClassSkills;
+                List<BlueprintFeature> classSkillFeatures = new List<BlueprintFeature>();
+                foreach(StatType favoredClassClassSkill in favoredClass.ClassSkills)
+                {
+                    classSkillFeatures.Add(StatBonusTenRanksByStatType.Get(favoredClassClassSkill));
+                }
 
-                // Parameterized selections can't be at the top level, so make sure it's nested inside another selection.
-                var skillSelection = Helpers.CreateFeatureSelection($"{paramSkill.name}Selection", paramSkill.Name, paramSkill.Description,
-                    Helpers.MergeIds(favoredClass.AssetGuid, "751086fe9be448aaace88ed185b4240f"), paramSkill.Icon, UpdateLevelUpDeterminatorText.Group);
-                skillSelection.SetFeatures(paramSkill);
-                entries[0].Features.Add(skillSelection);
+
+                paramSkill.SetFeatures(classSkillFeatures);
+                entries[0].Features.Add(paramSkill);
             }
 
             favored.LevelEntries = entries.ToArray();
         }
 
-        static void LoadFavoredClass()
+        private static BlueprintFeature CreateStatOnRankBonuses(string GUID, StatType statType)
+        {
+            return Helpers.CreateFeature(
+                "SkillBonus" + statType,
+                "Favored Prestige Class Skill Bonus (" + statType + ")",
+                "You gain a +2 bonus on checks using the skill you chose from that prestige class’s class skills. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill. This bonus stacks with the bonus granted by Skill Focus, but does not stack with a bonus granted by any other feat (such as Magical Aptitude or Persuasive).",
+                GUID,
+                Helpers.skillFocusFeat.Icon,
+                FeatureGroup.None,
+                Helpers.Create<AddStatBonusBasedOnStatRanks>(x =>
+                {
+                    x.StatType = statType;
+                    x.BaseBonus = 2;
+                    x.IncreaseOnRank = 10;
+                    x.IncreaseOnRankBonus = 2;
+                }));
+        }
+
+        private static void LoadFavoredClass()
         {
             // Note: the favored class choice has no components for behavior, because the logic is implemented by
             // AddFavoredClassBonusChoice on level up. 
-            var favoredClassAny = Helpers.CreateFeature(
+            BlueprintFeature favoredClassAny = Helpers.CreateFeature(
                 "FavoredClassAny",
                 "Favored Class — Any",
                 "The favored class is automatically determined each level-up, and an extra hit point is awarded if gaining a level in that class. The favored class is your highest level non-prestige class. This is the default game behavior.",
@@ -173,7 +211,7 @@ namespace EldritchArcana
                 null,
                 FeatureGroup.Feat);
 
-            var choices = new List<BlueprintFeature> { favoredClassAny };
+            List<BlueprintFeature> choices = new List<BlueprintFeature> { favoredClassAny };
 
             // Per FAQ, half-elf and half-orcs can qualify for human favored class bonuses (or elf/orc ones, respectively).
             // In the game, Aasimar appear to be treated as having "Scion of Humanity" (they don't have Darkvision, but
@@ -181,16 +219,16 @@ namespace EldritchArcana
             // TODO: Tiefling should qualify too.
             extraSpellRaces = new BlueprintRace[] { Helpers.halfElf, Helpers.halfOrc, Helpers.human, Helpers.aasimar, Helpers.tiefling };
 
-            foreach (var characterClass in Helpers.classes)
+            foreach(BlueprintCharacterClass characterClass in Helpers.classes)
             {
-                if (characterClass.PrestigeClass) continue;
+                if(characterClass.PrestigeClass) continue;
                 choices.Add(CreateFavoredClassProgression(characterClass));
             }
 
             EventBus.Subscribe(new UpdateLevelUpDeterminatorText());
 
-            var noFeature = Helpers.PrerequisiteNoFeature(null);
-            var favoredClass = Helpers.CreateFeatureSelection(
+            PrerequisiteNoFeature noFeature = Helpers.PrerequisiteNoFeature(null);
+            BlueprintFeatureSelection favoredClass = Helpers.CreateFeatureSelection(
                 "FavoredClass",
                 "Favored Class",
                 "Each character begins play with a single favored class of their choosing—typically, this is the same class as the one they choose at 1st level. " +
@@ -208,23 +246,23 @@ namespace EldritchArcana
             });
         }
 
-        static BlueprintProgression CreateFavoredClassProgression(BlueprintCharacterClass favoredClass)
+        private static BlueprintProgression CreateFavoredClassProgression(BlueprintCharacterClass favoredClass)
         {
-            var className = favoredClass.Name.ToLower();
+            string className = favoredClass.Name.ToLower();
             // TODO: implement other classes/races favored class benefits.
-            var description = $"Whenever you gain a {className} level, you can choose between +1 hit point, +1 skill rank, or the racial bonus associated with their favored class.";
+            string description = $"Whenever you gain a {className} level, you can choose between +1 hit point, +1 skill rank, or the racial bonus associated with their favored class.";
 
-            var isSorcerer = favoredClass.AssetGuid == "b3a505fb61437dc4097f43c3f8f9a4cf";
-            var isBard = favoredClass.AssetGuid == "772c83a25e2268e448e841dcd548235f";
-            var isOracle = favoredClass == OracleClass.oracle;
-            var isExtraSpellClass = isSorcerer || isBard || isOracle;
-            if (isExtraSpellClass)
+            bool isSorcerer = favoredClass.AssetGuid == "b3a505fb61437dc4097f43c3f8f9a4cf";
+            bool isBard = favoredClass.AssetGuid == "772c83a25e2268e448e841dcd548235f";
+            bool isOracle = favoredClass == OracleClass.oracle;
+            bool isExtraSpellClass = isSorcerer || isBard || isOracle;
+            if(isExtraSpellClass)
             {
                 description += "\nRacial favored class benefits:" +
                     $"\n  Human (and Half-Elf, Half-Orc, Aasimar) — Add one spell known from the {className} spell list. This spell must be at least one level below the highest {className} spell you can cast.";
             }
 
-            var favored = Helpers.CreateProgression(
+            BlueprintProgression favored = Helpers.CreateProgression(
                 $"FavoredClass{favoredClass.name}Progression",
                 $"Favored Class — {favoredClass.Name}",
                 description,
@@ -233,10 +271,10 @@ namespace EldritchArcana
                 FeatureGroup.Feat,
                 Helpers.Create<DisableAutomaticFavoredClassHitPoints>());
 
-            var choices = new List<BlueprintFeature>();
-            if (isExtraSpellClass)
+            List<BlueprintFeature> choices = new List<BlueprintFeature>();
+            if(isExtraSpellClass)
             {
-                for (int level = 1; level <= 8; level++)
+                for(int level = 1; level <= 8; level++)
                 {
                     choices.Add(CreateExtraSpellChoice(favoredClass, level));
                 }
@@ -246,16 +284,16 @@ namespace EldritchArcana
             return favored;
         }
 
-        static BlueprintFeature CreateExtraSpellChoice(BlueprintCharacterClass @class, int spellLevel)
+        private static BlueprintFeature CreateExtraSpellChoice(BlueprintCharacterClass @class, int spellLevel)
         {
-            var className = @class.Name.ToLower();
+            string className = @class.Name.ToLower();
 
-            var components = new List<BlueprintComponent>();
+            List<BlueprintComponent> components = new List<BlueprintComponent>();
             components.Add(Helpers.PrerequisiteFeaturesFromList(extraSpellRaces));
             components.Add(PrerequisiteCasterSpellLevel.Create(@class, spellLevel + 1));
             components.Add(Helpers.Create<AddOneSpellChoice>(a => { a.CharacterClass = @class; a.SpellLevel = spellLevel; }));
 
-            var feat = Helpers.CreateFeature($"Favored{@class.name}BonusSpellLevel{spellLevel}",
+            BlueprintFeature feat = Helpers.CreateFeature($"Favored{@class.name}BonusSpellLevel{spellLevel}",
                 $"Bonus Known Spell (Level {spellLevel})",
                 $"Add one level {spellLevel} spell known from the {className} spell list. This spell must be at least one level below the highest {className} spell you can cast.",
                 Helpers.MergeIds(@class.AssetGuid, spellLevelGuids[spellLevel - 1]),
@@ -266,11 +304,11 @@ namespace EldritchArcana
             return feat;
         }
 
-        static void LoadDeitySelection()
+        private static void LoadDeitySelection()
         {
             // For RP flavor, this adds an optional deity/atheism selection to the character creation page.
-            var baseDeitySelection = library.Get<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
-            var atheismFeature = library.Get<BlueprintFeature>("92c0d2da0a836ce418a267093c09ca54");
+            BlueprintFeatureSelection baseDeitySelection = library.Get<BlueprintFeatureSelection>("59e7a76987fe3b547b9cce045f4db3e4");
+            BlueprintFeature atheismFeature = library.Get<BlueprintFeature>("92c0d2da0a836ce418a267093c09ca54");
 
             // Classes tagged with "no atheism" can't select it on the Deity selection.
             // (in practice, most of them wouldn't get the option, since they have their own deity selection feature.
@@ -279,33 +317,33 @@ namespace EldritchArcana
                 Helpers.classes.Where(c => c.GetComponents<PrerequisiteNoFeature>().Any(p => p.Feature == atheismFeature))
                     .Select(c => Helpers.Create<PrerequisiteNoClassLevel>(p => p.CharacterClass = c)));
 
-            var deitySelection = library.CopyAndAdd(baseDeitySelection, "DeitySelectionAny", "d5c3c9d4080043f98e6c09f4e843440e");
+            BlueprintFeatureSelection deitySelection = library.CopyAndAdd(baseDeitySelection, "DeitySelectionAny", "d5c3c9d4080043f98e6c09f4e843440e");
             deitySelection.Group = FeatureGroup.None; // to prevent "determinators" page clutter.
-            var noDeityChoice = Helpers.CreateFeature("SkipDeity", "(Skip)",
+            BlueprintFeature noDeityChoice = Helpers.CreateFeature("SkipDeity", "(Skip)",
                 "Choose this to skip selecting a deity at character creation. You may select one later if you gain a level in a class that requires it (such as Cleric, Inquisitor, or Paladin).",
                 "e1f5711210404b34a805b00749eeba20",
                 null, FeatureGroup.None);
             noDeityChoice.HideInUI = true;
 
-            var choices = new List<BlueprintFeature> { noDeityChoice };
+            List<BlueprintFeature> choices = new List<BlueprintFeature> { noDeityChoice };
             choices.AddRange(baseDeitySelection.AllFeatures);
             choices.Add(atheismFeature);
             deitySelection.SetFeatures(choices);
 
-            var paladinDeitySelection = library.Get<BlueprintFeatureSelection>("a7c8b73528d34c2479b4bd638503da1d");
+            BlueprintFeatureSelection paladinDeitySelection = library.Get<BlueprintFeatureSelection>("a7c8b73528d34c2479b4bd638503da1d");
             ApplyClassMechanics_Apply_Patch.onChargenApply.Add((state, unit) =>
             {
-                if (!state.Selections.Any(s => s.Selection.GetGroup() == FeatureGroup.Deities ||
-                    (object)s.Selection == paladinDeitySelection))
+                if(!state.Selections.Any(s => s.Selection.GetGroup() == FeatureGroup.Deities ||
+                   (object)s.Selection == paladinDeitySelection))
                 {
                     deitySelection.AddSelection(state, unit, 1);
                 }
             });
         }
 
-        static BlueprintFeature bonusHitPointFeat, bonusSkillRankFeat;
+        private static BlueprintFeature bonusHitPointFeat, bonusSkillRankFeat;
 
-        internal static readonly String[] spellLevelGuids = new String[] {
+        internal static readonly string[] spellLevelGuids = new string[] {
             "1541c1ef94e24659b1120cf18792094a",
             "5c570cda113846ea86b800d64a90c2d5",
             "2eae028571d54067949a046773069e2b",
@@ -324,18 +362,15 @@ namespace EldritchArcana
     //
     // It's not easy to fix that method, so instead we reuse Channel Energy.
     // The text for it is updated to reflect what it actually means.
-    class UpdateLevelUpDeterminatorText : ILevelUpSelectClassHandler, ILevelUpCompleteUIHandler
+    internal class UpdateLevelUpDeterminatorText : ILevelUpSelectClassHandler, ILevelUpCompleteUIHandler
     {
         public static FeatureGroup Group = FeatureGroup.ChannelEnergy;
-
-        const String ChannelEnergyId = "d332c1748445e8f4f9e92763123e31bd";
-
-        readonly LocalizedString SavedText, SavedChoiceText;
-        readonly LocalizedString FavoredClass, ChooseFavoredClass;
-        readonly LocalizedString BonusText, ChooseBonusText;
-        readonly LocalizedString MysteryText, ChooseMysteryText;
-
-        readonly UICharGen CharGenText;
+        private const string ChannelEnergyId = "d332c1748445e8f4f9e92763123e31bd";
+        private readonly LocalizedString SavedText, SavedChoiceText;
+        private readonly LocalizedString FavoredClass, ChooseFavoredClass;
+        private readonly LocalizedString BonusText, ChooseBonusText;
+        private readonly LocalizedString MysteryText, ChooseMysteryText;
+        private readonly UICharGen CharGenText;
 
         public UpdateLevelUpDeterminatorText()
         {
@@ -352,20 +387,20 @@ namespace EldritchArcana
 
         void ILevelUpSelectClassHandler.HandleSelectClass(UnitDescriptor unit, LevelUpState state)
         {
-            var entries = state.SelectedClass.Progression.LevelEntries;
-            var isOracle = state.SelectedClass == OracleClass.oracle;
-            var hasChannelEnergy = entries.Any(l => l.Level == state.NextClassLevel &&
+            LevelEntry[] entries = state.SelectedClass.Progression.LevelEntries;
+            bool isOracle = state.SelectedClass == OracleClass.oracle;
+            bool hasChannelEnergy = entries.Any(l => l.Level == state.NextClassLevel &&
                 l.Features.Any(f => f.AssetGuid == ChannelEnergyId));
 
-            if (isOracle && state.NextClassLevel == 1)
+            if(isOracle && state.NextClassLevel == 1)
             {
                 SetText(MysteryText, ChooseMysteryText);
             }
-            else if (hasChannelEnergy)
+            else if(hasChannelEnergy)
             {
                 SetText(SavedText, SavedChoiceText);
             }
-            else if (state.NextLevel == 1)
+            else if(state.NextLevel == 1)
             {
                 SetText(FavoredClass, ChooseFavoredClass);
             }
@@ -380,7 +415,7 @@ namespace EldritchArcana
             SetText(SavedText, SavedChoiceText);
         }
 
-        void SetText(LocalizedString text, LocalizedString choiceText)
+        private void SetText(LocalizedString text, LocalizedString choiceText)
         {
             CharGenText.ChannelEnergy = text;
             CharGenText.ChooseChannelEnergy = choiceText;
@@ -391,7 +426,7 @@ namespace EldritchArcana
     public abstract class ComponentAppliedOnceOnLevelUp : OwnedGameLogicComponent<UnitDescriptor>, ILevelUpCompleteUIHandler
     {
         [JsonProperty]
-        int appliedRank;
+        private int appliedRank;
 
         public override void OnFactActivate()
         {
@@ -399,19 +434,19 @@ namespace EldritchArcana
             {
                 Log.Write($"{GetType()}.OnFactActivate(), applied rank? {appliedRank}");
                 int rank = Fact.GetRank();
-                if (appliedRank >= rank) return;
+                if(appliedRank >= rank) return;
 
                 // If we're in the level-up UI, apply the component
-                var levelUp = Game.Instance.UI.CharacterBuildController.LevelUpController;
-                if (Owner == levelUp.Preview || Owner == levelUp.Unit)
+                LevelUpController levelUp = Game.Instance.UI.CharacterBuildController.LevelUpController;
+                if(Owner == levelUp.Preview || Owner == levelUp.Unit)
                 {
-                    for (; appliedRank < rank; appliedRank++)
+                    for(; appliedRank < rank; appliedRank++)
                     {
                         Apply(levelUp.State);
                     }
                 }
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Log.Error(e);
             }
@@ -423,7 +458,7 @@ namespace EldritchArcana
 
         public void HandleLevelUpComplete(UnitEntityData unit, bool isChargen)
         {
-            if (RemoveAfterLevelUp && unit.Descriptor == Owner)
+            if(RemoveAfterLevelUp && unit.Descriptor == Owner)
             {
                 Log.Write($"Removing fact {Fact.Blueprint.AssetGuid}");
                 Owner.RemoveFact(Fact);
@@ -441,10 +476,10 @@ namespace EldritchArcana
 
         protected override void Apply(LevelUpState state)
         {
-            if (CharacterClass != state.SelectedClass) return;
+            if(CharacterClass != state.SelectedClass) return;
 
-            var spellbook = Owner.Progression.GetClassData(CharacterClass).Spellbook;
-            var spellSelection = state.DemandSpellSelection(spellbook, spellbook.SpellList);
+            Kingmaker.Blueprints.Classes.Spells.BlueprintSpellbook spellbook = Owner.Progression.GetClassData(CharacterClass).Spellbook;
+            SpellSelectionData spellSelection = state.DemandSpellSelection(spellbook, spellbook.SpellList);
             int existingNewSpells = spellSelection.LevelCount[SpellLevel]?.SpellSelections.Length ?? 0;
 
             Log.Write($"Adding spell selection to level {SpellLevel}");
@@ -475,7 +510,7 @@ namespace EldritchArcana
 
     public abstract class CustomPrerequisite : Prerequisite
     {
-        public abstract String GetCaption();
+        public abstract string GetCaption();
 
         public override string GetUIText()
         {
@@ -492,7 +527,7 @@ namespace EldritchArcana
 
         public static PrerequisiteCasterSpellLevel Create(BlueprintCharacterClass @class, int spellLevel)
         {
-            var p = Helpers.Create<PrerequisiteCasterSpellLevel>();
+            PrerequisiteCasterSpellLevel p = Helpers.Create<PrerequisiteCasterSpellLevel>();
             p.CharacterClass = @class;
             p.RequiredSpellLevel = spellLevel;
             return p;
@@ -503,7 +538,10 @@ namespace EldritchArcana
             return unit.GetSpellbook(CharacterClass)?.MaxSpellLevel >= RequiredSpellLevel;
         }
 
-        public override String GetCaption() => $"Can cast {CharacterClass.Name} spells of level: {RequiredSpellLevel}";
+        public override string GetCaption()
+        {
+            return $"Can cast {CharacterClass.Name} spells of level: {RequiredSpellLevel}";
+        }
     }
 
     [AllowedOn(typeof(BlueprintUnitFact))]
@@ -511,7 +549,7 @@ namespace EldritchArcana
     {
         public void HandleSelectClass(UnitDescriptor unit, LevelUpState state)
         {
-            if (Owner == unit)
+            if(Owner == unit)
             {
                 // handle subsequent level ups after level 1
                 Apply(state);
@@ -522,21 +560,21 @@ namespace EldritchArcana
         {
             // Note: this is different from the other favored class bonus components,
             // because the feature remains on the character, and kicks in at each level up.
-            var levelUp = Game.Instance.UI.CharacterBuildController.LevelUpController;
-            if (levelUp.State.NextLevel == 1 && (Owner == levelUp.Preview || Owner == levelUp.Unit))
+            LevelUpController levelUp = Game.Instance.UI.CharacterBuildController.LevelUpController;
+            if(levelUp.State.NextLevel == 1 && (Owner == levelUp.Preview || Owner == levelUp.Unit))
             {
                 // Handle the level 1 hit point adjustment in the character generator.
                 Apply(levelUp.State);
             }
         }
 
-        void Apply(LevelUpState state)
+        private void Apply(LevelUpState state)
         {
             // If a user-selectable favored class was chosen, then we need to disable the game's automatic favored class hit points.
             // TODO: could use a patch to skip ApplyClassMechanics.ApplyHitPoints instead of undoing it.
-            var @class = state.SelectedClass;
+            BlueprintCharacterClass @class = state.SelectedClass;
             int nextLevel = state.NextLevel;
-            var classes = BlueprintRoot.Instance.Progression.CharacterClasses;
+            BlueprintCharacterClass[] classes = BlueprintRoot.Instance.Progression.CharacterClasses;
             // This calculation was taken from ApplyClassMechanics.ApplyHitPoints.
             // All we want to do here is undo that function, so we replicate the logic as accurately as possible.
             //
@@ -544,7 +582,7 @@ namespace EldritchArcana
             // it won't allow the base class to get its favored class bonus.
             bool isFavoredClass = !@class.PrestigeClass && classes.Contains(@class) && !Owner.Progression.Classes.Any(c => c.Level >= nextLevel && c.CharacterClass != @class);
 
-            if (isFavoredClass)
+            if(isFavoredClass)
             {
                 Log.Write($"Remove auto favored class hit point {state.SelectedClass}");
                 Owner.Stats.HitPoints.BaseValue--;
@@ -568,7 +606,7 @@ namespace EldritchArcana
                 return base.ExtractSelectionItems(beforeLevelUpUnit, previewUnit)
                     .Where(f => Skills.Contains(f.Param.Value.StatType.Value));
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Log.Error(e);
                 return Array.Empty<IFeatureSelectionItem>();
@@ -588,12 +626,54 @@ namespace EldritchArcana
 
         public override void OnTurnOn()
         {
-            var statParam = Param.StatType.GetValueOrDefault();
-            if (statParam == StatType.Unknown) return;
-            var stat = Owner.Stats.GetStat(statParam);
+            StatType statParam = Param.StatType.GetValueOrDefault();
+            if(statParam == StatType.Unknown) return;
+            ModifiableValue stat = Owner.Stats.GetStat(statParam);
 
-            var bonus = stat.BaseValue >= 10 ? 4 : 2;
+            int bonus = stat.BaseValue >= 10 ? 4 : 2;
             m_Modifier = stat.AddModifier(bonus, this, Descriptor);
+        }
+
+        public override void OnTurnOff()
+        {
+            m_Modifier?.Remove();
+            m_Modifier = null;
+        }
+    }
+
+    [AllowedOn(typeof(BlueprintFeature))]
+    [AllowedOn(typeof(BlueprintBuff))]
+    [AllowMultipleComponents]
+    public class AddStatBonusBasedOnStatRanks : OwnedGameLogicComponent<UnitDescriptor>
+    {
+        public ModifierDescriptor Descriptor = ModifierDescriptor.Other;
+        public StatType StatType;
+        public int BaseBonus;
+        public int IncreaseOnRank;
+        public int IncreaseOnRankBonus;
+
+
+        [JsonProperty]
+        private ModifiableValue.Modifier m_Modifier;
+
+        public override void OnTurnOn()
+        {
+            OnTurnOff();
+            var stat = base.Owner.Stats.GetStat(StatType);
+            int bonusValue = BaseBonus;
+            Main.logger.Log("Test " + stat);
+            Main.logger.Log("stat.BaseStat.BaseValue " + stat.BaseValue);
+            Main.logger.Log("IncreaseOnRank " + IncreaseOnRank);
+            if(stat.BaseValue >= IncreaseOnRank)
+            {
+                bonusValue += IncreaseOnRankBonus;
+            }
+
+            Main.logger.Log("bonusValue " + bonusValue);
+            if(bonusValue > 0)
+            {
+                m_Modifier = stat.AddModifier(bonusValue, this, Descriptor);
+            }
         }
 
         public override void OnTurnOff()
@@ -611,22 +691,25 @@ namespace EldritchArcana
     //   multiclassing could cause issues.
     // - so instead, we use a patch that runs after ApplyClassMechanics.Apply
     [Harmony12.HarmonyPatch(typeof(ApplyClassMechanics), "Apply", new Type[] { typeof(LevelUpState), typeof(UnitDescriptor) })]
-    static class ApplyClassMechanics_Apply_Patch
+    internal static class ApplyClassMechanics_Apply_Patch
     {
         internal static readonly List<Action<LevelUpState, UnitDescriptor>> onChargenApply = new List<Action<LevelUpState, UnitDescriptor>>();
 
-        static ApplyClassMechanics_Apply_Patch() => Main.ApplyPatch(typeof(ApplyClassMechanics_Apply_Patch), "Favored Class and Traits during character creation");
+        static ApplyClassMechanics_Apply_Patch()
+        {
+            Main.ApplyPatch(typeof(ApplyClassMechanics_Apply_Patch), "Favored Class and Traits during character creation");
+        }
 
-        static void Postfix(ApplyClassMechanics __instance, LevelUpState state, UnitDescriptor unit)
+        private static void Postfix(ApplyClassMechanics __instance, LevelUpState state, UnitDescriptor unit)
         {
             try
             {
-                if (state.NextLevel == 1)
+                if(state.NextLevel == 1)
                 {
-                    foreach (var action in onChargenApply) action(state, unit);
+                    foreach(Action<LevelUpState, UnitDescriptor> action in onChargenApply) action(state, unit);
                 }
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Log.Error(e);
             }
