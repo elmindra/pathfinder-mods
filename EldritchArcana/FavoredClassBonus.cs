@@ -661,15 +661,21 @@ namespace EldritchArcana
             OnTurnOff();
             var stat = base.Owner.Stats.GetStat(StatType);
             int bonusValue = BaseBonus;
+<<<<<<< HEAD
+=======
             Main.logger.Log("Test " + stat);
             Main.logger.Log("stat.BaseStat.BaseValue " + stat.BaseValue);
             Main.logger.Log("IncreaseOnRank " + IncreaseOnRank);
+>>>>>>> master
             if(stat.BaseValue >= IncreaseOnRank)
             {
                 bonusValue += IncreaseOnRankBonus;
             }
 
+<<<<<<< HEAD
+=======
             Main.logger.Log("bonusValue " + bonusValue);
+>>>>>>> master
             if(bonusValue > 0)
             {
                 m_Modifier = stat.AddModifier(bonusValue, this, Descriptor);
