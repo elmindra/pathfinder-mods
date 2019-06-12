@@ -474,7 +474,7 @@ namespace EldritchArcana
 
         public bool OneMetamagicIsFree;
 
-        public BlueprintAbility Spell => (BlueprintAbility)Param.GetValueOrDefault().Blueprint;
+        public BlueprintAbility Spell => (BlueprintAbility)Param.Blueprint;
 
         public override void OnTurnOn()
         {
@@ -533,7 +533,7 @@ namespace EldritchArcana
     {
         public void OnEventAboutToTrigger(RuleSpellResistanceCheck evt)
         {
-            var spell = Param.GetValueOrDefault().Blueprint;
+            var spell = Param.Blueprint;
             if (evt.Ability != spell && evt.Ability?.Parent != spell) return;
 
             // Double spell penetration bonus.
@@ -555,7 +555,7 @@ namespace EldritchArcana
 
         public void OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
-            var spell = Param.GetValueOrDefault().Blueprint;
+            var spell = Param.Blueprint;
             if (evt.Spell != spell && evt.Spell?.Parent != spell) return;
 
             // Double other bonuses applied to this spell.
@@ -611,7 +611,7 @@ namespace EldritchArcana
         public void OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
             var spell = evt.Spell;
-            if (spell != null && spell.School == Param.GetValueOrDefault().SpellSchool)
+            if (spell != null && spell.School == Param.SpellSchool)
             {
                 evt.AddBonusCasterLevel(Bonus);
             }
@@ -721,7 +721,7 @@ namespace EldritchArcana
 
         bool IFeatureSelection.CanSelect(UnitDescriptor unit, LevelUpState state, FeatureSelectionState selectionState, IFeatureSelectionItem item)
         {
-            if (!item.Param.HasValue) return false;
+            if (item.Param == null) return false;
             if (HasNoSuchFeature)
             {
                 var feat = item.Param.Value.Blueprint as BlueprintFeature;
