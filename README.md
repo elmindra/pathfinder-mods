@@ -169,7 +169,7 @@ Other features:
 Traits
 ---
 
-Many traits are implemented, chosen base on usefulness (e.g. popular traits in PnP)
+Many traits are implemented, chosen based on usefulness (e.g. popular traits in PnP)
 and feasibility of implementing in game. Player characters get to choose 2 traits
 at character creation, but they must be from different trait categories. The feat
 "Additional Traits" can unlock 2 more, but they must also be from trait categories
